@@ -1,0 +1,28 @@
+EcoDigital · mozione tipo M4 · Se decide un algoritmo
+Proposta 09 del mazzo · Istituzioni
+Bozza da adattare. Le parti tra [ ] si completano con i dati del Comune.
+Contatti: Alessandro Di Capua e Michele D'Orso, info@ecodigital.it
+
+Mozione: registro pubblico degli algoritmi usati dal Comune
+
+Il Consiglio comunale di [Comune],
+
+Premesso che
+
+  • il Comune usa o potrà usare programmi informatici per stilare graduatorie, assegnare contributi, sussidi e servizi, valutare domande e concorsi;
+  • chi è dentro quel numero ha diritto di capire come è stato calcolato e di avere qualcuno a cui chiedere conto.
+
+Considerato che
+
+  • le norme europee sulla protezione dei dati e sull'intelligenza artificiale [riferimento da verificare] riconoscono diritti alle persone interessate da decisioni automatizzate;
+  • un elenco pubblico e leggibile è il modo più semplice per rendere chiaro chi decide e con quale criterio.
+
+Impegna il Sindaco e la Giunta a
+
+  • istituire entro sei mesi un registro pubblico, sul sito del Comune, dei programmi e degli algoritmi usati in graduatorie, contributi, sussidi e concorsi;
+  • indicare per ciascuno, in parole semplici, a cosa serve, con quali criteri lavora e quali dati usa;
+  • indicare per ciascuno una persona responsabile, con nome, cognome e recapito, a cui il cittadino può chiedere spiegazioni;
+  • chiedere ai fornitori le informazioni necessarie per compilare il registro, inserendo l'obbligo nei nuovi contratti;
+  • aggiornare il registro a ogni nuovo programma e riferire al Consiglio una volta l'anno.
+
+Fatto citato: scheda 09 del mazzo EcoDigital, settembre 2026.

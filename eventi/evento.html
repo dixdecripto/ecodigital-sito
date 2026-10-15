@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../css/brand.css">
+<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<title>Incontro EcoDigital</title>
+<meta name="description" content="Data, luogo, programma e iscrizione all'incontro EcoDigital.">
+</head>
+<body>
+<header class="testata">
+  <div class="contenitore">
+    <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
+    <nav aria-label="Navigazione principale">
+      <a href="index.html" class="attivo">Incontri</a>
+      <a class="nascondi-mobile" href="../sito/eventi.html">Tutte le tappe</a>
+      <a class="btn btn--giallo btn--piccolo" href="../sito/attivista.html">Diventa follower</a>
+    </nav>
+  </div>
+</header>
+
+<main id="pagina">
+  <section class="copertina" id="copertina">
+    <div class="contenitore"><img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital"><h1 class="display">Caricamento…</h1></div>
+  </section>
+  <div class="contenitore">
+    <div class="evento">
+      <div id="dettagli"></div>
+      <aside id="iscrizione" aria-label="Iscrizione"></aside>
+    </div>
+  </div>
+</main>
+
+<footer class="piede">
+  <div class="contenitore">
+    <div>
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <p style="margin:10px 0 0">La rete promossa da Alfonso Pecoraro Scanio. Il canale è curato da Alessandro Di Capua e Michele D'Orso.</p>
+    </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="index.html">Incontri</a>
+      <a href="privacy.html">Privacy delle iscrizioni</a>
+      <a href="../sito/index.html">Il sito</a>
+    </div>
+  </div>
+</footer>
+
+<template id="t-modulo">
+  <div class="riquadro">
+    <h2 class="display">Iscriviti</h2>
+    <p class="sotto">Gratis. Ci vogliono 30 secondi.</p>
+    <div class="avviso noprint" id="avviso-prova" hidden><strong>Backend non collegato</strong>Questa pagina è in prova: l'invio viene simulato e nessun dato parte. Per collegarla segui apps-script/README.md.</div>
+    <form id="modulo" novalidate style="margin-top:16px">
+      <div class="due">
+        <div class="campo"><label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="given-name" required maxlength="80"><span class="msg-campo">Scrivi il tuo nome.</span></div>
+        <div class="campo"><label for="cognome">Cognome</label><input type="text" id="cognome" name="cognome" autocomplete="family-name" required maxlength="80"><span class="msg-campo">Scrivi il tuo cognome.</span></div>
+      </div>
+      <div class="campo"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required maxlength="120" inputmode="email"><span class="msg-campo">Serve un'email valida: ci mandiamo la conferma.</span></div>
+      <div class="campo"><label for="ente">Ente o organizzazione <span class="facoltativo">(se c'è)</span></label><input type="text" id="ente" name="ente" autocomplete="organization" maxlength="120"></div>
+      <div class="due">
+        <div class="campo"><label for="ruolo">Ruolo</label>
+          <select id="ruolo" name="ruolo" required><option value="">Scegli…</option></select>
+          <span class="msg-campo">Scegli un ruolo.</span></div>
+        <div class="campo"><label for="citta">Città</label><input type="text" id="citta" name="citta" autocomplete="address-level2" required maxlength="80"><span class="msg-campo">Da dove vieni?</span></div>
+      </div>
+      <div class="campo"><label for="accompagnatori">Accompagnatori</label>
+        <select id="accompagnatori" name="accompagnatori">
+          <option value="0">Nessuno, vengo da solo</option><option value="1">Uno</option><option value="2">Due</option><option value="3">Tre</option>
+        </select></div>
+      <div class="trappola" aria-hidden="true"><label for="sito">Lascia vuoto</label><input type="text" id="sito" name="sito" tabindex="-1" autocomplete="off"></div>
+      <div class="campo" id="campo-privacy">
+        <label class="spunta"><input type="checkbox" id="privacy" name="privacy" required><span>Ho letto l'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei miei dati per gestire l'iscrizione.</span></label>
+        <span class="msg-campo">Per iscriverti serve questa spunta.</span>
+      </div>
+      <label class="spunta"><input type="checkbox" id="notizie" name="notizie"><span>Voglio ricevere le notizie di EcoDigital <span class="facoltativo">(facoltativo, ti cancelli quando vuoi)</span></span></label>
+      <button class="btn btn--pieno" type="submit" id="invia">Conferma l'iscrizione</button>
+      <div class="stato" id="stato" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</template>
+
+<script src="config.js"></script>
+<script src="eventi.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var id = ED.parametro("id");
+  var ev = null, eventi = [];
+
+  function copertina(e) {
+    var c = $("copertina");
+    var foto = e.foto ? '<img class="copertina__foto" src="' + ED.esc(e.foto) + '" alt=""><div class="copertina__velo"></div>' : '';
+    var ora = ED.orario(e);
+    c.innerHTML = foto + '<div class="contenitore">' +
+      '<img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap"><span class="etichetta etichetta--tipo">' + ED.TIPI[e.tipo] + '</span>' +
+      (e.stato === "passato" ? '<span class="etichetta etichetta--passato">Incontro passato</span>' : (e.confermato ? '' : '<span class="etichetta etichetta--da-confermare">Data da confermare</span>')) + '</div>' +
+      '<h1 class="display">' + ED.esc(e.titolo) + '</h1>' +
+      '<p class="sottotitolo">' + ED.esc(e.sottotitolo || "") + '</p>' +
+      '<p class="sottotitolo" style="margin-top:14px;font-weight:700">' + ED.esc(ED.cap(ED.dataEstesa(e))) + (ora ? ' · ' + ED.esc(ora) : '') + ' · ' + ED.esc(e.online ? "Online" : e.citta) + '</p>' +
+    '</div>';
+  }
+
+  function relatoriTesto(r) {
+    if (!r) return "";
+    if (/^da annunciare$/i.test(r)) return '<span class="rel">Relatori: da annunciare</span>';
+    return '<span class="rel">Relatori: <b>' + ED.esc(r) + '</b></span>';
+  }
+
+  function dettagli(e) {
+    var passato = e.stato === "passato";
+    var ora = ED.orario(e);
+    var mappa = ED.mappa(e);
+    var h = '<div class="fatti">' +
+      '<div class="fatto"><h3 class="occhiello">Quando</h3><p class="grande">' + ED.esc(ED.cap(ED.dataEstesa(e))) + '</p>' +
+        (ora ? '<p>' + ED.esc(ED.cap(ora)) + '</p>' : '') + (e.notaData && !passato ? '<p class="nota">' + ED.esc(e.notaData) + '</p>' : '') + '</div>' +
+      '<div class="fatto"><h3 class="occhiello">Dove</h3><p class="grande">' + ED.esc(e.online ? "Online" : e.luogo) + '</p>' +
+        (e.indirizzo ? '<p>' + ED.esc(e.indirizzo) + '</p>' : '') +
+        (e.online ? '<p class="nota">Il link per entrare arriva per email.</p>' : '') +
+        (mappa ? '<p class="nota"><a href="' + mappa + '" target="_blank" rel="noopener">Apri in Google Maps</a></p>' : '') + '</div>' +
+    '</div>';
+
+    if (passato && e.recap) h += '<section class="blocco"><h2 class="display">Com\'è andata</h2><p class="racconto">' + ED.esc(e.recap) + '</p></section>';
+    h += '<section class="blocco"><h2 class="display">' + (passato ? "L'incontro" : "Di cosa parliamo") + '</h2><p>' + ED.esc(e.descrizione) + '</p></section>';
+
+    if (e.programma && e.programma.length) {
+      h += '<section class="blocco"><h2 class="display">Programma</h2><ol class="programma">' + e.programma.map(function (p) {
+        var quando = [p.giorno, p.ora].filter(Boolean).join(" · ");
+        return '<li>' + (quando ? '<span class="ora">' + ED.esc(quando) + '</span>' : '') +
+          '<span class="tit">' + ED.esc(p.titolo) + '</span>' + (p.testo ? '<span class="rel">' + ED.esc(p.testo) + '</span>' : '') + relatoriTesto(p.relatori) + '</li>';
+      }).join("") + '</ol></section>';
+    }
+    if (e.relatori && e.relatori.length) {
+      h += '<section class="blocco"><h2 class="display">Relatori</h2><ul class="relatori">' +
+        e.relatori.map(function (r) { return '<li>' + ED.esc(r) + '</li>'; }).join("") + '</ul></section>';
+    }
+    h += '<section class="blocco"><h2 class="display">Chi organizza</h2><p>' + ED.esc(e.organizza) + '.</p>' +
+      (passato ? '' : '<p>Per domande scrivi a <a href="mailto:' + ED.esc(CONTATTO_EMAIL) + '">' + ED.esc(CONTATTO_EMAIL) + '</a>.</p>') + '</section>';
+    if (e.comeArrivare && !passato) h += '<section class="blocco"><h2 class="display">Come arrivare</h2><p>' + ED.esc(e.comeArrivare) + '</p>' +
+      (mappa ? '<p><a class="btn btn--linea btn--piccolo" href="' + mappa + '" target="_blank" rel="noopener">Indicazioni su Google Maps</a></p>' : '') + '</section>';
+    $("dettagli").innerHTML = h;
+  }
+
+  function prossimo() {
+    return eventi.filter(function (x) { return x.stato !== "passato" && x.id !== ev.id; })
+      .sort(function (a, b) { return ED.chiave(a) < ED.chiave(b) ? -1 : 1; })[0] || null;
+  }
+
+  function chiuso(titolo, testo) {
+    var p = prossimo();
+    $("iscrizione").innerHTML = '<div class="riquadro"><h2 class="display">' + titolo + '</h2><p class="chiuso">' + testo + '</p>' +
+      (p ? '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0"><p class="occhiello" style="margin:0 0 6px">La prossima tappa</p>' +
+        '<p style="margin:0 0 4px;font-weight:700;font-size:18px">' + ED.esc(p.titolo) + '</p>' +
+        '<p style="margin:0 0 14px;color:var(--grigio)">' + ED.esc(ED.cap(ED.dataEstesa(p))) + ' · ' + ED.esc(p.online ? "Online" : p.citta) + '</p>' +
+        '<a class="btn btn--pieno" href="evento.html?id=' + encodeURIComponent(p.id) + '#iscrizione">Iscriviti alla prossima</a>' : '') +
+      '<p style="margin:16px 0 0"><a class="btn btn--giallo btn--pieno" href="../sito/attivista.html">Diventa follower</a></p></div>';
+  }
+
+  function modulo() {
+    $("iscrizione").appendChild(document.getElementById("t-modulo").content.cloneNode(true));
+    if (!ED.collegato()) $("avviso-prova").hidden = false;
+    var ruolo = $("ruolo");
+    ED.RUOLI.forEach(function (r) { var o = document.createElement("option"); o.value = r; o.textContent = r; ruolo.appendChild(o); });
+    if (!ev.confermato) $("iscrizione").querySelector(".sotto").textContent = "Gratis. La data è da confermare: ti scriviamo appena è fissata.";
+    $("modulo").addEventListener("submit", invia);
+    if (location.hash === "#iscrizione") setTimeout(function () { $("iscrizione").scrollIntoView({ block: "start" }); }, 50);
+  }
+
+  function valida() {
+    var ok = true;
+    function segna(idCampo, valido) {
+      var box = $(idCampo).closest(".campo");
+      if (box) box.classList.toggle("campo-errore", !valido);
+      if (!valido && ok) { $(idCampo).focus(); }
+      if (!valido) ok = false;
+    }
+    segna("nome", $("nome").value.trim().length > 0);
+    segna("cognome", $("cognome").value.trim().length > 0);
+    segna("email", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test($("email").value.trim()));
+    segna("ruolo", !!$("ruolo").value);
+    segna("citta", $("citta").value.trim().length > 0);
+    segna("privacy", $("privacy").checked);
+    return ok;
+  }
+
+  function invia(e) {
+    e.preventDefault();
+    var st = $("stato");
+    st.innerHTML = "";
+    if (!valida()) { st.innerHTML = '<div class="avviso avviso--errore">Controlla i campi segnati in rosso.</div>'; return; }
+    var dati = {
+      evento: ev.id,
+      nome: $("nome").value.trim(),
+      cognome: $("cognome").value.trim(),
+      email: $("email").value.trim().toLowerCase(),
+      ente: $("ente").value.trim(),
+      ruolo: $("ruolo").value,
+      citta: $("citta").value.trim(),
+      accompagnatori: Number($("accompagnatori").value) || 0,
+      privacy: true,
+      notizie: $("notizie").checked,
+      sito: $("sito").value,
+      /* copia dei dati dell'evento: il backend la usa se il foglio «Eventi» è ancora vuoto */
+      datiEvento: { titolo: ev.titolo, dataInizio: ev.dataInizio, dataFine: ev.dataFine || "", oraInizio: ev.oraInizio || "", oraFine: ev.oraFine || "", luogo: ev.online ? "Online" : ev.luogo, indirizzo: ev.indirizzo || "", online: !!ev.online, confermato: !!ev.confermato, posti: ev.posti || 0 }
+    };
+    var bottone = $("invia");
+    bottone.disabled = true; bottone.textContent = "Invio in corso…";
+
+    var richiesta = ED.collegato() ? ED.api("iscrizione", dati) :
+      new Promise(function (ok) { setTimeout(function () { ok({ ok: true, codice: ED.codiceProva(), simulato: true }); }, 700); });
+
+    richiesta.then(function (r) {
+      ED.scrivi("ed-iscrizione-" + r.codice, { codice: r.codice, evento: ev.id, nome: dati.nome, cognome: dati.cognome, email: dati.email, accompagnatori: dati.accompagnatori, ruolo: dati.ruolo, simulato: !!r.simulato, quando: new Date().toISOString() });
+      esito(r, dati);
+    }).catch(function (err) {
+      bottone.disabled = false; bottone.textContent = "Conferma l'iscrizione";
+      st.innerHTML = '<div class="avviso avviso--errore"><strong>L\'iscrizione non è andata a buon fine.</strong>' + ED.esc((err && err.messaggio) || "Errore imprevisto.") +
+        ' Se il problema resta scrivi a <a href="mailto:' + ED.esc(CONTATTO_EMAIL) + '">' + ED.esc(CONTATTO_EMAIL) + '</a>.</div>';
+    });
+  }
+
+  function esito(r, dati) {
+    var link = "conferma.html?id=" + encodeURIComponent(ev.id) + "&codice=" + encodeURIComponent(r.codice);
+    var mail = r.simulato ? "In prova non parte nessuna email. Con il backend collegato arriva a <b>" + ED.esc(dati.email) + "</b> con il riepilogo." :
+      (r.emailInCoda ? "La email di conferma partirà entro qualche ora a <b>" + ED.esc(dati.email) + "</b>: oggi abbiamo raggiunto il tetto di invii." :
+      "Ti abbiamo mandato il riepilogo a <b>" + ED.esc(dati.email) + "</b>. Se non la vedi, guarda nello spam.");
+    $("iscrizione").innerHTML = '<div class="riquadro esito" tabindex="-1" id="esito">' +
+      '<div class="spunta-grande" aria-hidden="true">✓</div>' +
+      '<h2 class="display">' + (r.giaIscritto ? "Eri già iscritto" : "Sei iscritto") + '</h2>' +
+      (r.simulato ? '<div class="avviso" style="margin:10px 0"><strong>Backend non collegato</strong>Questa è una simulazione: il codice qui sotto è di prova.</div>' : '') +
+      '<p class="occhiello" style="margin:14px 0 0">Il tuo numero di iscrizione</p>' +
+      '<div class="codice">' + ED.esc(r.codice) + '</div>' +
+      '<p style="margin:0 0 6px">' + mail + '</p>' +
+      (dati.accompagnatori ? '<p style="margin:0 0 6px">Abbiamo segnato ' + ED.numero(dati.accompagnatori) + (dati.accompagnatori === 1 ? ' accompagnatore.' : ' accompagnatori.') + '</p>' : '') +
+      '<div class="azioni"><button class="btn" type="button" id="ics">Aggiungi al calendario</button><a class="btn btn--linea" href="' + link + '">Il tuo biglietto con il QR</a></div>' +
+    '</div>';
+    $("ics").addEventListener("click", function () { ED.scaricaIcs(ev, r.codice); });
+    $("esito").focus();
+  }
+
+  ED.caricaEventi().then(function (lista) {
+    eventi = lista;
+    ev = ED.trova(lista, id);
+    if (!ev) {
+      $("copertina").querySelector("h1").textContent = "Incontro non trovato";
+      $("dettagli").innerHTML = '<p>Questo indirizzo non corrisponde a nessun incontro. <a href="index.html">Torna agli incontri</a>.</p>';
+      return;
+    }
+    document.title = ev.titolo + " · Incontri EcoDigital";
+    copertina(ev);
+    dettagli(ev);
+    if (ev.stato === "passato") return chiuso("Questo incontro c'è già stato", "Qui sopra trovi com'è andata e chi è intervenuto.");
+    if (!ev.iscrizioniAperte) return chiuso("Iscrizioni non ancora aperte", "Apriamo le iscrizioni appena il programma è pronto.");
+    modulo();
+    ED.caricaPosti().then(function (p) {
+      if (ev.posti && typeof p[ev.id] === "number" && p[ev.id] >= ev.posti) chiuso("Al completo", "I posti sono finiti. Scrivi a " + ED.esc(CONTATTO_EMAIL) + " per entrare in lista d'attesa.");
+    });
+  });
+})();
+</script>
+</body>
+</html>

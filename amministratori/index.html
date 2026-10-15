@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Per gli amministratori · EcoDigital</title>
+<meta name="description" content="Cosa riceve un comune che entra nella rete EcoDigital: mozioni tipo da adottare, una tappa in città, la vetrina delle buone pratiche e una lettera al mese per gli amministratori.">
+<meta name="theme-color" content="#293B8E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800;125,900&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/brand.css?v=20261001">
+<style>
+/* token di riserva, uguali al kit: valgono se brand.css non si carica */
+:root{
+  --blu:#293B8E; --giallo:#F7B807; --verde:#09693A; --rosso:#C0202F;
+  --ink:#14161F; --grigio:#5B6070; --line:#E1E3EC; --tenue:#F4F5FA; --bianco:#FFFFFF;
+  --blu-tenue:#E9ECF7; --giallo-tenue:#FEF4D6; --verde-tenue:#E3F1EA;
+}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;line-height:1.6}
+*{box-sizing:border-box}
+h1,h2,h3{font-family:"Archivo","Arial Black",Arial,sans-serif;font-stretch:125%;text-transform:uppercase;color:var(--blu);letter-spacing:-.01em;line-height:1.02;margin:0 0 .4em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+@media(max-width:640px){.wrap{padding:0 16px}}
+
+/* testata */
+.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.top img{height:26px;width:auto;display:block}
+.top nav{display:flex;gap:22px;font-size:14px;font-weight:600}
+.top nav a{color:var(--ink);text-decoration:none}
+.top nav a:hover{color:var(--blu)}
+.top nav .cta{color:var(--blu);border-bottom:2px solid var(--giallo)}
+@media(max-width:760px){.top nav a:not(.cta){display:none}}
+
+/* apertura */
+.hero{padding:88px 0 72px}
+.hero .occhiello{color:rgba(255,255,255,.85)}
+.hero h1{max-width:900px;margin-top:14px}
+.hero .lead{max-width:640px;font-size:19px;line-height:1.55;margin:18px 0 30px;color:#fff}
+.hero .azioni{display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:640px){.hero{padding:56px 0 48px}.hero .lead{font-size:17px}.hero h1{font-size:clamp(24px,7.4vw,40px)}h2{font-size:clamp(22px,7vw,28px);overflow-wrap:break-word}}
+html,body{max-width:100%;overflow-x:clip}
+
+/* numeri */
+.fatti{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.fatti div{padding:26px 28px;border-right:1px solid var(--line)}
+.fatti div:last-child{border-right:0}
+.fatti div:first-child{padding-left:0}
+.fatti b{display:block;font-family:"Archivo",Arial,sans-serif;font-stretch:125%;font-weight:900;font-size:34px;color:var(--blu);line-height:1}
+.fatti span{display:block;margin-top:8px;font-size:14px;color:var(--grigio);line-height:1.45}
+@media(max-width:760px){.fatti{grid-template-columns:1fr}.fatti div{border-right:0;border-bottom:1px solid var(--line);padding:20px 16px}}
+
+section.blocco{padding:80px 0;border-bottom:1px solid var(--line)}
+@media(max-width:640px){section.blocco{padding:56px 0}}
+.intro{max-width:680px;color:var(--grigio);font-size:17px;margin:0 0 34px}
+
+/* indice delle quattro cose */
+.quattro{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.quattro a{display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:14px;background:var(--tenue);text-decoration:none;color:var(--ink);min-height:210px;transition:background .15s}
+.quattro a:hover{background:var(--blu-tenue)}
+.quattro .n{font-family:"Archivo",Arial,sans-serif;font-stretch:125%;font-weight:900;font-size:40px;line-height:1;color:var(--blu)}
+.quattro b{font-size:17px;line-height:1.3}
+.quattro span{font-size:14px;color:var(--grigio);line-height:1.5}
+.quattro a:nth-child(1) .n{color:var(--verde)}
+.quattro a:nth-child(4) .n{color:var(--rosso)}
+@media(max-width:1000px){.quattro{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.quattro{grid-template-columns:1fr}.quattro a{min-height:0}}
+
+/* mozioni */
+.mozioni{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.moz{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;background:#fff}
+.moz .testa{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.moz .cod{font-family:"Archivo",Arial,sans-serif;font-stretch:125%;font-weight:900;color:var(--blu);font-size:15px}
+.moz h3{font-size:22px;margin:0}
+.moz .atto{margin:0;color:var(--grigio);font-size:15px;line-height:1.5}
+.moz details{border-top:1px solid var(--line);padding-top:12px}
+.moz summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--blu)}
+.moz ul{margin:10px 0 0;padding-left:18px;font-size:14px;line-height:1.55}
+.moz li{margin-bottom:6px}
+.moz .giu{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.moz .btn{min-height:42px;font-size:14px;padding:0 18px}
+@media(max-width:860px){.mozioni{grid-template-columns:1fr}}
+.nota{font-size:14px;color:var(--grigio);margin-top:22px;max-width:760px}
+
+/* tappa */
+.due{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.colonna{border-radius:14px;padding:28px}
+.colonna h3{font-size:20px}
+.colonna ul{list-style:none;margin:16px 0 0;padding:0}
+.colonna li{padding:14px 0;border-top:1px solid rgba(20,22,31,.1);font-size:16px;line-height:1.5}
+.colonna li b{display:block}
+.colonna li span{color:var(--grigio);font-size:14px}
+.voi{background:var(--giallo-tenue)}
+.noi{background:var(--blu);color:#fff}
+.noi h3{color:#fff}
+.noi li{border-top-color:rgba(255,255,255,.18)}
+.noi li span{color:rgba(255,255,255,.78)}
+@media(max-width:760px){.due{grid-template-columns:1fr}.colonna{padding:22px}}
+
+/* moduli */
+form.modulo{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;max-width:820px}
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo.tutta{grid-column:1/-1}
+.campo label,.campo legend{font-size:13px;font-weight:700;letter-spacing:.02em}
+.campo input,.campo select,.campo textarea{font:inherit;font-size:16px;padding:12px 14px;border:1px solid #C9CCD8;border-radius:8px;background:#fff;color:var(--ink);width:100%}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:3px solid var(--giallo);outline-offset:1px;border-color:var(--blu)}
+.campo textarea{min-height:120px;resize:vertical}
+.conta{font-size:12px;color:var(--grigio);align-self:flex-end}
+fieldset.campo{border:0;padding:0;margin:0}
+.scelte{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scelte label,.consenso label{display:flex;gap:10px;align-items:flex-start;font-size:15px;font-weight:400;letter-spacing:0;line-height:1.45;padding:10px 12px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.scelte input,.consenso input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--blu)}
+.consenso label{border:0;padding:0;font-size:14px;color:var(--grigio)}
+.esito{grid-column:1/-1;font-size:15px;padding:14px 16px;border-radius:8px;display:none}
+.esito.ok{display:block;background:var(--verde-tenue);color:var(--verde)}
+.esito.prova{display:block;background:var(--giallo-tenue);color:#6B4E00}
+.esito.ko{display:block;background:#FBE9EB;color:var(--rosso)}
+@media(max-width:640px){form.modulo{grid-template-columns:1fr}.scelte{grid-template-columns:1fr}}
+
+/* vetrina */
+.vetrina{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+.vetrina form.modulo{grid-template-columns:1fr}
+@media(max-width:900px){.vetrina{grid-template-columns:1fr;gap:28px}}
+.passi{list-style:none;margin:0;padding:0;counter-reset:p}
+.passi li{counter-increment:p;position:relative;padding:0 0 18px 46px;font-size:16px;line-height:1.5}
+.passi li::before{content:counter(p);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--blu);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+
+/* lettera */
+.lettera{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.anteprima{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(20,22,31,.06),0 8px 24px rgba(20,22,31,.06)}
+.anteprima .oggetto{padding:14px 20px;background:var(--tenue);font-size:13px;color:var(--grigio);border-bottom:1px solid var(--line)}
+.anteprima .oggetto b{color:var(--ink)}
+.anteprima .corpo{padding:22px 20px}
+.anteprima .sez{padding:14px 0;border-top:1px solid var(--line)}
+.anteprima .sez:first-child{border-top:0;padding-top:0}
+.anteprima .sez small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grigio);margin-bottom:6px}
+.anteprima .sez p{margin:0;font-size:15px;line-height:1.5}
+.anteprima .piede{padding:12px 20px;font-size:12px;color:var(--grigio);border-top:1px solid var(--line)}
+@media(max-width:900px){.lettera{grid-template-columns:1fr;gap:28px}}
+
+/* adesione */
+.adesione{background:var(--tenue)}
+.piede{padding:44px 0 56px;font-size:14px;color:var(--grigio)}
+.piede img{height:22px;margin-bottom:14px}
+.piede a{color:var(--blu)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="../sito/index.html"><img src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
+    <nav aria-label="Sezioni della pagina">
+      <a href="#proposte">Le proposte</a>
+      <a href="#tappa">Una tappa</a>
+      <a href="#vetrina">La vetrina</a>
+      <a href="#lettera">La lettera</a>
+      <a class="cta" href="#aderisci">Aderisci come ente</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero grad">
+  <div class="wrap">
+    <span class="occhiello">Sindaci, assessori, consiglieri, Responsabili per la Transizione Digitale</span>
+    <h1>Per gli amministratori</h1>
+    <p class="lead">Quattro cose concrete per un comune che entra nella rete EcoDigital: testi pronti da portare in consiglio, una tappa in città, uno spazio per raccontare quello che avete fatto e una lettera al mese. Tutto gratuito, curato da Alessandro Di Capua e Michele D'Orso.</p>
+    <div class="azioni">
+      <a class="btn btn-secondario" href="#aderisci">Aderisci come ente</a>
+      <a class="btn btn-fantasma" href="#proposte">Leggi le mozioni tipo</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap fatti" aria-label="Alcuni numeri">
+  <div><b>31</b><span>tappe della rete EcoDigital dal 2021, in tutta Italia</span></div>
+  <div><b>21.01.2026</b><span>workshop «Comuni EcoDigital» a Roma, sindaci e amministratori allo stesso tavolo</span></div>
+  <div><b id="n-mozioni">10</b><span>mozioni tipo pronte, una per ogni proposta del mazzo che un comune può adottare</span></div>
+</div>
+
+<section class="blocco">
+  <div class="wrap">
+    <span class="occhiello">Il pacchetto</span>
+    <h2>Cosa riceve il vostro comune</h2>
+    <p class="intro">Ogni cosa si può prendere da sola. Nessuna costa nulla all'ente e nessuna chiede di aderire a un partito o a un'associazione.</p>
+    <div class="quattro">
+      <a href="#proposte"><span class="n">1</span><b>Le proposte del mese, pronte per il consiglio</b><span>Per ogni proposta del mazzo che un comune può adottare, il testo di una mozione da scaricare e adattare.</span></a>
+      <a href="#tappa"><span class="n">2</span><b>Una tappa EcoDigital in città</b><span>Voi mettete sala, data e due relatori del territorio. Noi comunicazione, locandina, copertura e iscrizioni.</span></a>
+      <a href="#vetrina"><span class="n">3</span><b>La vetrina della buona pratica</b><span>Una cosa fatta davvero dal vostro comune, raccontata sul sito e sui canali EcoDigital.</span></a>
+      <a href="#lettera"><span class="n">4</span><b>La lettera mensile</b><span>Tre buone pratiche da copiare e le scadenze utili del mese, una volta al mese.</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="blocco" id="proposte">
+  <div class="wrap">
+    <span class="occhiello">1 · Le proposte del mese</span>
+    <h2>Da adottare in consiglio o in giunta</h2>
+    <p class="intro">Ogni mese il mazzo EcoDigital mette in fila 18 proposte. Queste sono quelle che un comune può fare da solo, con i suoi poteri. Il testo segue la forma della mozione: premesso che, considerato che, impegna il Sindaco e la Giunta. Le parti tra parentesi quadre si completano con i dati del comune.</p>
+    <div class="mozioni" id="mozioni"></div>
+    <p class="nota">I punti segnati [riferimento da verificare] chiedono la citazione di una norma: la indica il segretario comunale prima della presentazione. Se la mozione viene approvata, scriveteci a <a href="mailto:info@ecodigital.it">info@ecodigital.it</a>: la raccontiamo nella vetrina.</p>
+  </div>
+</section>
+
+<section class="blocco" id="tappa">
+  <div class="wrap">
+    <span class="occhiello">2 · Ospita una tappa</span>
+    <h2>EcoDigital nella vostra città</h2>
+    <p class="intro">Le tappe sono incontri pubblici sulla transizione ecologica e digitale del territorio, con relatori locali e le esperienze di chi ha già fatto. Dal 2021 sono state 31.</p>
+    <div class="due">
+      <div class="colonna voi">
+        <h3>Cosa serve da voi</h3>
+        <ul>
+          <li><b>Una sala</b><span>Sala consiliare, auditorium, biblioteca: basta un posto accessibile con proiettore e microfono.</span></li>
+          <li><b>Una data</b><span>Con almeno quattro settimane di anticipo, per preparare la comunicazione.</span></li>
+          <li><b>Due relatori locali</b><span>Chi nel territorio fa già qualcosa: un tecnico del comune, un'impresa, una scuola, un'associazione.</span></li>
+        </ul>
+      </div>
+      <div class="colonna noi">
+        <h3>Cosa facciamo noi</h3>
+        <ul>
+          <li><b>Comunicazione</b><span>Annuncio sul sito e sui canali EcoDigital, Facebook, Instagram e LinkedIn.</span></li>
+          <li><b>Locandina</b><span>Grafica pronta per stampa e social, con il logo del comune.</span></li>
+          <li><b>Copertura</b><span>Foto, video brevi e racconto della tappa dopo l'incontro.</span></li>
+          <li><b>Iscrizioni dal sito</b><span>Pagina dell'incontro con modulo di iscrizione, promemoria e conteggio dei posti.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="nota">Per proporre una data spuntate «Ospitare una tappa» nel modulo di adesione, oppure scrivete a <a href="mailto:info@ecodigital.it">info@ecodigital.it</a>. Il calendario degli incontri è nella <a href="../eventi/index.html">pagina eventi</a>.</p>
+  </div>
+</section>
+
+<section class="blocco" id="vetrina">
+  <div class="wrap vetrina">
+    <div>
+      <span class="occhiello">3 · La vetrina della buona pratica</span>
+      <h2>Raccontate una cosa fatta davvero</h2>
+      <p class="intro">Un servizio online che funziona, un edificio recuperato, i dati di una centralina pubblicati, un corso per i cittadini. Le pratiche scelte vanno sul sito EcoDigital e sui canali social, con il nome del comune e di chi l'ha fatta.</p>
+      <ol class="passi">
+        <li>Scrivete la pratica in 300 caratteri: cosa, dove, quando, con quale risultato.</li>
+        <li>Vi ricontattiamo per una foto e un numero che dica il risultato.</li>
+        <li>Prima della pubblicazione vi mandiamo il testo da approvare.</li>
+      </ol>
+    </div>
+    <form class="modulo" id="f-pratica" novalidate>
+      <div class="campo"><label for="p-ente">Ente</label><input id="p-ente" name="ente" required placeholder="Comune di ..."></div>
+      <div class="campo"><label for="p-ref">Referente</label><input id="p-ref" name="referente" required placeholder="Nome, cognome e ruolo"></div>
+      <div class="campo"><label for="p-email">Email istituzionale</label><input id="p-email" name="email" type="email" required placeholder="nome@comune.esempio.it"></div>
+      <div class="campo"><label for="p-testo">La pratica in 300 caratteri</label><textarea id="p-testo" name="pratica" maxlength="300" required placeholder="Cosa avete fatto, dove, quando e con quale risultato."></textarea><span class="conta" id="p-conta">0 su 300</span></div>
+      <div class="campo consenso"><label><input type="checkbox" name="consenso" required> Acconsento al trattamento dei dati per essere ricontattato su questa pratica. I dati non vengono ceduti a terzi.</label></div>
+      <div><button class="btn btn-primario" type="submit">Manda la pratica</button></div>
+      <div class="esito" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<section class="blocco" id="lettera">
+  <div class="wrap lettera">
+    <div>
+      <span class="occhiello">4 · La lettera mensile</span>
+      <h2>Una lettera al mese per gli amministratori</h2>
+      <p class="intro">Arriva all'indirizzo istituzionale, una volta al mese, e si legge in tre minuti.</p>
+      <ul class="passi" style="list-style:none">
+        <li>Tre buone pratiche da copiare, ognuna con il comune che l'ha fatta e il contatto per chiedere come.</li>
+        <li>Le scadenze utili del mese: bandi sulla transizione digitale ed ecologica, PNRR compreso, e giornate da segnare in calendario.</li>
+        <li>La proposta del mese, con la sua mozione tipo pronta da scaricare.</li>
+      </ul>
+      <p class="nota">Per riceverla spuntate «La lettera mensile» nel modulo di adesione. Per smettere basta rispondere «stop».</p>
+    </div>
+    <div class="anteprima" aria-label="Esempio di lettera">
+      <div class="oggetto">Oggetto: <b>Tre cose da copiare a ottobre</b> · da EcoDigital</div>
+      <div class="corpo">
+        <div class="sez"><small>Buona pratica</small><p>Qui va la prima pratica arrivata dalla vetrina: il comune, cosa ha fatto, il numero del risultato.</p></div>
+        <div class="sez"><small>Scadenza</small><p>Ecomondo, Rimini, dal 3 al 6 novembre 2026: la rete cerca chi pubblica già i numeri della propria filiera.</p></div>
+        <div class="sez"><small>Proposta del mese</small><p>Anche col telefono vecchio: ogni servizio digitale del comune si prova su un telefono di sei anni prima di andare online. Mozione tipo M1.</p></div>
+      </div>
+      <div class="piede">Rispondi «stop» per non ricevere altro.</div>
+    </div>
+  </div>
+</section>
+
+<section class="blocco adesione" id="aderisci">
+  <div class="wrap">
+    <span class="occhiello">Adesione dell'ente</span>
+    <h2>Il vostro comune nella rete</h2>
+    <p class="intro">Compilate il modulo con un indirizzo istituzionale. Vi rispondono Alessandro Di Capua e Michele D'Orso.</p>
+    <form class="modulo" id="f-adesione" novalidate>
+      <div class="campo tutta"><label for="a-ente">Ente</label><input id="a-ente" name="ente" required placeholder="Comune di ..."></div>
+      <div class="campo"><label for="a-ruolo">Ruolo</label>
+        <select id="a-ruolo" name="ruolo" required>
+          <option value="">Scegli</option>
+          <option>Sindaco o sindaca</option>
+          <option>Assessore o assessora</option>
+          <option>Consigliere o consigliera</option>
+          <option>Responsabile per la Transizione Digitale</option>
+          <option>Segretario o dirigente</option>
+          <option>Altro ruolo nell'ente</option>
+        </select>
+      </div>
+      <div class="campo"><label for="a-nome">Nome e cognome</label><input id="a-nome" name="nome" required autocomplete="name"></div>
+      <div class="campo tutta"><label for="a-email">Email istituzionale</label><input id="a-email" name="email" type="email" required placeholder="nome@comune.esempio.it"></div>
+      <fieldset class="campo tutta">
+        <legend>Cosa vi interessa</legend>
+        <div class="scelte">
+          <label><input type="checkbox" name="interessi" value="mozioni"> Le proposte del mese e le mozioni tipo</label>
+          <label><input type="checkbox" name="interessi" value="tappa"> Ospitare una tappa</label>
+          <label><input type="checkbox" name="interessi" value="vetrina"> Raccontare una buona pratica</label>
+          <label><input type="checkbox" name="interessi" value="lettera"> La lettera mensile</label>
+        </div>
+      </fieldset>
+      <div class="campo tutta consenso"><label><input type="checkbox" name="consenso" required> Acconsento al trattamento dei dati per ricevere le comunicazioni scelte. I dati servono solo a EcoDigital, non vengono ceduti a terzi e si cancellano su richiesta a info@ecodigital.it.</label></div>
+      <div><button class="btn btn-primario" type="submit">Aderisci</button></div>
+      <div class="esito" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="piede">
+  <div class="wrap">
+    <img src="../img/logo/istituzionale.svg" alt="EcoDigital">
+    <p>EcoDigital è la rete promossa da Alfonso Pecoraro Scanio. Il canale di informazione è curato da Alessandro Di Capua e Michele D'Orso.<br>
+    Per comuni, imprese e startup: <a href="mailto:info@ecodigital.it">info@ecodigital.it</a> · <a href="../sito/index.html">Diventa follower</a></p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="mozioni.js"></script>
+<script>
+(function () {
+  /* schede delle mozioni */
+  var box = document.getElementById("mozioni");
+  if (typeof MOZIONI !== "undefined") {
+    document.getElementById("n-mozioni").textContent = MOZIONI.length;
+    MOZIONI.forEach(function (m) {
+      var parti = m.proposta.split("·").map(function (x) { return x.trim(); });
+      var tema = parti[1] || "", perchi = parti[2] ? " " + parti[2].charAt(0).toUpperCase() + parti[2].slice(1) + "." : "";
+      var el = document.createElement("article");
+      el.className = "moz";
+      el.innerHTML =
+        '<div class="testa"><span class="cod">' + m.codice + '</span><span class="pill pill-linea">' + esc(tema) + '</span></div>' +
+        '<h3>' + esc(m.titolo) + '</h3>' +
+        '<p class="atto">' + esc(m.atto) + '. ' + esc(parti[0]) + '.' + esc(perchi) + '</p>' +
+        '<details><summary>Cosa impegna a fare</summary><ul>' +
+        m.impegni.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + '</ul></details>' +
+        '<div class="giu"><a class="btn btn-primario" href="' + m.file + '" download>Scarica il testo</a></div>';
+      box.appendChild(el);
+    });
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  /* contatore della vetrina */
+  var t = document.getElementById("p-testo"), c = document.getElementById("p-conta");
+  t.addEventListener("input", function () { c.textContent = t.value.length + " su 300"; });
+
+  /* invio: stesso schema del sistema eventi, JSON come text/plain senza preflight */
+  function collegato() { return typeof ENDPOINT === "string" && /^https:\/\//.test(ENDPOINT); }
+  function invia(form, azione) {
+    var esito = form.querySelector(".esito");
+    esito.className = "esito";
+    if (!form.checkValidity()) {
+      esito.className = "esito ko";
+      esito.textContent = "Mancano dei campi: controllate ente, nome, email e il consenso.";
+      return;
+    }
+    var dati = { azione: azione, consenso: true, pagina: "amministratori", inviato: new Date().toISOString() };
+    new FormData(form).forEach(function (v, k) {
+      if (k === "consenso") return;
+      if (k === "interessi") { (dati.interessi = dati.interessi || []).push(v); } else { dati[k] = String(v).trim(); }
+    });
+    if (!collegato()) {
+      esito.className = "esito prova";
+      esito.textContent = "Pagina in prova: il collegamento non è ancora attivo e nessun dato è stato inviato. Nel frattempo scrivete a " + (typeof CONTATTO_EMAIL === "string" ? CONTATTO_EMAIL : "info@ecodigital.it") + ".";
+      return;
+    }
+    var b = form.querySelector("button"); b.disabled = true;
+    fetch(ENDPOINT, { method: "POST", body: JSON.stringify(dati), redirect: "follow" })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j || j.ok !== true) throw new Error((j && j.errore) || "errore");
+        esito.className = "esito ok";
+        esito.textContent = azione === "adesione-ente" ? "Grazie, adesione ricevuta. Vi scriviamo noi all'indirizzo indicato." : "Grazie, pratica ricevuta. Vi ricontattiamo per la foto e il testo da approvare.";
+        form.reset(); c.textContent = "0 su 300";
+      })
+      .catch(function (e) {
+        esito.className = "esito ko";
+        esito.textContent = "Invio non riuscito (" + e.message + "). Riprovate tra un minuto o scrivete a info@ecodigital.it.";
+      })
+      .then(function () { b.disabled = false; });
+  }
+  document.getElementById("f-adesione").addEventListener("submit", function (e) { e.preventDefault(); invia(this, "adesione-ente"); });
+  document.getElementById("f-pratica").addEventListener("submit", function (e) { e.preventDefault(); invia(this, "buona-pratica"); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../css/brand.css">
+<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<title>Iscritti agli incontri · EcoDigital</title>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<header class="regia-testa">
+  <div class="contenitore">
+    <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <h1 class="display">Iscritti</h1>
+    </div>
+    <div style="display:flex;gap:10px">
+      <a class="btn btn--linea btn--piccolo" href="checkin.html" style="color:#fff;border-color:rgba(255,255,255,.5)">Check-in</a>
+      <button class="btn btn--linea btn--piccolo" type="button" id="esci" style="color:#fff;border-color:rgba(255,255,255,.5)">Esci</button>
+    </div>
+  </div>
+</header>
+
+<main class="contenitore" style="padding-bottom:64px">
+  <div id="avviso-regia"></div>
+  <div id="regia">
+    <div class="barra">
+      <div class="campo" style="flex:3"><label for="evento">Incontro</label><select id="evento"></select></div>
+      <div class="campo" style="flex:1"><label for="ruolo">Ruolo</label><select id="ruolo"><option value="">Tutti i ruoli</option></select></div>
+      <label class="spunta" style="margin:0 0 12px;grid-template-columns:22px auto"><input type="checkbox" id="annullate"><span>Mostra le annullate</span></label>
+    </div>
+
+    <div class="contatori" id="contatori"></div>
+
+    <div class="azioni" style="margin:0 0 6px">
+      <button class="btn" type="button" id="csv">Scarica CSV</button>
+      <button class="btn btn--linea" type="button" id="copia">Copia negli appunti</button>
+      <button class="btn btn--giallo" type="button" id="promemoria">Manda il promemoria</button>
+      <button class="btn btn--linea" type="button" id="grazie">Manda il grazie</button>
+      <button class="btn btn--linea" type="button" id="aggiorna">Aggiorna</button>
+    </div>
+    <div id="conferma"></div>
+    <div class="stato" id="stato" role="status" aria-live="polite"></div>
+
+    <div class="tabella-wrap" style="margin-top:18px">
+      <table class="tab">
+        <thead><tr><th>Codice</th><th>Nome</th><th>Email</th><th>Ente</th><th>Ruolo</th><th>Città</th><th>Acc.</th><th>Notizie</th><th>Iscritto il</th><th>Presente</th></tr></thead>
+        <tbody id="righe"></tbody>
+      </table>
+    </div>
+
+    <section class="blocco" style="margin-top:44px;max-width:760px">
+      <h2 class="display" style="font-size:22px;color:var(--blu)">Programma sul foglio</h2>
+      <p>Per spostare il programma da eventi.js al foglio «Eventi»: copia qui sotto, apri il foglio, clicca la cella A1 del foglio «Eventi» e incolla. Poi in config.js metti <code>EVENTI_DAL_FOGLIO = true</code>.</p>
+      <button class="btn btn--linea btn--piccolo" type="button" id="copia-eventi">Copia il programma per il foglio</button>
+    </section>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script src="eventi.js"></script>
+<script src="app.js"></script>
+<script src="regia.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var iscritti = [], eventi = [], quota = null;
+  $("esci").addEventListener("click", REGIA.esci);
+  ED.RUOLI.forEach(function (r) { var o = document.createElement("option"); o.value = r; o.textContent = r; $("ruolo").appendChild(o); });
+
+  var COLONNE = [
+    { chiave: "codice", titolo: "Codice" }, { chiave: "timestamp", titolo: "Iscritto il" },
+    { chiave: "nome", titolo: "Nome" }, { chiave: "cognome", titolo: "Cognome" }, { chiave: "email", titolo: "Email" },
+    { chiave: "ente", titolo: "Ente" }, { chiave: "ruolo", titolo: "Ruolo" }, { chiave: "citta", titolo: "Città" },
+    { chiave: "accompagnatori", titolo: "Accompagnatori" }, { chiave: "notizieTesto", titolo: "Notizie" },
+    { chiave: "stato", titolo: "Stato" }, { chiave: "presente", titolo: "Presente" }
+  ];
+
+  function evento() { return ED.trova(eventi, $("evento").value); }
+  function siNo(v) { return v === true || v === "sì" || v === "TRUE" || v === "true"; }
+  function quando(iso) {
+    if (!iso) return "";
+    var d = new Date(iso); if (isNaN(d)) return String(iso);
+    return d.toLocaleDateString("it-IT", { day: "2-digit", month: "2-digit" }) + " " + d.toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit" });
+  }
+
+  function visibili() {
+    var ruolo = $("ruolo").value, tutte = $("annullate").checked;
+    return iscritti.filter(function (r) { return (!ruolo || r.ruolo === ruolo) && (tutte || r.stato !== "annullata"); });
+  }
+
+  function disegna() {
+    var c = REGIA.conteggi(iscritti.filter(function (r) { return !$("ruolo").value || r.ruolo === $("ruolo").value; }));
+    var ev = evento();
+    $("contatori").innerHTML =
+      '<div class="contatore"><b>' + c.iscrizioni + '</b><span>Iscrizioni attive</span></div>' +
+      '<div class="contatore"><b>' + c.persone + (ev && ev.posti ? '<small style="font-size:16px;color:var(--grigio)"> / ' + ev.posti + '</small>' : '') + '</b><span>Persone attese' + (ev && ev.posti ? ' su posti' : '') + '</span></div>' +
+      '<div class="contatore contatore--verde"><b>' + c.notizie + '</b><span>Vogliono le notizie</span></div>' +
+      '<div class="contatore"><b>' + c.presenti + '</b><span>Arrivati al check-in</span></div>' +
+      '<div class="contatore"><b>' + c.annullate + '</b><span>Annullate</span></div>';
+    var righe = visibili();
+    $("righe").innerHTML = righe.length ? righe.map(function (r) {
+      return '<tr class="' + (r.stato === "annullata" ? "annullata" : "") + (r.presente ? " presente" : "") + '">' +
+        '<td><b>' + ED.esc(r.codice) + '</b>' + (r.prova ? ' <span class="prova">prova</span>' : '') + '</td>' +
+        '<td>' + ED.esc(r.nome + " " + r.cognome) + '</td><td>' + ED.esc(r.email) + '</td><td>' + ED.esc(r.ente || "") + '</td>' +
+        '<td>' + ED.esc(r.ruolo || "") + '</td><td>' + ED.esc(r.citta || "") + '</td><td>' + (Number(r.accompagnatori) || 0) + '</td>' +
+        '<td>' + (siNo(r.notizie) ? "sì" : "no") + '</td><td>' + quando(r.timestamp) + '</td><td>' + (r.presente ? quando(r.presente) : "") + '</td></tr>';
+    }).join("") : '<tr><td colspan="10" style="text-align:center;color:var(--grigio);padding:28px">Nessun iscritto con questi filtri.</td></tr>';
+  }
+
+  function carica() {
+    $("conferma").innerHTML = "";
+    $("stato").innerHTML = '<p class="chiuso">Carico l\'elenco…</p>';
+    REGIA.elenco($("evento").value).then(function (j) {
+      iscritti = j.iscritti || [];
+      quota = typeof j.quotaEmail === "number" ? j.quotaEmail : null;
+      $("stato").innerHTML = "";
+      disegna();
+    }).catch(function (err) {
+      var m = REGIA.erroreChiave(err);
+      $("stato").innerHTML = '<div class="avviso avviso--errore"><strong>Elenco non disponibile.</strong>' + ED.esc(m) + (/chiave/i.test(m) ? ' <a href="admin.html">Rientra con la chiave giusta</a>.' : '') + '</div>';
+    });
+  }
+
+  function testoCsv() {
+    var righe = visibili().map(function (r) { var x = Object.assign({}, r); x.notizieTesto = siNo(r.notizie) ? "sì" : "no"; return x; });
+    return ED.csv(righe, COLONNE);
+  }
+
+  function copia(testo, cosa) {
+    function fatto() { $("stato").innerHTML = '<div class="avviso avviso--ok">' + cosa + ' copiato negli appunti.</div>'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(testo).then(fatto, function () { vecchioModo(testo); fatto(); });
+    } else { vecchioModo(testo); fatto(); }
+  }
+  function vecchioModo(testo) {
+    var t = document.createElement("textarea"); t.value = testo; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select(); try { document.execCommand("copy"); } catch (e) {} t.remove();
+  }
+
+  $("csv").addEventListener("click", function () {
+    var blob = new Blob([testoCsv()], { type: "text/csv;charset=utf-8" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = "iscritti-" + $("evento").value + ".csv"; document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  });
+  $("copia").addEventListener("click", function () { copia(testoCsv().replace(/^﻿/, ""), "Elenco"); });
+  $("aggiorna").addEventListener("click", carica);
+  $("ruolo").addEventListener("change", disegna);
+  $("annullate").addEventListener("change", disegna);
+
+  /* Conferma in pagina, senza finestre del browser. */
+  function chiediConferma(azione) {
+    var ev = evento(), c = REGIA.conteggi(iscritti);
+    var cosa = azione === "promemoria" ? "il promemoria" : "l'email di ringraziamento";
+    var quanti = azione === "grazie" && c.presenti ? c.presenti : c.iscrizioni;
+    var testo = 'Stai per mandare ' + cosa + ' a <b>' + quanti + (quanti === 1 ? ' iscrizione' : ' iscrizioni') + '</b> di <b>' + ED.esc(ev ? ev.titolo : "") + '</b>' +
+      (azione === "grazie" && c.presenti ? ', solo a chi è passato dal check-in' : '') + '. Chi l\'ha già ricevuto viene saltato.' +
+      (quota !== null ? ' Oggi Google lascia ancora <b>' + quota + '</b> email a questo account: quelle in più partono domani da sole.' : '') +
+      (azione === "promemoria" && ev && !ev.confermato ? '<br><b>Attenzione:</b> la data di questo incontro risulta ancora da confermare.' : '');
+    if (!c.iscrizioni) { $("conferma").innerHTML = '<div class="avviso" style="margin-top:14px">Nessun iscritto attivo: non c\'è nessuno a cui scrivere.</div>'; return; }
+    $("conferma").innerHTML = '<div class="conferma-inline"><p>' + testo + '</p><div class="azioni"><button class="btn btn--rosso" type="button" id="vai">Sì, manda adesso</button><button class="btn btn--linea" type="button" id="no">Annulla</button></div></div>';
+    $("no").addEventListener("click", function () { $("conferma").innerHTML = ""; });
+    $("vai").addEventListener("click", function () {
+      var b = $("vai"); b.disabled = true; b.textContent = "Invio…";
+      REGIA.azione(azione, { evento: $("evento").value }).then(function (j) {
+        $("conferma").innerHTML = "";
+        $("stato").innerHTML = '<div class="avviso avviso--ok"><strong>' + (j.simulato ? "Simulazione: nessuna email è partita." : "Fatto.") + '</strong>' +
+          (j.simulato ? "Con il backend collegato qui vedi quante email sono partite." :
+            "Inviate: " + (j.inviate || 0) + ". Già ricevute, saltate: " + (j.saltate || 0) + "." + (j.inCoda ? " In coda per domani: " + j.inCoda + "." : "")) + '</div>';
+        carica();
+      }).catch(function (err) {
+        b.disabled = false; b.textContent = "Sì, manda adesso";
+        $("stato").innerHTML = '<div class="avviso avviso--errore"><strong>Invio non riuscito.</strong>' + ED.esc(REGIA.erroreChiave(err)) + '</div>';
+      });
+    });
+  }
+  $("promemoria").addEventListener("click", function () { chiediConferma("promemoria"); });
+  $("grazie").addEventListener("click", function () { chiediConferma("grazie"); });
+
+  /* Programma in TSV, colonne identiche al foglio «Eventi» di Code.gs */
+  var CAMPI = ["id", "stato", "confermato", "tipo", "titolo", "sottotitolo", "dataInizio", "dataFine", "soloMese", "oraInizio", "oraFine", "notaData", "citta", "regione", "luogo", "indirizzo", "online", "posti", "iscrizioniAperte", "organizza", "descrizione", "programma", "relatori", "comeArrivare", "foto", "recap"];
+  $("copia-eventi").addEventListener("click", function () {
+    var righe = [CAMPI.join("\t")].concat((typeof EVENTI !== "undefined" ? EVENTI : []).map(function (e) {
+      return CAMPI.map(function (k) {
+        var v = e[k];
+        if (k === "programma") v = JSON.stringify(v || []);
+        else if (k === "relatori") v = (v || []).join("; ");
+        else if (typeof v === "boolean") v = v ? "TRUE" : "FALSE";
+        return String(v == null ? "" : v).replace(/[\t\r\n]+/g, " ");
+      }).join("\t");
+    }));
+    copia(righe.join("\n"), "Programma");
+  });
+
+  REGIA.porta($("regia"), function () {
+    ED.caricaEventi().then(function (lista) {
+      eventi = lista;
+      REGIA.scegliEvento($("evento"), eventi);
+      $("evento").addEventListener("change", carica);
+      carica();
+    });
+  });
+})();
+</script>
+</body>
+</html>

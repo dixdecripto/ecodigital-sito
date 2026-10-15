@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../css/brand.css">
+<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<title>La tua iscrizione · EcoDigital</title>
+<meta name="description" content="Il riepilogo della tua iscrizione a un incontro EcoDigital, con il QR da mostrare all'ingresso.">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<header class="testata">
+  <div class="contenitore">
+    <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
+    <nav aria-label="Navigazione principale">
+      <a href="index.html">Incontri</a>
+      <a class="nascondi-mobile" href="../sito/eventi.html">Tutte le tappe</a>
+      <a class="btn btn--giallo btn--piccolo" href="../sito/attivista.html">Diventa follower</a>
+    </nav>
+  </div>
+</header>
+
+<main class="contenitore" style="padding-top:36px;padding-bottom:64px">
+  <div id="contenuto"><p>Caricamento…</p></div>
+</main>
+
+<footer class="piede">
+  <div class="contenitore">
+    <div>
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <p style="margin:10px 0 0">La rete promossa da Alfonso Pecoraro Scanio. Il canale è curato da Alessandro Di Capua e Michele D'Orso.</p>
+    </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="index.html">Incontri</a>
+      <a href="privacy.html">Privacy delle iscrizioni</a>
+      <a href="../sito/index.html">Il sito</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" integrity="sha512-ZDSPMa/JM1D+7kdg2x3BsruQ6T/JpJo3jWDWkCZsP+5yVyp1KfESqLI+7RqB5k24F7p2cV7i2YHh/890y6P6Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="config.js"></script>
+<script src="eventi.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var id = ED.parametro("id");
+  var codice = (ED.parametro("codice") || "").toUpperCase();
+  var annulla = (ED.parametro("annulla") || "").toUpperCase();
+  var box = $("contenuto");
+
+  function disegnaQR(canvas, testo) {
+    if (typeof qrcode !== "function") return false;
+    var qr = qrcode(0, "M");
+    qr.addData(testo);
+    qr.make();
+    var n = qr.getModuleCount(), margine = 4, lato = n + margine * 2;
+    var scala = Math.floor(400 / lato);
+    canvas.width = canvas.height = lato * scala;
+    var c = canvas.getContext("2d");
+    c.fillStyle = "#FFFFFF"; c.fillRect(0, 0, canvas.width, canvas.height);
+    c.fillStyle = "#14161F";
+    for (var r = 0; r < n; r++) for (var k = 0; k < n; k++) if (qr.isDark(r, k)) c.fillRect((k + margine) * scala, (r + margine) * scala, scala, scala);
+    return true;
+  }
+
+  function biglietto(ev) {
+    var dati = ED.leggi("ed-iscrizione-" + codice) || {};
+    var ora = ED.orario(ev);
+    var acc = Number(dati.accompagnatori) || 0;
+    box.innerHTML =
+      (dati.simulato ? '<div class="avviso" style="margin-bottom:18px"><strong>Backend non collegato</strong>Questa iscrizione è una prova fatta da questo browser: il codice non vale all\'ingresso.</div>' : '') +
+      '<div class="biglietto">' +
+        '<div class="biglietto__testa aurora"><img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">' +
+          '<p class="occhiello" style="color:rgba(255,255,255,.85);margin:22px 0 4px">Sei iscritto a</p><h1 class="display" style="margin:0;font-size:clamp(28px,4.4vw,48px)">' + ED.esc(ev.titolo) + '</h1></div>' +
+        '<div class="biglietto__corpo"><dl>' +
+          (dati.nome ? '<dt>Nome</dt><dd>' + ED.esc(dati.nome + " " + (dati.cognome || "")) + (acc ? ' <span style="color:var(--grigio);font-weight:500">e ' + ED.numero(acc) + (acc === 1 ? ' accompagnatore' : ' accompagnatori') + '</span>' : '') + '</dd>' : '') +
+          '<dt>Quando</dt><dd>' + ED.esc(ED.cap(ED.dataEstesa(ev))) + (ora ? ', ' + ED.esc(ora) : '') + (ev.confermato ? '' : '<br><span class="etichetta etichetta--da-confermare" style="margin-top:6px">Data da confermare</span>') + '</dd>' +
+          '<dt>Dove</dt><dd>' + ED.esc(ev.online ? "Online, il link arriva per email" : ev.luogo) + (ev.indirizzo ? '<br><span style="font-weight:500">' + ED.esc(ev.indirizzo) + '</span>' : '') +
+            (ED.mappa(ev) ? '<br><a href="' + ED.mappa(ev) + '" target="_blank" rel="noopener" style="font-weight:600;font-size:14px">Apri in Google Maps</a>' : '') + '</dd>' +
+          '<dt>Codice</dt><dd><span class="codice" style="margin:0;font-size:26px">' + ED.esc(codice) + '</span></dd>' +
+        '</dl></div>' +
+        '<div class="biglietto__qr"><canvas id="qr" aria-label="QR del codice ' + ED.esc(codice) + '" role="img"></canvas><span style="font-size:13px;color:var(--grigio)">Mostralo all\'ingresso</span></div>' +
+      '</div>' +
+      '<div class="azioni noprint" style="margin-top:18px"><button class="btn" type="button" id="ics">Aggiungi al calendario</button><button class="btn btn--linea" type="button" onclick="window.print()">Stampa</button><a class="btn btn--linea" href="evento.html?id=' + encodeURIComponent(ev.id) + '">Programma dell\'incontro</a></div>' +
+      '<section class="blocco" style="margin-top:40px;max-width:720px"><h2 class="display" style="color:var(--blu);font-size:26px">Cosa succede adesso</h2><ol class="passi">' +
+        '<li><span>Ti abbiamo mandato questo riepilogo per email. Tienila: dentro c\'è il link per tornare qui.</span></li>' +
+        (ev.confermato ? '' : '<li><span>La data è ancora da confermare: appena è fissata ti scriviamo, e se non ti va più bene puoi disdire con un clic.</span></li>') +
+        '<li><span>Il giorno prima arriva il promemoria' + (ev.online ? ' con il link per entrare in diretta.' : ' con l\'indirizzo e l\'orario.') + '</span></li>' +
+        (ev.online ? '' : '<li><span>All\'ingresso mostra il QR dal telefono oppure di\' il tuo codice: ci mettiamo un attimo.</span></li>') +
+        '<li><span>Dopo l\'incontro ti mandiamo le foto e la data della prossima tappa.</span></li>' +
+      '</ol></section>' +
+      '<section class="blocco noprint" style="max-width:720px"><h2 class="display" style="color:var(--blu);font-size:22px">Non puoi più venire?</h2><p>Liberi il posto per qualcun altro. <a href="conferma.html?id=' + encodeURIComponent(ev.id) + '&annulla=' + encodeURIComponent(codice) + '">Disdici l\'iscrizione</a>.</p></section>';
+    $("ics").addEventListener("click", function () { ED.scaricaIcs(ev, codice); });
+    if (!disegnaQR($("qr"), codice)) {
+      $("qr").outerHTML = '<div class="codice" style="font-size:22px">' + ED.esc(codice) + '</div><span style="font-size:12px;color:var(--grigio)">Il QR non si è caricato: basta il codice.</span>';
+    }
+  }
+
+  function disdetta(ev) {
+    box.innerHTML = '<div class="riquadro" style="max-width:620px">' +
+      '<p class="occhiello" style="margin:0 0 6px">Disdetta</p>' +
+      '<h1 class="display" style="margin:0 0 10px;font-size:32px;color:var(--blu)">Vuoi annullare l\'iscrizione?</h1>' +
+      '<p>Incontro: <b>' + ED.esc(ev.titolo) + '</b>, ' + ED.esc(ED.dataEstesa(ev)) + '.<br>Codice: <b>' + ED.esc(annulla) + '</b></p>' +
+      (ED.collegato() ? '' : '<div class="avviso" style="margin-bottom:14px"><strong>Backend non collegato</strong>La disdetta viene solo simulata.</div>') +
+      '<div class="azioni" id="scelte"><button class="btn btn--rosso" type="button" id="si">Sì, annulla l\'iscrizione</button><a class="btn btn--linea" href="conferma.html?id=' + encodeURIComponent(ev.id) + '&codice=' + encodeURIComponent(annulla) + '">No, tengo il posto</a></div>' +
+      '<div class="stato" id="stato" role="status" aria-live="polite"></div></div>';
+    $("si").addEventListener("click", function () {
+      var b = $("si"); b.disabled = true; b.textContent = "Annullo…";
+      var r = ED.collegato() ? ED.api("annulla", { evento: ev.id, codice: annulla }) :
+        new Promise(function (ok) { setTimeout(function () { ok({ ok: true, simulato: true }); }, 500); });
+      r.then(function () {
+        ED.togli("ed-iscrizione-" + annulla);
+        $("scelte").remove();
+        $("stato").innerHTML = '<div class="avviso avviso--ok"><strong>Iscrizione annullata.</strong>Il posto torna libero. Se cambi idea puoi iscriverti di nuovo dalla <a href="evento.html?id=' + encodeURIComponent(ev.id) + '">pagina dell\'incontro</a>.</div>';
+      }).catch(function (err) {
+        b.disabled = false; b.textContent = "Sì, annulla l'iscrizione";
+        $("stato").innerHTML = '<div class="avviso avviso--errore"><strong>Non siamo riusciti ad annullare.</strong>' + ED.esc((err && err.messaggio) || "") + ' Scrivi a <a href="mailto:' + ED.esc(CONTATTO_EMAIL) + '">' + ED.esc(CONTATTO_EMAIL) + '</a> e lo facciamo noi.</div>';
+      });
+    });
+  }
+
+  ED.caricaEventi().then(function (lista) {
+    var ev = ED.trova(lista, id);
+    var valido = /^ED-\d{4}-[A-Z0-9]{4}$/;
+    if (!ev || !(valido.test(codice) || valido.test(annulla))) {
+      box.innerHTML = '<div class="riquadro" style="max-width:620px"><h1 class="display" style="margin:0 0 10px;font-size:30px;color:var(--blu)">Iscrizione non trovata</h1><p>Il link non è completo. Riaprilo dall\'email di conferma oppure scrivi a <a href="mailto:' + ED.esc(CONTATTO_EMAIL) + '">' + ED.esc(CONTATTO_EMAIL) + '</a>.</p><p><a class="btn" href="index.html">Vai agli incontri</a></p></div>';
+      return;
+    }
+    if (annulla) disdetta(ev); else biglietto(ev);
+  });
+})();
+</script>
+</body>
+</html>

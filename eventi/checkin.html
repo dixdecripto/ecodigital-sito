@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../css/brand.css">
+<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<title>Check-in · EcoDigital</title>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<header class="regia-testa">
+  <div class="contenitore">
+    <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <h1 class="display">Check-in</h1>
+    </div>
+    <button class="btn btn--linea btn--piccolo" type="button" id="esci" style="color:#fff;border-color:rgba(255,255,255,.5)">Esci</button>
+  </div>
+</header>
+
+<main class="contenitore" style="padding-bottom:64px">
+  <div id="avviso-regia"></div>
+  <div id="regia">
+    <div class="barra">
+      <div class="campo" style="flex:2"><label for="evento">Incontro</label><select id="evento"></select></div>
+      <div class="campo" style="flex:3"><label for="cerca">Cerca per nome, cognome o codice</label><input type="search" id="cerca" placeholder="Es. Rossi oppure ED-2026-K7QM" autocomplete="off" style="min-height:54px;font-size:18px"></div>
+    </div>
+    <div class="contatori" id="contatori"></div>
+    <div class="stato" id="stato" role="status" aria-live="polite"></div>
+    <div class="lista-checkin" id="lista"></div>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script src="eventi.js"></script>
+<script src="app.js"></script>
+<script src="regia.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var iscritti = [];
+  $("esci").addEventListener("click", REGIA.esci);
+
+  function contatori() {
+    var c = REGIA.conteggi(iscritti);
+    $("contatori").innerHTML =
+      '<div class="contatore contatore--verde"><b>' + c.personePresenti + '</b><span>Ingressi (persone entrate)</span></div>' +
+      '<div class="contatore"><b>' + c.persone + '</b><span>Persone attese, accompagnatori compresi</span></div>' +
+      '<div class="contatore"><b>' + c.presenti + ' / ' + c.iscrizioni + '</b><span>Iscrizioni arrivate</span></div>';
+  }
+
+  function lista() {
+    var q = REGIA.normalizza($("cerca").value.trim());
+    var righe = iscritti.filter(function (r) {
+      if (r.stato === "annullata") return false;
+      if (!q) return true;
+      return REGIA.normalizza(r.nome + " " + r.cognome + " " + r.cognome + " " + r.nome + " " + r.codice + " " + (r.ente || "")).indexOf(q) >= 0;
+    }).sort(function (a, b) { return (a.cognome || "").localeCompare(b.cognome || "", "it"); });
+    if (!righe.length) {
+      $("lista").innerHTML = '<div class="vuoto">' + (q ? "Nessuno con questo nome o codice. Controlla l'ortografia o chiedi il codice dell'email." : "Ancora nessun iscritto per questo incontro.") + '</div>';
+      return;
+    }
+    $("lista").innerHTML = righe.slice(0, 80).map(function (r) {
+      var acc = Number(r.accompagnatori) || 0;
+      return '<div class="persona' + (r.presente ? ' presente' : '') + '">' +
+        '<div><div class="nome">' + ED.esc(r.nome + " " + r.cognome) + (r.prova ? ' <span class="prova">prova</span>' : '') + '</div>' +
+        '<div class="dett"><span class="cod">' + ED.esc(r.codice) + '</span> · ' + ED.esc(r.ruolo || "") + (r.ente ? ' · ' + ED.esc(r.ente) : '') +
+        (acc ? ' · <b>con ' + ED.numero(acc) + (acc === 1 ? ' accompagnatore' : ' accompagnatori') + '</b>' : '') +
+        (r.presente ? ' · entrato alle ' + new Date(r.presente).toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit" }) : '') + '</div></div>' +
+        (r.presente ? '<button class="btn btn--linea btn--piccolo" data-codice="' + ED.esc(r.codice) + '" data-presente="0">Annulla ingresso</button>'
+                    : '<button class="btn" data-codice="' + ED.esc(r.codice) + '" data-presente="1">Presente</button>') +
+      '</div>';
+    }).join("") + (righe.length > 80 ? '<p class="chiuso">Ne mostriamo 80: scrivi qualche lettera in più per restringere.</p>' : '');
+  }
+
+  function carica() {
+    $("stato").innerHTML = '<p class="chiuso">Carico l\'elenco…</p>';
+    REGIA.elenco($("evento").value).then(function (j) {
+      iscritti = j.iscritti || [];
+      $("stato").innerHTML = "";
+      contatori(); lista();
+    }).catch(function (err) {
+      var m = REGIA.erroreChiave(err);
+      $("stato").innerHTML = '<div class="avviso avviso--errore"><strong>Elenco non disponibile.</strong>' + ED.esc(m) + (/chiave/i.test(m) ? ' <a href="checkin.html">Rientra con la chiave giusta</a>.' : '') + '</div>';
+    });
+  }
+
+  $("lista").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-codice]"); if (!b) return;
+    var codice = b.getAttribute("data-codice"), presente = b.getAttribute("data-presente") === "1";
+    b.disabled = true;
+    REGIA.azione("checkin", { evento: $("evento").value, codice: codice, presente: presente }).then(function (j) {
+      iscritti.forEach(function (r) { if (r.codice === codice) r.presente = presente ? (j.presenteIl || new Date().toISOString()) : ""; });
+      contatori(); lista();
+      if (presente) { $("cerca").value = ""; lista(); $("cerca").focus(); }
+    }).catch(function (err) {
+      b.disabled = false;
+      $("stato").innerHTML = '<div class="avviso avviso--errore"><strong>Ingresso non registrato.</strong>' + ED.esc(REGIA.erroreChiave(err)) + '</div>';
+    });
+  });
+
+  /* Invio nella ricerca: se resta una persona sola, la segna presente. */
+  $("cerca").addEventListener("input", lista);
+  $("cerca").addEventListener("keydown", function (e) {
+    if (e.key !== "Enter") return;
+    var bottoni = $("lista").querySelectorAll('button[data-presente="1"]');
+    if (bottoni.length === 1 && $("lista").querySelectorAll(".persona").length === 1) bottoni[0].click();
+  });
+
+  REGIA.porta($("regia"), function () {
+    ED.caricaEventi().then(function (eventi) {
+      REGIA.scegliEvento($("evento"), eventi);
+      $("evento").addEventListener("change", carica);
+      carica();
+      $("cerca").focus();
+    });
+  });
+})();
+</script>
+</body>
+</html>

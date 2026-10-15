@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le tappe fatte · EcoDigital</title>
+<meta name="description" content="Tutte le tappe della rete EcoDigital, dal riconoscimento di Venezia dell'11 settembre 2026 alla prima serata romana del 12 ottobre 2021: data, città, luogo e relatori, più i prossimi appuntamenti.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+.v2 .tl2{margin-top:clamp(30px,5vh,52px);border-top:1px solid rgba(255,255,255,.18)}
+.v2 .tl2 .anno{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;
+  letter-spacing:-.035em;font-size:clamp(34px,5vw,64px);line-height:1;color:var(--signal);
+  margin:clamp(26px,4vh,46px) 0 0;padding-top:clamp(16px,2.4vh,26px);border-top:2px solid var(--signal);
+  font-variant-numeric:tabular-nums}
+.v2 .tl2 .anno:first-child{margin-top:0;border-top:0;padding-top:clamp(18px,2.6vh,28px)}
+.v2 .tl2 .anno small{display:block;font-family:var(--font);font-stretch:normal;font-weight:700;
+  font-size:.66rem;letter-spacing:.16em;margin-top:9px;color:rgba(255,255,255,.6)}
+.v2 .tl2 .tappa{display:grid;grid-template-columns:132px minmax(0,1fr);gap:clamp(16px,2.4vw,30px);
+  padding:clamp(20px,3vh,30px) 0;border-bottom:1px solid rgba(255,255,255,.18);align-items:start}
+.v2 .tl2 .tappa.solotesto{grid-template-columns:minmax(0,1fr)}
+.v2 .tl2 .tappa figure{margin:0;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.07);aspect-ratio:3/4}
+.v2 .tl2 .tappa img{width:100%;height:100%;object-fit:cover}
+.v2 .tl2 .tappa figure.orizz{aspect-ratio:3/4;display:grid;place-items:center}
+.v2 .tl2 .tappa figure.orizz img{object-fit:contain}
+.v2 .tl2 .when{display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:800;color:var(--signal)}
+.v2 .tl2 .when em{font-style:normal;color:rgba(255,255,255,.72)}
+.v2 .tl2 h4{font-size:clamp(19px,1.9vw,25px);line-height:1.16;letter-spacing:-.025em;font-weight:700;
+  margin:9px 0 8px;text-wrap:balance}
+.v2 .tl2 .dove{font-size:.84rem;opacity:.72;margin:0 0 8px}
+.v2 .tl2 .chi{font-size:.86rem;line-height:1.5;opacity:.82;margin:0}
+.v2 .tl2 .chi b{font-weight:700;opacity:.7;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  display:block;margin-bottom:3px}
+@media(max-width:620px){
+  .v2 .tl2 .tappa{grid-template-columns:88px minmax(0,1fr);gap:14px}
+}
+.v2 .prog{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
+  gap:clamp(18px,3vw,32px);margin-top:clamp(28px,4vh,46px)}
+.v2 .prog .ap{border:1px solid rgba(255,255,255,.24);border-radius:16px;padding:clamp(20px,2.6vw,28px);
+  background:rgba(255,255,255,.06)}
+.v2 .prog .ap .quando{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--signal)}
+.v2 .prog .ap h3{font-size:clamp(20px,2vw,26px);line-height:1.14;letter-spacing:-.025em;margin:10px 0 10px}
+.v2 .prog .ap p{font-size:.92rem;line-height:1.5;opacity:.82;margin:0}
+.v2 .prog .ap .stato{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.66rem;
+  letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.72}
+.v2 .prog .ap .stato::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sun)}
+.v2 .prog .ap.ok .stato::before{background:var(--signal)}
+.v2 .sale{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  gap:clamp(16px,2.4vw,26px);margin-top:clamp(26px,4vh,42px)}
+.v2 .sale figure{margin:0}
+.v2 .sale figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;
+  border:1px solid var(--line)}
+.v2 .sale figcaption{font-size:.82rem;line-height:1.45;color:var(--muted);margin-top:10px}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html">Rete</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="sfide.html">Territori</a>
+      <a href="eventi/index.html" aria-current="true">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html">Blog</a>
+      <a href="stampa.html">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ====================================================== APERTURA -->
+<section class="scene">
+  <div class="scene-bg"><img src="img/foto/s-sala2.jpg" alt="Un giovane relatore al tavolo di un incontro della rete EcoDigital" width="1000" height="667"></div>
+  <div class="veil f80"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="in"><div class="wrap">
+    <p class="kick">Dal 12 ottobre 2021 a oggi</p>
+    <h1 class="giant sm">Le tappe fatte.</h1>
+    <p class="say" style="margin-top:26px;max-width:56ch">56 incontri in 25 città, dalla prima serata romana del 2021 al premio ricevuto a Venezia l'11 settembre 2026. Qui sotto trovi prima le prossime due, poi tutte le altre a partire dalla più recente.</p>
+    <div class="acts">
+      <a class="b b-sig" href="#programma">Le prossime due</a>
+      <a class="b b-line" href="#archivio">Tutte le tappe</a>
+    </div>
+    <aside class="rimando" style="margin-top:clamp(26px,4vh,40px)" aria-label="Prossimi incontri e iscrizioni">
+      <div>
+        <span class="tag">Novità</span>
+        <h2>Prossimi incontri e iscrizioni</h2>
+        <p>Gli incontri in programma hanno una pagina loro, con il posto, l'orario e il modulo per iscriversi. Ti arriva la conferma per email e un promemoria il giorno prima.</p>
+      </div>
+      <a class="b b-blu" href="eventi/index.html">Vai agli incontri</a>
+    </aside>
+  </div></div>
+  <a class="arrow" href="#programma" aria-label="Scorri al programma"><span>Scorri</span>
+    <svg viewBox="0 0 18 26" fill="none" aria-hidden="true"><path d="M9 1v22M2 16l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- ====================================================== PROSSIMAMENTE -->
+<section class="scene mid short" id="programma" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">Prossimamente</p>
+    <h2 class="giant xs rv2" data-d="1">Le prossime due.</h2>
+    <div class="prog">
+      <div class="ap ok rv2" data-d="1">
+        <p class="quando">Dal 3 al 6 novembre 2026 · Rimini</p>
+        <h3>Ecomondo</h3>
+        <p>Torniamo alla fiera di Rimini, dove l'8 novembre 2024 abbiamo presentato il 22° Rapporto sugli italiani e le rinnovabili. Cerchiamo imprese e amministrazioni che pubblicano i numeri del riuso dei materiali e portiamo le loro best practice negli incontri del 2027.</p>
+        <p class="stato">Date confermate, programma della rete da definire</p>
+      </div>
+      <div class="ap rv2" data-d="2">
+        <p class="quando">11 e 12 dicembre 2026 · città da confermare</p>
+        <h3>Incontro nazionale EcoDigital</h3>
+        <p>Due giorni per rimettere in fila le best practice raccolte durante l'anno e scegliere quali portare avanti nel 2027. Le date sono una proposta: la città e la sede si annunciano appena sono confermate.</p>
+        <p class="stato">Proposta, città e sede da confermare</p>
+      </div>
+    </div>
+    <p class="note rv2" data-d="3">Vuoi un incontro EcoDigital nella tua città? Servono una sala, qualcuno del posto che lo organizzi e una buona pratica di cui parlare. Relatori, materiali e comunicazione li mette la rete. Chi vuole partecipare scriva a info@ecodigital.it.</p>
+    <div class="acts">
+      <a class="b b-sig rv2" data-d="3" href="eventi/index.html">Iscriviti agli incontri</a>
+      <a class="b b-line rv2" data-d="3" href="attivista.html">Proponi un incontro</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== ARCHIVIO -->
+<section class="scene" id="archivio" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">L'archivio</p>
+    <h2 class="giant xs rv2" data-d="1">Dal 2026 al 2021.</h2>
+    <p class="say rv2" data-d="2" style="margin-top:18px;max-width:56ch">I nomi sono quelli stampati sulle locandine e scritti nei post della rete. Le tappe del 2026 e del 2025 arrivano dall'archivio del gruppo Facebook, quelle prima dalle locandine conservate dalla rete. Le 13 tappe campane vengono dal sito di <a href="campania.html" style="color:var(--signal)">EcoDigital Campania</a>, che chiude e passa qui.</p>
+    <div class="tl2">
+
+      <h3 class="anno rv2">2026<small>Dieci tappe</small></h3>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/s-venezia-lido.jpg" alt="Alfonso Pecoraro Scanio, Alessandro Di Capua e Michele D'Orso con l'attestato davanti al Palazzo del Cinema del Lido di Venezia" width="563" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">11.09.2026 <em>Lido di Venezia</em></p>
+          <h4>Sorriso Diverso Venezia Award: riconoscimento al video sulle Aree Marine Protette</h4>
+          <p class="dove">Spazio Incontri del Venice Production Bridge, Hotel Excelsior · 83ª Mostra Internazionale d'Arte Cinematografica, ore 16:30</p>
+          <p class="chi"><b>Per la rete</b>Alfonso Pecoraro Scanio, Alessandro Di Capua, Michele D'Orso. Il video «Il Viaggio del Delfino», da Capri a Taranto sul progetto 30x30, è di Di Capua e D'Orso. Premio alla XVI edizione promossa da Università Cerca Lavoro con Dream On, terzo anno di fila che la rete e la Fondazione UniVerde portano un video alla Mostra.</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2026-07-22.jpg" alt="Locandina dell'EcoDigital Forum del 22/07/2026 a Roma" width="666" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">22.07.2026 <em>Roma</em></p>
+          <h4>EcoDigital Forum: territori intelligenti, sicuri e sostenibili</h4>
+          <p class="dove">Palazzo delle Esposizioni, Sala Forum, via Milano 13 · ore 16, diretta su Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Svetlana Celli, Alfonso Pecoraro Scanio, Mino Dinoi, Giovanni Legnini, Federico Protto, Filomena Maggino, Emmanuel Conte, Luigi Gabriele, Tiberio Brunetti, Marco Armoni, Alessandro Monaco, Luigi Garofalo; best practice di Anselmo Pellizzi, Riccardo Del Prete, Ettore Iorio, Karen Iacono, Stefano Bennati, Matteo Testi, Anastasia Salzano, Giuseppe Patta, Lucia Viola, Flavio De Septis, Marco Marchesani</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2026-07-13.jpg" alt="Locandina dell'EcoDigital Tourism Summit del 13/07/2026 all'Hotel Bristol di Vietri sul Mare" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">13.07.2026 <em>Vietri sul Mare</em></p>
+          <h4>EcoDigital Tourism Summit 2026: comuni smart, turismo diffuso e sostenibile</h4>
+          <p class="dove">Hotel Bristol, via Mazzini 232 · dalle 18, promosso da SOS Terra ETS con la rete EcoDigital</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Giovanni De Simone, sindaco di Vietri sul Mare, e Vittorio Mendozzi, consigliere con delega al turismo. Interventi di Alfonso Pecoraro Scanio, Vincenzo Maraio (assessore al Turismo della Regione Campania), Rosanna Romano (direttore generale politiche culturali e turismo della Regione), Valentina Della Corte (Federico II), Vincenzo Lipardi (Fabbrica Italiana dell'Innovazione), Luciano Pignataro; i sindaci Luigi Del Prete (Frattamaggiore), Maria Teresa Scarpa (Gioi), Stefano Pisani (Pollica), Salvatore Mazzone (Pietrelcina), Gerardo Santoli (Santo Stefano del Sole), Marco Rizzo (Castellabate), Elio Guadagno (Ottati), Vittorio D'Alessio (Mercogliano); poi Andrea Ferraioli (distretto turistico Costa d'Amalfi), Giovanni Molinari (Campania da Vivere), Teresa Del Giudice (Federico II), Donatella Taurino (Laviano), Valerio Calabrese (Museo Vivente della dieta mediterranea), Giuseppe Zaccaria (ristoratori vietresi), Cosmo Di Mauro (Pro Loco Vietri sul Mare). Modera Christian Cutino.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2026-07-02.jpg" alt="Locandina dell'incontro EcoDigital del 02/07/2026 a Milano" width="712" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">02.07.2026 <em>Milano</em></p>
+          <h4>Milano EcoDigital: giovani, innovazione e startup</h4>
+          <p class="dove">W Executive, Palazzo Bocconi, corso di Porta Venezia 48 · ore 11</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Ottavio Maria Campigli, Emmanuel Conte, Fabrizio Capaccioli, Marco Armoni, Manuel Urzì, Cosmano Lombardo, Aurora Caporossi, Luca Lagona, Matteo Milione, Vincenzo Rana, Silvia Cariolo, Ivan Gritskiv, Daniela Giustino, Eleonora Masseretti</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure class="orizz"><img src="img/foto/loc-2026-06-15.jpg" alt="Locandina del lancio della XVI edizione di Mediterraneo da remare, 15/06/2026 a Roma" width="1000" height="774" loading="lazy"></figure>
+        <div>
+          <p class="when">15.06.2026 <em>Roma</em></p>
+          <h4>Mediterraneo da remare, XVI edizione: obiettivo 30x30</h4>
+          <p class="dove">CNR, Sala Marconi, piazzale Aldo Moro 7 · ore 16, campagna della Fondazione UniVerde con la rete tra i media partner</p>
+          <p class="chi"><b>Sul palco</b>Andrea Lenzi, Alfonso Pecoraro Scanio, Carmen Di Penta, Alberto Tripi, Gilberto Pichetto Fratin, Vincenzo Leone, Luciano Buonfiglio, Tatjana Hema, Maria Alessandra Gallone, Silvestro Greco, Carmelo Barone, Francesco Aliberti, Paolo Casciotti; modera Donatella Bianchi</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2026-05-14.jpg" alt="Locandina dell'incontro EcoDigital del 14/05/2026 a Chieti" width="798" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">14.05.2026 <em>Chieti</em></p>
+          <h4>Chieti EcoDigital: giovani, innovazione e smart city</h4>
+          <p class="dove">Via Colonnetta 50/A · ore 17</p>
+          <p class="chi"><b>Sul palco</b>Giovanni Legnini, Alfonso Pecoraro Scanio, Daniela Torto, Fabio Stella, con i giovani startupper e i candidati della coalizione. Legnini è stato eletto sindaco di Chieti l'8 giugno 2026.</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2026-05-12.jpg" alt="Locandina dell'incontro sul futuro della cucina italiana, 12/05/2026 a Milano" width="801" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">12.05.2026 <em>Milano</em></p>
+          <h4>Il futuro della cucina italiana, contro il fake food</h4>
+          <p class="dove">TuttoFood, stand Regione Campania, padiglione 6H-07 · ore 11</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Mariacarmela Serluca, Alessandro Beduschi, Emmanuel Conte, Dominga Cotarella, Luciano Pignataro, Fabrizio Capaccioli, Enrico Delfingher, Maria D'Amico, Maurizio Bellante, Giuseppe Di Martino, Francesco Capece, Mario Ferretti, Giuseppe Santoro, Riccardo Del Prete, Manuel Urzì, Antonio Galatà e Gianluca Zambrotta; modera Christian Cutino</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/s-2026-02-26.jpg" alt="I giovani della rete EcoDigital al Parlamento europeo di Bruxelles, davanti alle bandiere degli Stati membri" width="1000" height="750" loading="lazy"></figure>
+        <div>
+          <p class="when">26.02.2026 <em>Bruxelles</em></p>
+          <h4>Due giorni al Parlamento europeo su transizione ecodigital, trasparenza e democrazia</h4>
+          <p class="dove">Parlamento europeo, su invito di Dario Tamburrano</p>
+          <p class="chi"><b>Chi c'era</b>I giovani della rete, ricevuti da Dario Tamburrano. Incontri con Danilo Della Valle, Valentina Palmisano, Benedetta Scuderi, Pasquale Tridico, Gaetano Pedullà, Giuseppe Antoci, Mario Furore</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2026-02-17.jpg" alt="Locandina dell'incontro «Turismo, territorio e innovazione ecodigital in Campania» del 17/02/2026 a Napoli" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">17.02.2026 <em>Napoli</em></p>
+          <h4>Turismo, territorio e innovazione ecodigital in Campania</h4>
+          <p class="dove">Fabbrica Italiana dell'Innovazione, via Ponte dei Granili 24 · ore 15:30, pitch e best practice</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Vincenzo Lipardi, Alfonso Pecoraro Scanio, Vincenzo Maraio e Teresa Armato (assessora al Turismo del Comune di Napoli). Moderano Francesco Castagna ed Eugenio Gervasio. Interventi di Vito Grassi, Valentina Della Corte, Luciano Pignataro, Christian Cutino, Emilia Di Girolamo. Best practice e pitch di Raffaele De Luca, Annamaria Oliviero, Salvatore Mazzone, Stefano Giaquinto, Salvatore Santangelo, Rino Ricciardelli, Marco Razzano, Peppino Pagano, Vincenzo Castaldo, Giovanni Molinari, Alberto Carrato, Alessandro Di Capua, Riccardo Del Prete, Federico Quagliuolo.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2026-01-21.jpg" alt="Locandina del workshop Comuni EcoDigital del 21/01/2026 a Roma" width="666" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">21.01.2026 <em>Roma</em></p>
+          <h4>Comuni EcoDigital: workshop e best practice di giovani, startup e istituzioni</h4>
+          <p class="dove">Città metropolitana di Roma Capitale, Palazzo Valentini, Sala di Liegro, via IV Novembre 119a · ore 16</p>
+          <p class="chi"><b>Sul palco</b>Pierluigi Sanna, Alfonso Pecoraro Scanio, Giuseppe Conte, Loredana De Petris, Daniele Diaco, Livio De Santoli, Teresa Del Giudice, Vincenzo Maraio, Thomas De Luca, Giuseppe Nobiletti, Salvatore Quinci; best practice dei sindaci Francesco Miccichè, Luca Lopomo, Salvatore Mazzone, Alberto Bertucci, Stefano Pisani e del vicesindaco Arcangelo Di Cola, con Anselmo Pellizzi, Lucia Viola, Riccardo Del Prete, Massimiliano Califano Di Marino, Enrico Maria Borrelli, Karen Iacono; modera Stefano Zago</p>
+        </div>
+      </article>
+
+      <h3 class="anno rv2">2025<small>16 tappe</small></h3>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-12-28.jpg" alt="Locandina del Christmas Wine Art Fest del 28/12/2025 al Teatro Comunale di Cercola" width="705" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">28.12.2025 <em>Cercola</em></p>
+          <h4>Christmas Wine Art Fest: i prodotti tradizionali dell'area vesuviana</h4>
+          <p class="dove">Teatro Comunale, viale dei Platani · ore 17:30, con il Comune di Cercola, l'Irvat e il MAVV</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Biagio Rossi (sindaco di Cercola), Raffaele De Luca (Parco nazionale del Vesuvio) e Ciro Costagliola (Irvat). Al convegno «I PAT dell'area vesuviana: valorizzazione, tutela e salute» Gianni Cicia, Annamaria Colao, Teresa Del Giudice, Christian Cutino ed Emilia Di Girolamo per EcoDigital Campania, Alfonso Pecoraro Scanio, Eugenio Gervasio, Dario Duro, Toti Lange, Oscar Leonessa, Giovanni Molinari; modera Antonio Vastarelli.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="1">
+        <figure class="orizz"><img src="img/foto/loc-2025-12-20.jpg" alt="Christian Cutino parla al microfono davanti agli studenti durante la Festa del Mandarino Flegreo" width="1000" height="779" loading="lazy"></figure>
+        <div>
+          <p class="when">20.12.2025 <em>Ischia</em></p>
+          <h4>Festa del Mandarino Flegreo: gli studenti e le eccellenze agroalimentari</h4>
+          <p class="dove">Istituto Professionale «V. Telese»</p>
+          <p class="chi"><b>Per la rete</b>Christian Cutino con gli studenti dell'istituto, su come un approccio ecodigital tutela le produzioni locali e aiuta a far nascere imprese giovani.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2025-12-12.jpg" alt="Locandina dell'incontro «Costruire il futuro» del 12/12/2025 a Santa Maria Capua Vetere" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">12.12.2025 <em>Santa Maria Capua Vetere</em></p>
+          <h4>Costruire il futuro: proposte ecodigital per una regione giovane</h4>
+          <p class="dove">Amico Bio, piazza Adriano 35 · ore 18, pitch di esperti, startupper, artigiani e innovatori</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Jose Marano (presidente dell'Intergruppo EcoDigital all'ARS), i consiglieri regionali Raffaele Aveta, Gennaro Saiello e Davide D'Errico, Enrico Amico (Amico Bio, Coldiretti Caserta), Francesco Castagna (Agilea), Emilia Di Girolamo (MAVV), Manuel Lombardi (Le Campestre, Terranostra), Gianluca Pirro (pizzaioli napoletani); modera Christian Cutino.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-12-08.jpg" alt="Locandina dell'incontro «Verso #CucinaItalianaUnesco» dell'8/12/2025 a Vietri sul Mare" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">08.12.2025 <em>Vietri sul Mare</em></p>
+          <h4>Verso #CucinaItalianaUnesco: cibo, artigianato e biodiversità</h4>
+          <p class="dove">Ristorante Dal Pescatore, via Cristoforo Colombo 50 · ore 17, con la ceramica del maestro Lucio Ronca per gli otto anni dell'arte del pizzaiuolo napoletano patrimonio Unesco</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Alfonso Pecoraro Scanio, Giovanni De Simone, Luciano Pignataro e Vittorio Mendozzi. Interventi di Giuseppe Zaccaria, Cosmo di Mauro, Lucio Ronca, Iolanda Busillo, Fabio Amato, Roberta Di Giovanni e Gaetano Cataldo; modera Christian Cutino.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2025-11-08.jpg" alt="Locandina dell'incontro «Il futuro è adesso» dell'8/11/2025 al Teatro Sannazaro di Napoli" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">08.11.2025 <em>Napoli</em></p>
+          <h4>Il futuro è adesso: giovani e innovazione per una Campania da vivere</h4>
+          <p class="dove">Teatro Sannazaro, via Chiaia 157 · ore 10:30, incontro pubblico</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Gaetano Manfredi (sindaco di Napoli), Roberto Fico, Alfonso Pecoraro Scanio, Jose Marano, Lara Sansone (Teatro Sannazaro) e Christian Cutino; modera Luciano Pignataro. Interventi di Franco Manna, Lello Esposito, Emilia Di Girolamo, Carmine Esposito, Vincenzo Durazzo, Luca Coppola, Lello Savonardo, Patrizio Rispo, Antonio Evangelista, Mario Talarico, Errico Porzio, Anselmo Pellizzi, Angelica De Ieso, Nando Salemme, Daniele Famengo, Bruno Zarzaca, Giuseppe Russo, Giovanni Molinari, Ettore Paternìti, Federico Quagliuolo e Gianluca Calazzo.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2025-10-20.jpg" alt="Locandina della campagna «Make Pizza Not War» del 20/10/2025 al Gambrinus di Napoli" width="801" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">20.10.2025 <em>Napoli</em></p>
+          <h4>Make Pizza Not War: campagna #NoFakeFood e #StopWar</h4>
+          <p class="dove">Bar Gambrinus, via Chiaia 1 · ore 11</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Luciano Pignataro, Christian Cutino, Luca Imbimbo (StarPack) e Vincenzo Durazzo (Napolimania); modera Emilia Di Girolamo, direttrice del Museo dell'arte, del vino e della vite.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-10-18.jpg" alt="Locandina dell'incontro «Turismo, cibo e territorio» del 18/10/2025 a Pompei" width="801" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">18.10.2025 <em>Pompei</em></p>
+          <h4>Turismo, cibo e territorio: le sfide per una Campania ecodigital</h4>
+          <p class="dove">Hotel del Sole, Sala Hermes, via Plinio 15 · ore 17</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Christian Cutino, Nunzia Valente (progetto Smartland Pompei), Fabio Postiglione (O.P. Mytilus Campaniae), Francesco Varnelli (Hotel del Sole, Varnelli Bistrot), Margherita Di Somma (Bosco de' Medici), Armando La Mura (azienda Cannavacciuolo), Vincenzo Malafronte (florovivaisti campani), Federico Quagliuolo (Storie di Napoli, app Ferdinando), Eugenio Gervasio (MAVV di Portici); modera Alfonso Del Forno.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="1">
+        <figure class="orizz"><img src="img/foto/loc-2025-09-30.jpg" alt="Il tavolo dei relatori dell'incontro «Giovani e futuro» del 30/09/2025 a Napoli" width="1000" height="538" loading="lazy"></figure>
+        <div>
+          <p class="when">30.09.2025 <em>Napoli</em></p>
+          <h4>Giovani e futuro: turismo, cultura e innovazione</h4>
+          <p class="dove">Ore 11:07, con il patrocinio della Fondazione UniVerde e il contributo dell'Osservatorio Giovani della Federico II · ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Christian Cutino, Alfonso Pecoraro Scanio, Lello Savonardo (Osservatorio Giovani, Federico II), Carmine Esposito (La Compagnia dei Figliuoli), Francesco Pio Fiorillo (Lympha), Sveva Schiassi (Rural Hack), Antonio Evangelista (Space Factory), Claudio Marcedula (Nea Connect), Julia Gulisano (I cook for you), Emilia Di Girolamo (MAVV), Vincenzo Parente (Apple Training Center del liceo Caccioppoli), Alessandro Di Capua.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2025-09-16.jpg" alt="Locandina dell'incontro «Lo zoo delle startup» del 16/09/2025 a Roma" width="666" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">16.09.2025 <em>Roma</em></p>
+          <h4>Lo zoo delle startup: tra zebre e unicorni</h4>
+          <p class="dove">Bioparco di Roma, Sala Lecci · ore 15, dentro Rome Future Week</p>
+          <p class="chi"><b>Sul palco</b>Lucia Venturi, Sabrina Alfonsi, Alfonso Pecoraro Scanio, Nicola Cucari, Cristina Tajani, Federico Mento, Jacopo Mele, Manuel Urzì, Lorenzo Di Ciaccio, Bettina Giordani, Andrea Azzarello, Desiree Farletti, Anselmo Pellizzi; modera Michele Franzese</p>
+        </div>
+      </article>
+
+      <article class="tappa solotesto rv2" data-d="2">
+        <div>
+          <p class="when">06.09.2025 <em>Lido di Venezia</em></p>
+          <h4>Premio Sorriso Diverso al video «Mare Nostrum»</h4>
+          <p class="dove">82ª Mostra Internazionale d'Arte Cinematografica</p>
+          <p class="chi"><b>Cosa è successo</b>«Mare Nostrum» è il video della Fondazione UniVerde per la XV edizione di «Mediterraneo da remare». Il premio è stato ritirato da Alfonso Pecoraro Scanio e ne hanno dato notizia askanews, il Sole 24 Ore, il Tempo, Libero e Appia News. Della serata non abbiamo una foto in archivio.</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-07-16.jpg" alt="Locandina dell'incontro «Giovani, AI e rivoluzione EcoDigital» del 16/07/2025 a Roma" width="707" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">16.07.2025 <em>Roma</em></p>
+          <h4>Giovani, AI e rivoluzione EcoDigital</h4>
+          <p class="dove">Binario F, via Marsala 29H · ore 16, diretta su Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Luigi Capello, Alfonso Pecoraro Scanio, Agostino Santillo, Monica Lucarelli, Loredana De Petris, Roberto Franciosi, Marco Carrara, Antonio Uricchio, Costanza Andreini, Marco Armoni; pitch e best practice con Anselmo Pellizzi, Manuel Urzì, Riccardo Del Prete, Radiosa Romani, Marta Basso, Marco Ciotoli, Stefano Cappello, Aram Chantal Mbow, Thomas Marino, Domenico Giudici</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2025-05-26.jpg" alt="Locandina dell'incontro EcoDigital del 26/05/2025 a Napoli" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">26.05.2025 <em>Napoli</em></p>
+          <h4>Napoli e il turismo sostenibile: accoglienza smart e ristorazione green</h4>
+          <p class="dove">Grand Hotel Santa Lucia, via Partenope 46 · seminario</p>
+          <p class="chi"><b>Sul palco</b>Gaetano Manfredi, Felice Casucci, Alfonso Pecoraro Scanio, Valentina Della Corte, Maurizio De Giovanni, Raffaele Sacchi, Paolo Barrale, Rosanna Romano</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure class="orizz"><img src="img/foto/loc-2025-04-11.jpg" alt="Il tavolo dei relatori del dibattito «Campania innovazioni in rete» dell'11/04/2025 a Napoli" width="1000" height="749" loading="lazy"></figure>
+        <div>
+          <p class="when">11.04.2025 <em>Napoli</em></p>
+          <h4>Campania innovazioni in rete</h4>
+          <p class="dove">Ore 16:33, dibattito della rete EcoDigital ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Luana Cotena (Alare), Tommaso Marrone (CSF), Raffaele Esposito (Parco parlante), Ivan Acampora (Greenverse), Alfonso Pecoraro Scanio, Raffaele De Luca (Parco nazionale del Vesuvio), Vincenzo Martino (VeniVerso), Annalisa Buffardi (INDIRE), Stefano Cinti (Federico II), Rosario Palumbo (Comune di Napoli), Sossio Aversana (Focus Green), Federico Quagliuolo (Storie di Napoli), Flavia Sorrentino (Consiglio comunale di Napoli), Christian Cutino, Gennaro Saiello (Consiglio regionale della Campania), Raffaele Savonardo (Federico II), Emilia Di Girolamo (MAVV).</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2025-02-27.jpg" alt="Locandina dell'incontro «Puglia EcoDigital» del 27/02/2025 a Bari" width="706" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">27.02.2025 <em>Bari</em></p>
+          <h4>Puglia EcoDigital: turismo e innovazione</h4>
+          <p class="dove">Fiera del Levante, BTM, stand Rete dei Comuni Sostenibili · ore 12</p>
+          <p class="chi"><b>Sul palco</b>Vito Leccese, Alfonso Pecoraro Scanio, Luca Lopomo, Raimondo Innamorato, Francesca Portincasa, Alessandro Broccatelli, Marco Giaimis, Martina Iaffaldano, Vito Carella, Roberto Salamina, Claudio Cerabino, Sabrina Fiorentino</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-02-13.jpg" alt="Locandina dell'incontro EcoDigital del 13/02/2025 a Milano" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">13.02.2025 <em>Milano</em></p>
+          <h4>Bilancio di sostenibilità, trasparenza e credibilità dei dati. Una sfida EcoDigital</h4>
+          <p class="dove">Palazzo Bocconi, W Executive, corso Venezia 48 · ore 16:30, diretta su Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Ottavio Maria Campigli, Alfonso Pecoraro Scanio, Stefan Grbovic, Fabrizio Capaccioli, Marcella Panzeri, Oscar Di Montigny; modera Alessandra Frangi</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure class="orizz"><img src="img/foto/loc-2025-01-30.jpg" alt="Il tavolo dei relatori del convegno «Agrifood e turismo» del 30/01/2025 a Salerno" width="1000" height="537" loading="lazy"></figure>
+        <div>
+          <p class="when">30.01.2025 <em>Salerno</em></p>
+          <h4>Agrifood e turismo: la sfida ecodigital a Salerno</h4>
+          <p class="dove">Ore 16:28, convegno di EcoDigital con la Fondazione UniVerde · ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Christian Cutino, Alfonso Pecoraro Scanio, Luciano Pignataro, Giuseppe Pagano (azienda agricola San Giuseppe), Giuseppe Coletti (Authentico), Iolanda Busillo (Lemonline), Piercamillo Falasca (Enzima12), Maurizio Vessa (Comune di Salerno), Giampaolo Iacomino (Riso Ellebi), Giampaolo Raimondi ed Emilio Di Stasi (Torre Lama), Gianluca Quaranta (Alburn Natura), Alessandro Di Capua, Alfonso Del Forno.</p>
+        </div>
+      </article>
+      <h3 class="anno rv2">2024<small>19 tappe</small></h3>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2024-12-23.jpg" alt="Locandina dell'incontro EcoDigital del 23/12/2024 a Salerno" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">23.12.2024 <em>Salerno</em></p>
+          <h4>Salerno EcoDigital, presentazione del calendario «Obiettivo Terra 2025»</h4>
+          <p class="dove">Diretta su RCS75 Digital Radio</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2024-12-18.jpg" alt="Locandina dell'incontro EcoDigital del 18/12/2024 a Palermo" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">18.12.2024 <em>Palermo</em></p>
+          <h4>Sicilia EcoDigital: l'educazione alla transizione ecologica e digitale</h4>
+          <p class="dove">Sala Stampa «Mario Palumbo», Palazzo Reale</p>
+          <p class="chi"><b>Sul palco</b>Gaetano Galvagno, Alfonso Pecoraro Scanio, Jose Marano, Alessandro De Leo, Dario Safina, Gaetano Armao; modera Gaspare Borsellino</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2024-12-04.jpg" alt="Locandina dell'incontro EcoDigital del 04/12/2024 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">04.12.2024 <em>Roma</em></p>
+          <h4>Europa EcoDigital: le nuove generazioni tra finanza, innovazione e sostenibilità</h4>
+          <p class="dove">Europa Experience, David Sassoli, piazza Venezia 6/c</p>
+          <p class="chi"><b>Sul palco</b>Dario Tamburrano, Alfonso Pecoraro Scanio, Loredana De Petris, Anna Maria Bernini, Francesco Boccia, Carmela Auriemma, Jose Marano, Jacopo Mele, Roberto Franciosi</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2024-11-14.jpg" alt="Locandina dell'incontro EcoDigital del 14/11/2024 a Bologna" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">14.11.2024 <em>Bologna</em></p>
+          <h4>Bologna EcoDigital</h4>
+          <p class="dove">The Rooom, via Galliera 8</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Emma Petitti, Massimo Bugani, Marco Tina, Manuel Urzì, Benedetta Brighenti, Cristiano Fanelli, Augusto Bianchini</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2024-11-08.jpg" alt="Locandina dell'incontro EcoDigital del 08/11/2024 a Rimini" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">08.11.2024 <em>Rimini</em></p>
+          <h4>Amministrazioni locali, transizione energetica ed EcoDigital: 22° Rapporto «Gli italiani, le rinnovabili e la green &amp; blue economy»</h4>
+          <p class="dove">Ecomondo, stand AlmavivA, Fiera di Rimini, hall B7</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Alessandra Astolfi, Valerio Lucciarini De Vincenzi, Antonio Noto, Vannia Gava, Riccardo Toto, Emma Petitti, Gaetano Manfredi, Vito Leccese; modera Gianni Todini</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2024-10-15.jpg" alt="Locandina dell'incontro EcoDigital del 15/10/2024 a Genova" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">15.10.2024 <em>Genova</em></p>
+          <h4>Liguria EcoDigital</h4>
+          <p class="dove">Talent Garden Baltimora, Giardini Baltimora</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Fabrizia Pecunia, Ornella D'Alessio, Andrea Bàssoli, Chiara Ghisalberti, Manuel Urzì, Gianluca Sommariva, Santo Grammatico</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2024-09-27.jpg" alt="Locandina dell'incontro EcoDigital del 27/09/2024 a Torino" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">27.09.2024 <em>Torino</em></p>
+          <h4>Piemonte EcoDigital, Giornata mondiale del turismo e XIV Rapporto «Gli italiani, il turismo sostenibile e l'ecoturismo»</h4>
+          <p class="dove">Centro Studi Sereno Regis, via Garibaldi 13</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Nadia Conticelli, Domenico Carretta, Rosanna Purchia, Tiziana Mossa, Adriano Meloni, Marco Armoni, Marco Pironti, Luca Carabetta</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2024-07-22.jpg" alt="Locandina dell'incontro EcoDigital del 22/07/2024 a Milano" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">22.07.2024 <em>Milano</em></p>
+          <h4>EcoDigital, strategie per il futuro</h4>
+          <p class="dove">Palazzo Bocconi, corso Venezia 48</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Ottavio Maria Campigli, Emmanuel Conte, Marco Armoni, Tiziana Mossa, Chiara Castelli, Andrea Bellini, Matteo Milione, Manuel Urzì</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2024-07-15.jpg" alt="Locandina dell'incontro EcoDigital del 15/07/2024 a Catania" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">15.07.2024 <em>Catania</em></p>
+          <h4>Sicilia EcoDigital: strategie e best practice</h4>
+          <p class="dove">Comune di Catania, Palazzo degli Elefanti</p>
+          <p class="chi"><b>Sul palco</b>Enrico Trantino, Sebastiano Anastasi, Alfonso Pecoraro Scanio, Barbara Floridia, Gaetano Armao, Jose Marano, Andrea Passanisi, Manuel Urzì</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2024-05-30.jpg" alt="Locandina dell'incontro EcoDigital del 30/05/2024 a Lecce" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">30.05.2024 <em>Lecce</em></p>
+          <h4>Puglia EcoDigital: giovani, turismo, Europa e innovazione</h4>
+          <p class="dove">Palazzo Turrisi-Palumbo, via Marco Basseo 16</p>
+          <p class="chi"><b>Sul palco</b>Massimo Monteduro, Alfonso Pecoraro Scanio, Angelo Consoli, Mario Furore, Valentina Palmisano, Leonardo Donno, Luca Lopomo, Anna Laura Remigi, Fabrizio Manzulli</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2024-05-18.jpg" alt="Locandina dell'incontro EcoDigital del 18/05/2024 a Castellammare di Stabia" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">18.05.2024 <em>Castellammare di Stabia</em></p>
+          <h4>Castellammare di Stabia EcoDigital: giovani, turismo e innovazione</h4>
+          <p class="dove">Stabile S. Filomena, via Sarnelli 26</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Luigi Vicinanza, Mariella Verdoliva, Tristano Dello Ioio, Giovanna Iannuzzi, Federico Gargiulo, Lucio Cacace, Christian Cutino</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2024-05-16.jpg" alt="Locandina dell'incontro EcoDigital del 16/05/2024 a Milano" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">16.05.2024 <em>Milano</em></p>
+          <h4>Europa EcoDigital: giovani, innovazione e Green Deal</h4>
+          <p class="dove">Youthquake, corso Ventidue Marzo 13</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Gaetano Pedullà, Manuel Urzì, Jacopo Mele, Elena dell'Agnese, Matteo Milione, Fabrizio Capaccioli, Stefan Grbovic</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2024-05-06.jpg" alt="Locandina dell'incontro EcoDigital del 06/05/2024 a Napoli" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">06.05.2024 <em>Napoli</em></p>
+          <h4>Napoli EcoDigital: turismo sostenibile e turismo delle radici</h4>
+          <p class="dove">Archivio di Stato, Sala Filangieri · seminario</p>
+          <p class="chi"><b>Sul palco</b>Candida Carrino, Alfonso Pecoraro Scanio, Maurizio De Giovanni, Matteo Lorito, Teresa Armato, Gennaro Saiello, Valentina Della Corte, Luciano Pignataro, Josi Della Ragione, Luigi Vicinanza</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2024-03-18.jpg" alt="Locandina dell'incontro EcoDigital del 18/03/2024 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">18.03.2024 <em>Roma</em></p>
+          <h4>EcoDigital: PNRR e smart governance</h4>
+          <p class="dove">Sala Zuccari, Palazzo Giustiniani</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Loredana De Petris, Giuseppe Conte, Stefano Patuanelli, Francesco Boccia, Livio De Santoli, Walter Massa, Filomena Maggino, Antonio Felice Uricchio, Gianfranco Amendola</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2024-03-08.jpg" alt="Locandina dell'incontro EcoDigital del 08/03/2024 a Pescara" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">08.03.2024 <em>Pescara</em></p>
+          <h4>Abruzzo EcoDigital: ecologia, pace e diritti</h4>
+          <p class="dove">Comitato elettorale, piazza Unione · presentazione del libro «La lezione di Marco»</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Alfonso D'Amico, Giovanni Legnini</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2024-03-07.jpg" alt="Locandina dell'incontro EcoDigital del 07/03/2024 ad Avezzano" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">07.03.2024 <em>Avezzano</em></p>
+          <h4>Innovazione ecologica e digitale: economia, ambiente, turismo</h4>
+          <p class="dove">Gran Caffè, piazza Risorgimento</p>
+          <p class="chi"><b>Sul palco</b>Sergio Costa, Alfonso Pecoraro Scanio, Giorgio Fedele, Daniele Diaco, Linda Meleo, Luca Cococcetta</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2024-03-01.jpg" alt="Locandina dell'incontro EcoDigital del 01/03/2024 a Urbino" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">01.03.2024 <em>Urbino</em></p>
+          <h4>Urbino EcoDigital, la sfida per il benessere di cittadini e ambiente</h4>
+          <p class="dove">Caffè degli Archi, piazza della Repubblica</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Federico Scaramucci, Gianluca Carrabs, Alessandro Maria Marchetti, Giorgio Staccioli, Rossana del Regno</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2024-02-17.jpg" alt="Locandina dell'incontro EcoDigital del 17/02/2024 a Quartu Sant'Elena" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">17.02.2024 <em>Quartu Sant'Elena</em></p>
+          <h4>Giovani, agricoltura e innovazione per una transizione EcoDigital giusta</h4>
+          <p class="dove">Mercato di Campagna Amica</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Luca Saba, Mariafrancesca Serra, Nicola Stefano Tuveri, Debora Castangia, Diego Lai, Frediano Augusto Mura</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2024-02-02.jpg" alt="Locandina dell'incontro EcoDigital del 02/02/2024 a Milano" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">02.02.2024 <em>Milano</em></p>
+          <h4>EcoDigital: Act Now!</h4>
+          <p class="dove">W Executive, corso Venezia 48 · diretta su Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Ottavio Maria Campigli, Emmanuel Conte, Nicola Di Marco, Jacopo Mele, Marco Armoni, Enzo Baglieri, Manuel Urzì</p>
+        </div>
+      </article>
+
+      <h3 class="anno rv2">2023<small>Sei tappe</small></h3>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2023-11-28.jpg" alt="Locandina dell'incontro EcoDigital del 28/11/2023 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">28.11.2023 <em>Roma</em></p>
+          <h4>La rivoluzione EcoDigital</h4>
+          <p class="dove">Sala Matteotti, Palazzo Theodoli-Bianchelli</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Loredana De Petris, Giuseppe Conte, Agostino Santillo, Alfonso Celotto, Luca Lopomo, Costanza Andreini, Luca Carabetta, Veronica Barbati, Francesco Paolo Russo</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure class="orizz"><img src="img/foto/loc-2023-07-17.jpg" alt="Il tavolo dei relatori del convegno «La rivoluzione ecodigital» del 17/07/2023 a Roma" width="1000" height="536" loading="lazy"></figure>
+        <div>
+          <p class="when">17.07.2023 <em>Roma</em></p>
+          <h4>La rivoluzione ecodigital: best practice per la transizione ecologica e digitale</h4>
+          <p class="dove">Ore 16:45, convegno della rete ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Alfonso Celotto (Roma Tre), Loredana De Petris, Agostino Santillo, Costanza Andreini (Meta), Marco Colarossi, Matteo Molesti, Giuseppe Conte, Luca Carabetta, Matteo Testi (Deep Learning Italia), Luca Lopomo (sindaco di Crispiano), Francesco Paolo Russo (ANGI), Andrea Grieco (AWorld), Anselmo Pellizzi, Irene Licastro (Aspire Institute), Gabriele Carneglia e Angelo Di Mauro (LUISS), Leonardo Ruzzante, Arash Moazenchi (Rcoffee), Chiara Cinelli, Manuel Urzì, Diana Zagarella (Olivair), Christian Cutino, Luigi Bisogno.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2023-05-08.jpg" alt="Locandina dell'incontro EcoDigital del 08/05/2023 a Napoli" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">08.05.2023 <em>Napoli</em> · <span class="dot-ph" tabindex="0" title="anno ricostruito, da confermare">data ricostruita</span></p>
+          <h4>Turismo, innovazione e sfida EcoDigital</h4>
+          <p class="dove">Hotel NH Napoli Panorama, via Medina 70 · seminario</p>
+          <p class="chi"><b>Sul palco</b>Gaetano Manfredi, Matteo Lorito, Felice Casucci, Alfonso Pecoraro Scanio, Valentina Della Corte, Annamaria Colao, Maurizio De Giovanni, Mario Furore</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2023-03-15.jpg" alt="Locandina dell'incontro EcoDigital del 15/03/2023 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">15.03.2023 <em>Roma</em></p>
+          <h4>Italia EcoDigital, proposte e best practice per le sfide del Lazio</h4>
+          <p class="dove">Spazio Field, via Merulana 248</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Loredana De Petris, Valentina Corrado, Giulia D'Amore, Leonardo Ruzzante, Alessandra Zeppieri, Valerio Novelli, Roberta Della Casa, Marco Colarossi, Adriano Zuccalà</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2023-01-31.jpg" alt="Locandina dell'incontro EcoDigital del 31/01/2023 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">31.01.2023 <em>Roma</em></p>
+          <h4>Giovani e EcoDigital: Lazio smart, Roma pulita</h4>
+          <p class="dove">Spazio Field, via Merulana 248</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Loredana De Petris, Giuseppe Conte, Donatella Bianchi, Tina Balì, Leonardo Ruzzante, Giulia d'Amore</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2023-01-24.jpg" alt="Locandina dell'incontro EcoDigital del 24/01/2023 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">24.01.2023 <em>Roma</em></p>
+          <h4>Giovani per una Regione Lazio EcoDigital</h4>
+          <p class="dove">SCAI Comunicazione, via Alvise Cadamosto 14</p>
+          <p class="chi"><b>Sul palco</b>Donatella Bianchi, Alfonso Pecoraro Scanio, Giulia d'Amore, Leonardo Ruzzante, Roberta Lombardi, Jacopo Mele</p>
+        </div>
+      </article>
+
+      <h3 class="anno rv2">2022<small>Quattro tappe</small></h3>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2022-08-30.jpg" alt="Locandina dell'incontro EcoDigital del 30/08/2022 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">30.08.2022 <em>Roma</em></p>
+          <h4>Verso un'Italia EcoDigital: la sfida ecologista e progressista per la prossima legislatura</h4>
+          <p class="dove">Palazzo Madama · conferenza stampa</p>
+          <p class="chi"><b>Sul palco</b>Loredana De Petris, Alfonso Pecoraro Scanio, Livio De Santoli, Gianfranco Amendola, Alessandra Maiorino, Domenico De Masi, Elisabetta Kalenda, Leonardo Ruzzante</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2022-07-28.jpg" alt="Locandina dell'incontro EcoDigital del 28/07/2022 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">28.07.2022 <em>Roma</em></p>
+          <h4>Italia EcoDigital: occasione per cambiare il Paese e contrastare l'emergenza climatica</h4>
+          <p class="dove">Sala Caduti di Nassirya, Palazzo Madama · conferenza stampa</p>
+          <p class="chi"><b>Sul palco</b>Leonardo Palese, Eleonora Massa, Leonardo Ruzzante, Domenico Giudici, Gianfranco Amendola, Stephanie Brancaforte, Domenico De Masi, Fabrizio Manzulli, Valerio Rossi Albertini, Alfonso Pecoraro Scanio</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2022-07-07.jpg" alt="Locandina dell'incontro EcoDigital del 07/07/2022 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">07.07.2022 <em>Roma</em></p>
+          <h4>Verso un'Italia EcoDigital, Phygital &amp; Metaverse Meeting</h4>
+          <p class="dove">Spazio Field, via Merulana 248</p>
+          <p class="chi"><b>Sul palco</b>Loredana De Petris, Alfonso Pecoraro Scanio, Francesco Paolo Russo, Rossella Muroni, Roberto Cifani, Maria Grazia Midulla, Giuseppe Onufrio, Maria Cecilia Guerra, Giuseppe Conte, Domenico De Masi</p>
+        </div>
+      </article>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2022-03-30.jpg" alt="Locandina dell'incontro EcoDigital del 30/03/2022 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">30.03.2022 <em>Roma</em></p>
+          <h4>Italia e UE: indipendenza energetica e sfida EcoDigital</h4>
+          <p class="dove">Sala Zuccari, Palazzo Giustiniani</p>
+          <p class="chi"><b>Sul palco</b>Loredana De Petris, Alfonso Pecoraro Scanio, Giuseppe Sala, Gaetano Manfredi, Francesco Boccia, Gianni Girotto, Livio De Santoli, Rossella Muroni; conclude Giuseppe Conte</p>
+        </div>
+      </article>
+
+      <h3 class="anno rv2">2021<small>La prima</small></h3>
+
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2021-10-12.jpg" alt="Locandina del primo incontro EcoDigital del 12/10/2021 a Roma" width="236" height="340" loading="lazy"></figure>
+        <div>
+          <p class="when">12.10.2021 <em>Roma</em> · <span class="dot-ph" tabindex="0" title="anno ricostruito, da confermare">data ricostruita</span></p>
+          <h4>Transizione ecologica e digitale: dialogo per una capitale smart</h4>
+          <p class="dove">Palazzo Brancaccio</p>
+          <p class="chi"><b>Sul palco</b>Alessandro Bianchi, Paolo Cento, Loredana De Petris, Enrico Gasbarra, Alfonso Pecoraro Scanio, Roberto Gualtieri; modera Stefano Zago</p>
+        </div>
+      </article>
+
+    </div>
+    <p class="note rv2">Due locandine non riportavano l'anno: è stato ricostruito dal giorno della settimana e dal contesto, ed è segnalato sulla riga. Le locandine sono immagini d'archivio della rete.</p>
+  </div></div>
+</section>
+
+<!-- ====================================================== CHI RIEMPIE LE SALE -->
+<section class="scene mid short light" style="background:var(--bg)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2" style="color:var(--signal-ink)">Chi c'era</p>
+    <h2 class="giant xs rv2" data-d="1" style="color:var(--forest)">Nelle sale ci sono sindaci e ventenni.</h2>
+    <div class="sale">
+      <figure class="rv2" data-d="1">
+        <img src="img/foto/s-2026-01-21.jpg" alt="Sindaci, amministratori e giovani della rete in posa nella Sala di Liegro di Palazzo Valentini a Roma" width="1000" height="750" loading="lazy">
+        <figcaption>Roma, 21 gennaio 2026. Palazzo Valentini, Sala di Liegro: sindaci, amministratori e giovani della rete al workshop «Comuni EcoDigital».</figcaption>
+      </figure>
+      <figure class="rv2" data-d="2">
+        <img src="img/foto/s-2026-02-26.jpg" alt="I giovani della rete EcoDigital davanti alle bandiere degli Stati membri al Parlamento europeo" width="1000" height="750" loading="lazy">
+        <figcaption>Bruxelles, 26 febbraio 2026. I giovani della rete al Parlamento europeo, ricevuti da Dario Tamburrano.</figcaption>
+      </figure>
+      <figure class="rv2" data-d="3">
+        <img src="img/foto/s-gruppo.jpg" alt="Alfonso Pecoraro Scanio in mezzo a un gruppo di studenti che tengono in mano i cartelli EcoDigital" width="950" height="537" loading="lazy">
+        <figcaption>Studenti a una tappa EcoDigital con Alfonso Pecoraro Scanio, foto dell'archivio della rete.</figcaption>
+      </figure>
+    </div>
+    <p class="say rv2" data-d="3" style="margin-top:26px;color:var(--muted)">I nomi e i ruoli di chi è salito sul palco stanno nella pagina della rete. Le buone notizie uscite da questi incontri stanno nella pagina dei territori.</p>
+    <div class="acts">
+      <a class="b b-dark rv2" data-d="3" href="rete.html">La rete siamo noi</a>
+      <a class="b b-dark rv2" data-d="3" href="sfide.html">Le buone notizie dai territori</a>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale che gira l'Italia a cercare le buone notizie ecologiche e digitali e le racconta.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, il canale delle buone notizie ecologiche e digitali · <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.rv2'));
+  if(!items.length) return;
+  if(!('IntersectionObserver' in window)){ items.forEach(function(n){n.classList.add('shown');}); return; }
+  setTimeout(function(){ items.forEach(function(n){n.classList.add('shown');}); }, 1500);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){
+      var i=+(en.target.getAttribute('data-d')||0);
+      setTimeout(function(){en.target.classList.add('shown');}, i*80);
+      io.unobserve(en.target); } });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+  items.forEach(function(n){io.observe(n);});
+})();
+</script>
+
+</body>
+</html>

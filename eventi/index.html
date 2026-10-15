@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../css/brand.css">
+<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<title>Incontri EcoDigital</title>
+<meta name="description" content="Gli incontri di EcoDigital: iscriviti alle prossime tappe e guarda com'è andata nelle ultime.">
+</head>
+<body>
+<header class="testata">
+  <div class="contenitore">
+    <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
+    <nav aria-label="Navigazione principale">
+      <a href="index.html" class="attivo">Incontri</a>
+      <a class="nascondi-mobile" href="../sito/eventi.html">Tutte le tappe</a>
+      <a class="btn btn--giallo btn--piccolo" href="../sito/attivista.html">Diventa follower</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="aurora apertura">
+    <div class="contenitore">
+      <span class="occhiello">Incontri EcoDigital</span>
+      <h1 class="display">Ci vediamo<br>in sala.</h1>
+      <p>Le prossime tappe del canale in giro per l'Italia e online. Scegli l'incontro, lascia nome ed email: la conferma arriva subito, il promemoria il giorno prima.</p>
+    </div>
+  </section>
+
+  <div class="contenitore">
+    <div class="filtri" role="group" aria-label="Filtri">
+      <div>
+        <label for="f-regione">Regione</label>
+        <select id="f-regione"><option value="">Tutte le regioni</option></select>
+      </div>
+      <div>
+        <label id="lab-tipo">Tipo di incontro</label>
+        <div class="segmenti" id="f-tipo" aria-labelledby="lab-tipo"></div>
+      </div>
+    </div>
+
+    <section class="sezione" aria-labelledby="h-prossimi">
+      <h2 id="h-prossimi" class="display">In programma</h2>
+      <p class="intro">Dove c'è scritto «data da confermare» puoi iscriverti lo stesso: ti scriviamo appena giorno e ora sono fissati.</p>
+      <div class="schede" id="prossimi"></div>
+    </section>
+
+    <section class="sezione" aria-labelledby="h-passati" style="padding-top:8px">
+      <h2 id="h-passati" class="display">Com'è andata</h2>
+      <p class="intro">Gli ultimi incontri della rete, dal più recente.</p>
+      <div class="passati" id="passati"></div>
+    </section>
+  </div>
+
+  <section class="proponi">
+    <div class="contenitore">
+      <div>
+        <h2 class="display">Un incontro nella tua città?</h2>
+        <p>Servono una sala, qualcuno del posto che lo organizzi e una buona pratica di cui parlare. Al resto pensiamo noi.</p>
+      </div>
+      <a class="btn" id="proponi-mail" href="#">Scrivici</a>
+    </div>
+  </section>
+</main>
+
+<footer class="piede">
+  <div class="contenitore">
+    <div>
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <p style="margin:10px 0 0">La rete promossa da Alfonso Pecoraro Scanio. Il canale è curato da Alessandro Di Capua e Michele D'Orso.</p>
+    </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a href="index.html">Incontri</a>
+      <a href="privacy.html">Privacy delle iscrizioni</a>
+      <a href="../sito/index.html">Il sito</a>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="eventi.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  var stato = { regione: "", tipo: "" };
+  var eventi = [], posti = {};
+  var $ = function (id) { return document.getElementById(id); };
+
+  $("proponi-mail").href = "mailto:" + CONTATTO_EMAIL + "?subject=" + encodeURIComponent("Proposta di incontro EcoDigital");
+
+  function filtra(lista) {
+    return lista.filter(function (e) {
+      return (!stato.regione || e.regione === stato.regione) && (!stato.tipo || e.tipo === stato.tipo);
+    });
+  }
+
+  function testoPosti(e) {
+    if (!e.posti) return "";
+    var occ = posti[e.id];
+    if (typeof occ === "number") {
+      var restano = Math.max(0, e.posti - occ);
+      if (restano === 0) return "Al completo";
+      return restano === 1 ? "Resta un posto" : "Restano " + ED.numero(restano) + " posti";
+    }
+    return ED.numero(e.posti) + " posti" + (e.online ? " in diretta" : "");
+  }
+
+  function scheda(e) {
+    var d = ED.bloccoData(e);
+    var url = "evento.html?id=" + encodeURIComponent(e.id);
+    var luogo = e.online ? "Online" : e.luogo;
+    var ora = ED.orario(e);
+    var pieno = testoPosti(e) === "Al completo";
+    return '<article class="scheda scheda--' + e.tipo + '">' +
+      '<div class="scheda__data" aria-hidden="true"><span class="scheda__num' + (e.soloMese ? ' scheda__num--mese' : '') + '">' + ED.esc(d.num) + '</span><span class="scheda__mese">' + ED.esc(d.mese) + '</span>' + (d.nota ? '<span class="scheda__nota">' + ED.esc(d.nota) + '</span>' : '') + '</div>' +
+      '<div class="scheda__corpo">' +
+        '<div class="scheda__testa"><span class="scheda__citta">' + ED.esc(e.citta) + '</span>' +
+        '<span class="etichetta etichetta--tipo">' + ED.TIPI[e.tipo] + '</span>' +
+        (e.confermato ? '' : '<span class="etichetta etichetta--da-confermare">Data da confermare</span>') + '</div>' +
+        '<h3 class="scheda__titolo"><a href="' + url + '">' + ED.esc(e.titolo) + '</a></h3>' +
+        '<p class="scheda__luogo"><span class="sr">Quando: </span>' + ED.esc(ED.cap(ED.dataEstesa(e))) + (ora ? ' · ' + ED.esc(ora) : '') + '<br>' + ED.esc(luogo) + '</p>' +
+      '</div>' +
+      '<div class="scheda__azione"><span class="scheda__posti">' + ED.esc(testoPosti(e)) + '</span>' +
+        (e.iscrizioniAperte && !pieno ? '<a class="btn" href="' + url + '#iscrizione">Iscriviti</a>' : '<a class="btn btn--linea" href="' + url + '">Dettagli</a>') +
+      '</div>' +
+    '</article>';
+  }
+
+  function riga(e) {
+    return '<div class="passato">' +
+      '<span class="passato__data">' + ED.dataBreve(e) + '</span>' +
+      '<span class="passato__citta">' + ED.esc(e.citta) + '</span>' +
+      '<span class="passato__titolo">' + ED.esc(e.titolo) + '<small>' + ED.esc(e.sottotitolo || "") + '</small></span>' +
+      '<a class="link" href="evento.html?id=' + encodeURIComponent(e.id) + '">Guarda com\'è andata →</a>' +
+    '</div>';
+  }
+
+  function disegna() {
+    var prossimi = filtra(eventi.filter(function (e) { return e.stato !== "passato"; }))
+      .sort(function (a, b) { return ED.chiave(a) < ED.chiave(b) ? -1 : 1; });
+    var passati = filtra(eventi.filter(function (e) { return e.stato === "passato"; }))
+      .sort(function (a, b) { return ED.chiave(a) > ED.chiave(b) ? -1 : 1; });
+    $("prossimi").innerHTML = prossimi.length ? prossimi.map(scheda).join("") :
+      '<div class="vuoto">Nessun incontro in programma con questi filtri.</div>';
+    $("passati").innerHTML = passati.length ? passati.map(riga).join("") :
+      '<div class="vuoto" style="margin-top:16px">Nessun incontro passato con questi filtri.</div>';
+  }
+
+  function filtri() {
+    var regioni = [];
+    eventi.forEach(function (e) { if (regioni.indexOf(e.regione) < 0) regioni.push(e.regione); });
+    regioni.sort(function (a, b) { return a === "Online" ? 1 : b === "Online" ? -1 : a.localeCompare(b, "it"); });
+    var sel = $("f-regione");
+    regioni.forEach(function (r) { var o = document.createElement("option"); o.value = r; o.textContent = r; sel.appendChild(o); });
+    sel.addEventListener("change", function () { stato.regione = sel.value; disegna(); });
+
+    var tipi = [["", "Tutti"]].concat(Object.keys(ED.TIPI).map(function (k) { return [k, ED.TIPI[k]]; }));
+    var box = $("f-tipo");
+    box.innerHTML = tipi.map(function (t) {
+      return '<button type="button" data-tipo="' + t[0] + '" aria-pressed="' + (t[0] === "" ? "true" : "false") + '">' + t[1] + '</button>';
+    }).join("");
+    box.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button"); if (!b) return;
+      stato.tipo = b.getAttribute("data-tipo");
+      Array.prototype.forEach.call(box.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      disegna();
+    });
+  }
+
+  ED.caricaEventi().then(function (lista) {
+    eventi = lista;
+    filtri();
+    disegna();
+    return ED.caricaPosti();
+  }).then(function (p) { posti = p || {}; if (Object.keys(posti).length) disegna(); });
+})();
+</script>
+</body>
+</html>

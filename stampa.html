@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Press · EcoDigital</title>
+<meta name="description" content="Rassegna stampa della rete EcoDigital dal 2022 al 2026, 77 voci con testata, data e link, più i materiali per i giornalisti: loghi, foto di Venezia 2026, sintesi e contatti.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+/* ---------- apertura corta ---------- */
+.v2 .lead{min-height:0;align-items:flex-start}
+.v2 .lead .in{padding:calc(var(--hdr-h) + 52px) 0 clamp(30px,5vh,52px)}
+.v2 .lead .say{max-width:58ch}
+
+/* ---------- fasce basse, niente schermate piene ---------- */
+.v2 .band{min-height:0;display:block}
+.v2 .band .in{padding:clamp(34px,6vh,62px) 0 clamp(40px,6vh,72px)}
+.v2 .h-sec{font-size:clamp(22px,2.4vw,32px);line-height:1.06;letter-spacing:-.01em;
+  font-weight:800;color:var(--forest)}
+.v2 .band .say{color:var(--muted);margin-top:16px;max-width:62ch}
+
+/* ---------- rassegna ---------- */
+.v2 .filtri{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(20px,3vh,28px)}
+.v2 .fbtn{font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;
+  color:var(--forest);background:transparent;border:1px solid var(--line);border-radius:999px;
+  padding:9px 16px;cursor:pointer;transition:background .16s ease,color .16s ease,border-color .16s ease}
+.v2 .fbtn:hover{border-color:var(--forest)}
+.v2 .fbtn.on{background:var(--forest);border-color:var(--forest);color:#fff}
+.v2 .gruppo[hidden]{display:none}
+.v2 .yr{margin:clamp(26px,4vh,38px) 0 4px;font-family:var(--display);font-stretch:125%;font-weight:800;
+  font-size:clamp(26px,3vw,40px);line-height:1;letter-spacing:-.01em;color:var(--signal-ink)}
+.v2 .rs{border-top:2px solid var(--forest)}
+.v2 .rs a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 26px;align-items:baseline;
+  padding:15px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .18s ease}
+.v2 .rs a:hover{padding-left:8px}
+.v2 .rs .t{font-size:1.02rem;font-weight:700;line-height:1.32;letter-spacing:-.02em;color:var(--forest)}
+.v2 .rs a:hover .t{color:var(--signal-ink)}
+.v2 .rs .s{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--muted);
+  white-space:nowrap}
+.v2 .rs .n{grid-column:1/-1;font-size:.76rem;line-height:1.4;color:var(--muted);margin-top:4px}
+@media(max-width:640px){.v2 .rs a{grid-template-columns:1fr}.v2 .rs .s{white-space:normal}}
+
+/* ---------- materiali ---------- */
+.v2 .kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(16px,2.4vw,26px);
+  margin-top:clamp(24px,4vh,36px);align-items:start}
+.v2 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,24px)}
+.v2 .card h3{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;
+  color:var(--signal-ink);margin-bottom:12px}
+.v2 .card p{font-size:.95rem;line-height:1.55;color:var(--ink)}
+.v2 .card ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.v2 .card li{font-size:.92rem;line-height:1.4}
+.v2 .dl{display:inline-block;font-weight:700;color:var(--signal-ink);text-decoration:none;
+  border-bottom:1px solid rgba(9,105,58,.45);padding-bottom:1px}
+.v2 .dl:hover{color:var(--forest);border-bottom-color:var(--forest)}
+.v2 .small{font-size:.78rem;color:var(--muted);line-height:1.45;margin-top:6px}
+.v2 .logobox{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:8px;background:#fff}
+.v2 .logobox.dark{background:var(--forest);border-color:var(--forest)}
+.v2 .logobox img{width:100%;height:auto}
+
+.v2 .pics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;
+  margin-top:clamp(22px,3vh,30px)}
+.v2 .pics figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.v2 .pics img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 30%}
+.v2 .pics figcaption{padding:11px 13px;font-size:.78rem;line-height:1.45;color:var(--muted)}
+.v2 .pics figcaption b{display:block;color:var(--ink);font-weight:700;margin-bottom:4px}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html">Rete</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="sfide.html">Territori</a>
+      <a href="eventi/index.html">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html">Blog</a>
+      <a href="stampa.html" aria-current="page">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ====================================================== APERTURA -->
+<section class="scene mid lead" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2">Press</p>
+    <h1 class="giant sm">Per chi scrive di noi.</h1>
+    <p class="say" style="margin-top:22px">Qui sotto ci sono gli articoli usciti sulla rete, i loghi, le foto in alta risoluzione e i contatti. Per un'intervista o per un materiale che non trovi scrivi a <a href="mailto:info@ecodigital.it" style="color:var(--signal);font-weight:700">info@ecodigital.it</a>.</p>
+  </div></div>
+</section>
+
+<!-- ====================================================== RASSEGNA -->
+<section class="scene light band" id="rassegna" style="background:var(--bg)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2" style="color:var(--signal-ink)">Ne hanno scritto</p>
+    <h2 class="h-sec">Agenzie, quotidiani, radio e televisioni, dal più recente</h2>
+    <p class="say">77 articoli, lanci e dirette dal 2022 a oggi. Ci sono askanews, Italpress, Il Sole 24 Ore, Il Tempo, Libero Quotidiano, Quotidiano.net, Radio Radicale, Key4biz, LiveSicilia, BlogSicilia, Quotidiano del Sud, Affaritaliani, Appia News, Capri Press, Sardegna Reporter, TeleAmbiente e i comunicati della Fondazione UniVerde. I link portano al sito della testata. Dove manca il giorno esatto abbiamo lasciato mese e anno, e dove la pagina non risponde più lo abbiamo scritto sotto la voce.</p>
+
+    <div class="filtri" role="group" aria-label="Filtra per anno">
+      <button type="button" class="fbtn on" data-anno="tutti" aria-pressed="true">Tutti</button>
+      <button type="button" class="fbtn" data-anno="2026" aria-pressed="false">2026</button>
+      <button type="button" class="fbtn" data-anno="2025" aria-pressed="false">2025</button>
+      <button type="button" class="fbtn" data-anno="2024" aria-pressed="false">2024</button>
+      <button type="button" class="fbtn" data-anno="2023" aria-pressed="false">2023</button>
+      <button type="button" class="fbtn" data-anno="2022" aria-pressed="false">2022</button>
+    </div>
+
+    <div class="gruppo" data-anno="2026">
+      <h3 class="yr">2026</h3>
+      <div class="rs">
+        <a href="https://askanews.it/2026/09/12/pecoraro-scanio-tutelare-il-30-delle-aree-marine-entro-il-2030/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: tutelare il 30% delle aree marine entro il 2030»</span>
+          <span class="s">askanews · 12 settembre 2026</span>
+        </a>
+        <a href="https://www.italpress.com/pecoraro-scanio-a-venezia-successo-per-il-video-ecodigital-pro-mediterraneo-2/" rel="noopener">
+          <span class="t">«Pecoraro Scanio, a Venezia successo per il video EcoDigital pro Mediterraneo»</span>
+          <span class="s">Italpress · 12 settembre 2026</span>
+        </a>
+        <a href="https://www.iltempo.it/pillole/2026/09/12/video/pecoraro-scanio-a-venezia-successo-per-il-video-ecodigital-pro-mediterraneo--49119320/" rel="noopener">
+          <span class="t">«Pecoraro Scanio, a Venezia successo per il video EcoDigital pro Mediterraneo», video</span>
+          <span class="s">Il Tempo · 12 settembre 2026</span>
+        </a>
+        <a href="https://www.liberoquotidiano.it/news/pillole/49119323/pecoraro_scanio_a_venezia_successo_per_il_video_ecodigital_pro_mediterraneo_/" rel="noopener">
+          <span class="t">«Pecoraro Scanio, a Venezia successo per il video EcoDigital pro Mediterraneo», video</span>
+          <span class="s">Libero Quotidiano · 12 settembre 2026</span>
+        </a>
+        <a href="https://www.quotidiano.net/video/pecoraro-scanio-a-venezia-successo-per-il-video-ecodigital-pro-mediterraneo-v6uu3n7l" rel="noopener">
+          <span class="t">«Pecoraro Scanio, a Venezia successo per il video EcoDigital pro Mediterraneo», video</span>
+          <span class="s">Quotidiano.net · 12 settembre 2026</span>
+        </a>
+        <a href="https://www.liberoquotidiano.it/news/tv-news/49119583/pecoraro-scanio-tutelare-il-30-delle-aree-marine-entro-il-2030/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: tutelare il 30% delle aree marine entro il 2030», video</span>
+          <span class="s">Libero Quotidiano · 12 settembre 2026</span>
+        </a>
+        <a href="https://www.easynewsweb.com/venezia-83-sorriso-diverso-venezia-award-i-vincitori-oggi-la-premiazione-alle-1630/" rel="noopener">
+          <span class="t">«Venezia 83, Sorriso Diverso Venezia Award, i vincitori»</span>
+          <span class="s">Easy News Press Agency · 11 settembre 2026</span>
+        </a>
+        <a href="https://www.mywhere.it/163143/venezia-83-assegnati-i-sorriso-diverso-award-ecco-i-vincitori.html" rel="noopener">
+          <span class="t">«Venezia 83, assegnati i Sorriso Diverso Award»</span>
+          <span class="s">MyWhere · 11 settembre 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/09/09/pecoraro-scanio-piu-fondi-e-investimenti-pubblici-per-startup-e-giovani/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: più fondi e investimenti pubblici per startup e giovani»</span>
+          <span class="s">askanews · 9 settembre 2026</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/798123/umanesimo-ecodigital-milano-ruolo-e-sfide-per-giovani-startup-ia-e-pubblica" rel="noopener">
+          <span class="t">«Umanesimo ecodigital Milano. Ruolo e sfide per giovani, startup, IA e pubblica amministrazione», registrazione integrale</span>
+          <span class="s">Radio Radicale · 8 settembre 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/08/27/pecoraro-scanio-subito-nuove-aree-marine-protette-governo-tuteli-mare/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: subito nuove aree marine protette, Governo tuteli mare»</span>
+          <span class="s">askanews · 27 agosto 2026</span>
+        </a>
+        <a href="https://www.italpress.com/pecoraro-scanio-governo-investa-subito-in-tutela-aree-marine-protette/" rel="noopener">
+          <span class="t">«Governo investa subito in tutela aree marine protette»</span>
+          <span class="s">Italpress · 27 agosto 2026</span>
+        </a>
+        <a href="https://www.iltempo.it/tv-news/2026/08/27/video/pecoraro-scanio-subito-nuove-aree-marine-protette-governo-tuteli-mare--48967201/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: subito nuove aree marine protette, Governo tuteli mare», video</span>
+          <span class="s">Il Tempo · 27 agosto 2026</span>
+        </a>
+        <a href="https://www.capripress.com/pecoraro-scanio-subito-nuove-aree-marine-protette-governo-tuteli-mare/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: subito nuove aree marine protette, Governo tuteli mare»</span>
+          <span class="s">Capri Press · 27 agosto 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/08/04/pecoraro-scanio-arrestare-incendiari-anche-con-tecnologie-ecodigital/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: arrestare incendiari anche con tecnologie EcoDigital»</span>
+          <span class="s">askanews · 4 agosto 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/07/23/pecoraro-scanio-giovani-e-tecnologie-eco-digital-per-comuni-smart/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: giovani e tecnologie eco-digital per comuni smart»</span>
+          <span class="s">askanews · 23 luglio 2026</span>
+        </a>
+        <a href="https://www.italpress.com/comuni-pecoraro-scanio-giovani-e-tecnologie-eco-digital-per-servizi-migliori-2/" rel="noopener">
+          <span class="t">«Comuni, Pecoraro Scanio: giovani e tecnologie eco-digital per servizi migliori»</span>
+          <span class="s">Italpress · 23 luglio 2026</span>
+        </a>
+        <a href="https://www.key4biz.it/pecoraro-scanio-servono-giovani-e-tecnologie-eco-digital-per-comuni-smart-e-costruire-unitalia-piu-sicura-sostenibile-e-competitiva/582350/" rel="noopener">
+          <span class="t">«Pecoraro Scanio, presidente EcoDigital: l'indipendenza digitale ed energetica passa dalle nostre aziende, startup e dai Comuni»</span>
+          <span class="s">Key4biz · 23 luglio 2026</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/795202/territori-intelligenti-sicuri-e-sostenibili-ecodigital-forum" rel="noopener">
+          <span class="t">«Territori intelligenti, sicuri e sostenibili, EcoDigital Forum», registrazione integrale</span>
+          <span class="s">Radio Radicale · 22 luglio 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/07/14/pecoraro-scanio-da-costiera-sfida-ecodigital-per-turismo-sostenibile/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: da Costiera sfida EcoDigital per turismo sostenibile»</span>
+          <span class="s">askanews · 14 luglio 2026</span>
+        </a>
+        <a href="https://www.italpress.com/pecoraro-scanio-dalla-costiera-amalfitana-sfida-ecodigital-per-turismo-diffuso-2/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: dalla Costiera Amalfitana sfida EcoDigital per turismo diffuso»</span>
+          <span class="s">Italpress · 14 luglio 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/07/08/ecodigital-in-sicilia-sfida-su-startup-e-nomadi-digitali/" rel="noopener">
+          <span class="t">«EcoDigital in Sicilia, sfida su startup e nomadi digitali»</span>
+          <span class="s">askanews · 8 luglio 2026</span>
+        </a>
+        <a href="https://www.italpress.com/ecodigital-a-palermo-puntare-su-giovani-e-startup-per-colmare-il-gap-europeo/" rel="noopener">
+          <span class="t">«EcoDigital a Palermo, puntare su giovani e startup per colmare il gap europeo»</span>
+          <span class="s">Italpress · 8 luglio 2026</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/794080/palermo-ecodigital-il-futuro-dellinnovazione-nel-sud" rel="noopener">
+          <span class="t">«Palermo EcoDigital. Il futuro dell'innovazione nel Sud», registrazione integrale</span>
+          <span class="s">Radio Radicale · 8 luglio 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/07/07/pecoraro-scanio-la-sicilia-sia-capitale-della-transizione-ecodigitale/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: la Sicilia sia capitale della transizione ecodigitale»</span>
+          <span class="s">askanews · 7 luglio 2026</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/tecnologia/pecoraro-scanio-da-milano-sfida-sovranita-digitale/AIwXp3zD" rel="noopener">
+          <span class="t">«Pecoraro Scanio: da Milano sfida su sovranità digitale», video</span>
+          <span class="s">Il Sole 24 Ore · 3 luglio 2026</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/793385/milano-ecodigital-giovani-innovazione-e-startup-per-costruire-il-futuro-dei-territori" rel="noopener">
+          <span class="t">«Milano ecodigital. Giovani innovazione e startup per costruire il futuro dei territori, delle imprese e delle istituzioni», registrazione integrale</span>
+          <span class="s">Radio Radicale · 2 luglio 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/06/25/pecoraro-scanio-minibus-ecodigital-accolto-in-campidoglio/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: Minibus Ecodigital accolto in Campidoglio»</span>
+          <span class="s">askanews · 25 giugno 2026</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/sostenibilita/mobilita-elettrica-pecoraro-scanio-minibus-ecodigital-accolto-campidoglio/AI8ICBsD" rel="noopener">
+          <span class="t">«Mobilità elettrica, Pecoraro Scanio: Minibus Ecodigital accolto in Campidoglio», video</span>
+          <span class="s">Il Sole 24 Ore · 25 giugno 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/05/15/chieti-ecodigital-con-legnini-spazio-a-giovani-e-startup/" rel="noopener">
+          <span class="t">«Chieti, Ecodigital con Legnini: spazio a giovani e startup»</span>
+          <span class="s">askanews · 15 maggio 2026</span>
+        </a>
+        <a href="https://www.italpress.com/ecodigital-chieti-pecoraro-scanio-e-legnini-nostre-citta-diventino-smart-city/" rel="noopener">
+          <span class="t">«EcoDigital Chieti, Pecoraro Scanio e Legnini: nostre città diventino smart city»</span>
+          <span class="s">Italpress · 15 maggio 2026</span>
+        </a>
+        <a href="https://www.radiolombardia.it/2026/05/15/ecodigital-chieti-pecoraro-scanio-e-legnini-nostre-citta-diventino-smart-city/" rel="noopener">
+          <span class="t">«EcoDigital Chieti, Pecoraro Scanio e Legnini: nostre città diventino smart city»</span>
+          <span class="s">Radio Lombardia · 15 maggio 2026</span>
+        </a>
+        <a href="https://www.italpress.com/pecoraro-scanio-e-marano-legge-per-sicilia-leader-innovazione-ecodigital/" rel="noopener">
+          <span class="t">«Pecoraro Scanio e Marano: legge per Sicilia leader innovazione Ecodigital»</span>
+          <span class="s">Italpress · 24 aprile 2026</span>
+        </a>
+        <a href="https://www.vivienna.it/2026/04/24/ecodigital-marano-e-pecoraro-scanio-al-lavoro-su-proposta-di-legge-per-attrarre-talenti-ed-investitori/" rel="noopener">
+          <span class="t">«EcoDigital, Marano e Pecoraro Scanio: al lavoro su proposta di legge per attrarre talenti ed investitori»</span>
+          <span class="s">Vivi Enna · 24 aprile 2026</span>
+        </a>
+        <a href="https://direttasicilia.it/2026/04/23/ecodigital-marano-e-pecoraro-scanio-al-lavoro-su-proposta-di-legge-per-attrarre-talenti-ed-investitori/" rel="noopener">
+          <span class="t">«EcoDigital, Marano e Pecoraro Scanio: al lavoro su proposta di legge per attrarre talenti ed investitori»</span>
+          <span class="s">Diretta Sicilia · 23 aprile 2026</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/787445/sicilia-ecodigital-il-futuro-dellinnovazione-nel-sud" rel="noopener">
+          <span class="t">«Sicilia EcoDigital. Il futuro dell'innovazione nel Sud», registrazione integrale da Catania</span>
+          <span class="s">Radio Radicale · 23 aprile 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/03/11/pecoraro-scanio-da-firenze-la-sfida-dellagricoltura-ecodigital/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: da Firenze la sfida dell'agricoltura Ecodigital»</span>
+          <span class="s">askanews · 11 marzo 2026</span>
+        </a>
+        <a href="https://askanews.it/2026/03/07/pecoraro-scanio-agricoltura-ecodigital-e-guidata-da-donne-e-giovani/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: agricoltura Ecodigital è guidata da donne e giovani»</span>
+          <span class="s">askanews · 7 marzo 2026</span>
+        </a>
+        <a href="https://www.italpress.com/pecoraro-scanio-agricoltura-ecodigital-guidata-da-donne-e-giovani/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: agricoltura EcoDigital guidata da donne e giovani»</span>
+          <span class="s">Italpress · 7 marzo 2026</span>
+        </a>
+        <a href="https://www.iltempo.it/tv-news/2026/02/24/video/ue-pecoraro-scanio-il-digitale-sia-al-servizio-della-democrazia--46494473/" rel="noopener">
+          <span class="t">«Ue, Pecoraro Scanio: il digitale sia al servizio della democrazia», video da Bruxelles</span>
+          <span class="s">Il Tempo · 24 febbraio 2026</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/782000/turismo-territorio-e-innovazione-ecodigital-in-campania-pitch-visioni-e-soluzioni-per" rel="noopener">
+          <span class="t">«Turismo, territorio e innovazione. Ecodigital in Campania. Pitch, visioni e soluzioni per i territori», registrazione integrale</span>
+          <span class="s">Radio Radicale · 17 febbraio 2026</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/779599/comuni-ecodigital" rel="noopener">
+          <span class="t">«Comuni ecodigital», registrazione integrale del workshop con Giuseppe Conte</span>
+          <span class="s">Radio Radicale · 21 gennaio 2026</span>
+        </a>
+      </div>
+    </div>
+    <div class="gruppo" data-anno="2025">
+      <h3 class="yr">2025</h3>
+      <div class="rs">
+        <a href="https://www.italpress.com/rete-ecodigital-in-campania-pecoraro-scanio-e-marano-sicilia-apripista-del-modello/" rel="noopener">
+          <span class="t">«Rete Ecodigital in Campania, Pecoraro Scanio e Marano: Sicilia apripista del modello»</span>
+          <span class="s">Italpress · 15 dicembre 2025</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/italia/pecoraro-scanio-mare-non-e-discarica-video-premiato-venezia/AHj2RZUC" rel="noopener">
+          <span class="t">«Mare non è discarica, video premiato a Venezia», video</span>
+          <span class="s">askanews per Il Sole 24 Ore · 6 settembre 2025</span>
+        </a>
+        <a href="https://appianews.it/pecoraro-scanio-mare-non-e-discarica-video-premiato-a-venezia/" rel="noopener">
+          <span class="t">«Mare non è discarica, video premiato a Venezia»</span>
+          <span class="s">Appia News · 6 settembre 2025</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/765519/ecodigital-talk-dialoghi-e-soluzioni-per-una-transizione-ecologica-e-digitale-giusta-e" rel="noopener">
+          <span class="t">«EcoDigital talk. Dialoghi e soluzioni per una transizione ecologica e digitale giusta e inclusiva», registrazione integrale</span>
+          <span class="s">Radio Radicale · 24 luglio 2025</span>
+        </a>
+        <a href="https://www.italpress.com/pecoraro-scanio-sicilia-sia-leader-nellinnovazione-ecodigital/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: Sicilia sia leader nell'innovazione EcoDigital»</span>
+          <span class="s">Italpress · 23 luglio 2025</span>
+        </a>
+        <a href="https://latr3.it/2025/07/23/torna-sicilia-ecodigital-marano-m5s-e-pecoraro-scanio-sostenibilita-ed-innovazione-alleati-della-competitivita/" rel="noopener">
+          <span class="t">«Torna Sicilia Ecodigital, Marano (M5s) e Pecoraro Scanio: sostenibilità ed innovazione alleati della competitività»</span>
+          <span class="s">LaTr3 · 23 luglio 2025</span>
+        </a>
+        <a href="https://innovationisland.it/sicilia-ecodigital-idee-strumenti-e-sinergie-per-un-futuro-sostenibile/" rel="noopener">
+          <span class="t">«Sicilia Ecodigital: idee, strumenti e sinergie per un futuro sostenibile»</span>
+          <span class="s">Innovation Island · 23 luglio 2025</span>
+        </a>
+        <a href="https://www.italpress.com/pecoraro-scanio-a-taranto-iniziativa-ecodigital/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: a Taranto iniziativa Ecodigital»</span>
+          <span class="s">Italpress · 15 aprile 2025</span>
+        </a>
+        <a href="https://radionbc.it/pecoraro-scanio-sfida-ecodigital-da-bari-stop-emigrazione-giovani/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: sfida Ecodigital da Bari, stop emigrazione giovani»</span>
+          <span class="s">Radio NBC Rete Regione · 28 febbraio 2025</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/italia/pecoraro-scanio-bari-rete-ecodigital-turismo-sostenibile/AG2uFG9C" rel="noopener">
+          <span class="t">«Pecoraro Scanio: a Bari rete EcoDigital per turismo sostenibile», video</span>
+          <span class="s">Il Sole 24 Ore · 25 febbraio 2025</span>
+        </a>
+        <a href="https://www.italpress.com/madre-terra-trasparenza-nella-rendicontazione-esg-sfida-ecodigital/" rel="noopener">
+          <span class="t">«Madre Terra, trasparenza nella rendicontazione ESG, sfida EcoDigital»</span>
+          <span class="s">Italpress · 11 febbraio 2025</span>
+        </a>
+        <a href="https://askanews.it/2025/02/06/bilancio-sostenibilita-pecoraro-strumento-credibilita-brand/" rel="noopener">
+          <span class="t">«Bilancio sostenibilità, Pecoraro: strumento credibilità brand»</span>
+          <span class="s">askanews · 6 febbraio 2025</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/sostenibilita/pecoraro-scanio-formare-giovani-ecodigital-sfida-parte-sicilia/AGXGTDLC" rel="noopener">
+          <span class="t">«Pecoraro Scanio: formare giovani Ecodigital, sfida parte da Sicilia», video</span>
+          <span class="s">Il Sole 24 Ore · 16 gennaio 2025</span>
+        </a>
+      </div>
+    </div>
+    <div class="gruppo" data-anno="2024">
+      <h3 class="yr">2024</h3>
+      <div class="rs">
+        <a href="https://www.tp24.it/2024/12/20/ambiente/all-ars-l-evento-sicilia-ecodigital-giovani-imprese-e-istituzioni-per-un-futuro-green/212650" rel="noopener">
+          <span class="t">«All'Ars l'evento Sicilia Ecodigital: giovani, imprese e istituzioni per un futuro green»</span>
+          <span class="s">Tp24 · 20 dicembre 2024</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/sostenibilita/pecoraro-scanio-dall-ars-sfida-ecodigital-giovani-e-imprese/AGhj2fqB" rel="noopener">
+          <span class="t">«Dall'Ars sfida Ecodigital con giovani e imprese», video</span>
+          <span class="s">Il Sole 24 Ore · 18 dicembre 2024</span>
+        </a>
+        <a href="https://www.quotidianodelsud.it/quotidiano/pecoraro-scanio-dalla-sicilia-sfida-di-ecodigital-per-linnovazione" rel="noopener">
+          <span class="t">«Pecoraro Scanio: dalla Sicilia sfida di Ecodigital per l'innovazione»</span>
+          <span class="s">Quotidiano del Sud · 18 dicembre 2024</span>
+        </a>
+        <a href="https://www.blogsicilia.it/comunicati-stampa/sicilia-ecodigital-marano-m5s-e-pecoraro-scanio-green-e-digitale-lars-fa-rete-con-i-giovani-e-le-imprese/1089144/" rel="noopener">
+          <span class="t">«Sicilia Ecodigital, Marano (M5s) e Pecoraro Scanio: green e digitale, l'Ars fa rete con i giovani e le imprese»</span>
+          <span class="s">BlogSicilia · 18 dicembre 2024</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/sostenibilita/pecoraro-scanio-sostenere-start-up-giovani-ecodigital/AG5YdIXB" rel="noopener">
+          <span class="t">«Pecoraro Scanio: sostenere start up giovani ecodigital», video</span>
+          <span class="s">Il Sole 24 Ore · 3 dicembre 2024</span>
+          <span class="n">Annuncio dell'incontro del 4 dicembre 2024 nella sala David Sassoli del Parlamento europeo a Roma.</span>
+        </a>
+        <a href="https://www.radioradicale.it/scheda/744052/ecodigital-verso-il-2050" rel="noopener">
+          <span class="t">«Ecodigital: verso il 2050», registrazione integrale</span>
+          <span class="s">Radio Radicale · 14 novembre 2024</span>
+        </a>
+        <a href="https://www.blogsicilia.it/comunicati-stampa/intergruppo-ecodigital-allars-marano-e-pecoraro-scanio-priorita-a-crisi-idrica/1054579/" rel="noopener">
+          <span class="t">«Intergruppo Ecodigital all'Ars, Marano e Pecoraro Scanio: priorità a crisi idrica»</span>
+          <span class="s">BlogSicilia · 16 settembre 2024</span>
+        </a>
+        <a href="https://livesicilia.it/costituito-allars-lintergruppo-ecodigital/" rel="noopener">
+          <span class="t">«Costituito all'Ars l'intergruppo Ecodigital»</span>
+          <span class="s">LiveSicilia · 14 settembre 2024</span>
+        </a>
+        <a href="https://www.italpress.com/costituito-intergruppo-ecodigital-allars-jose-marano-presidente/" rel="noopener">
+          <span class="t">«Costituito intergruppo Ecodigital all'Ars, Jose Marano presidente»</span>
+          <span class="s">Italpress · 13 settembre 2024</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/sostenibilita/pecoraro-scanio-premiato-mostra-cinema-venezia-spot-ecodigital/AFcBTTlD" rel="noopener">
+          <span class="t">«Premiato a Mostra cinema Venezia spot Ecodigital», video</span>
+          <span class="s">Il Sole 24 Ore · settembre 2024</span>
+          <span class="n">La pagina non riporta il giorno, resta il mese del lancio d'agenzia.</span>
+        </a>
+        <a href="https://www.sardegnareporter.it/2024/09/pecoraro-scanio-premiato-a-mostra-cinema-venezia-spot-ecodigital/649043/" rel="noopener">
+          <span class="t">«Pecoraro Scanio premiato a Mostra cinema Venezia per lo spot Ecodigital»</span>
+          <span class="s">Sardegna Reporter · settembre 2024</span>
+        </a>
+        <a href="https://www.affaritaliani.it/coffee/video/cronache/pecoraro-scanio-da-lecce-sfida-per-europa-ecodigital.html" rel="noopener">
+          <span class="t">«Pecoraro Scanio: da Lecce sfida per Europa EcoDigital», video</span>
+          <span class="s">Affaritaliani · 31 maggio 2024</span>
+        </a>
+        <a href="https://stream24.ilsole24ore.com/video/economia/pecoraro-scanio-transizione-ecodigital-crea-lavoro/AFapEH4C" rel="noopener">
+          <span class="t">«Pecoraro Scanio: transizione Ecodigital crea lavoro», video</span>
+          <span class="s">Il Sole 24 Ore · 15 marzo 2024</span>
+          <span class="n">Annuncio dell'incontro del 18 marzo 2024 nella sala Zuccari del Senato.</span>
+        </a>
+        <a href="https://www.radioradicale.it/eventi/9535" rel="noopener">
+          <span class="t">La diretta dell'incontro «EcoDigital: Act Now!» a Milano</span>
+          <span class="s">Radio Radicale · 2 febbraio 2024</span>
+        </a>
+        <a href="https://www.fondazioneuniverde.it/iniziative/ecodigital-act-now-a-milano-il-primo-incontro-nazionale-del-2024-della-rete-ecodigital-rilanciate-strategie-best-practice-e-proposte-di-attivisti-imprese-e-istituzioni-per-un-d/" rel="noopener">
+          <span class="t">«EcoDigital: Act Now!, a Milano il primo incontro nazionale del 2024 della Rete EcoDigital», comunicato</span>
+          <span class="s">Fondazione UniVerde · 2 febbraio 2024</span>
+        </a>
+      </div>
+    </div>
+    <div class="gruppo" data-anno="2023">
+      <h3 class="yr">2023</h3>
+      <div class="rs">
+        <a href="https://www.italpress.com/pecoraro-scanio-accolti-ordini-del-giorno-giovani-ecodigital/" rel="noopener">
+          <span class="t">«Pecoraro Scanio: accolti ordini del giorno giovani Ecodigital»</span>
+          <span class="s">Italpress · 29 dicembre 2023</span>
+          <span class="n">Due ordini del giorno bipartisan, di Riccardo Ricciardi e Gianfranco Rotondi, accolti dal Governo.</span>
+        </a>
+      </div>
+    </div>
+    <div class="gruppo" data-anno="2022">
+      <h3 class="yr">2022</h3>
+      <div class="rs">
+        <a href="https://ladiscussione.com/184269/ambiente/a-italia-ecodigital-i-migliori-progetti/" rel="noopener">
+          <span class="t">«A Italia #Ecodigital i migliori progetti»</span>
+          <span class="s">La Discussione · 30 luglio 2022</span>
+        </a>
+        <a href="https://www.italpress.com/transizione-pecoraro-scanio-rete-ecodigital-per-accesso-universale/" rel="noopener">
+          <span class="t">«Transizione, Pecoraro Scanio: rete Ecodigital per accesso universale»</span>
+          <span class="s">Italpress · 29 luglio 2022</span>
+          <span class="n">Il convegno Italia EcoDigital in Senato, con Loredana De Petris.</span>
+        </a>
+        <a href="https://www.sardegnagol.eu/ecodigital-pecoraro-scanio-giovani-siano-protagonisti-non-comparse/" rel="noopener">
+          <span class="t">«EcoDigital, Pecoraro Scanio: giovani siano protagonisti non comparse»</span>
+          <span class="s">Sardegnagol · 29 luglio 2022</span>
+        </a>
+        <a href="https://www.fondazioneuniverde.it/iniziative/gli-italiani-chiedono-la-transizione-ecologica-e-digitale-giuseppe-conte-e-il-candidato-ecodigital-piu-credibile/" rel="noopener">
+          <span class="t">«Gli italiani chiedono la transizione ecologica e digitale: Giuseppe Conte è il candidato EcoDigital più credibile», comunicato con il sondaggio Noto</span>
+          <span class="s">Fondazione UniVerde · 7 luglio 2022</span>
+        </a>
+        <a href="https://www.teleambiente.it/italiani-chiedono-transizione-ecologica-e-digitale-giuseppe-conte/" rel="noopener">
+          <span class="t">«Gli italiani chiedono la transizione ecologica e digitale»</span>
+          <span class="s">TeleAmbiente · dicembre 2022</span>
+          <span class="n">Articolo non più raggiungibile, la testata ha cambiato dominio e il link porta alla home di teleambiente.tv.</span>
+        </a>
+        <a href="https://www.teleambiente.it/ecodigital-rete-civica-unire-transizione-ecologica-digitale/" rel="noopener">
+          <span class="t">«EcoDigital, la rete civica per unire transizione ecologica e digitale»</span>
+          <span class="s">TeleAmbiente · data da confermare</span>
+          <span class="n">Articolo non più raggiungibile, stesso cambio di dominio.</span>
+        </a>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<script>
+(function(){
+  var bs=document.querySelectorAll(".filtri .fbtn"), gs=document.querySelectorAll(".gruppo");
+  for(var i=0;i<bs.length;i++){
+    bs[i].addEventListener("click",function(){
+      var a=this.getAttribute("data-anno"), j;
+      for(j=0;j<bs.length;j++){bs[j].className="fbtn";bs[j].setAttribute("aria-pressed","false");}
+      this.className="fbtn on"; this.setAttribute("aria-pressed","true");
+      for(j=0;j<gs.length;j++){
+        gs[j].hidden = !(a==="tutti" || gs[j].getAttribute("data-anno")===a);
+      }
+    });
+  }
+})();
+</script>
+
+<!-- ====================================================== MATERIALI -->
+<section class="scene light band" id="materiali" style="background:var(--card)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2" style="color:var(--signal-ink)">Materiali per la stampa</p>
+    <h2 class="h-sec">Loghi, foto e contatti, pronti da usare</h2>
+
+    <div class="kit">
+      <div class="card" style="background:var(--bg)">
+        <h3>Chi siamo, in breve</h3>
+        <p>EcoDigital è una rete civica nata nel 2021 su iniziativa di Alfonso Pecoraro Scanio, presidente della Fondazione UniVerde e già ministro dell'Ambiente. Tiene insieme la transizione ecologica e quella digitale. Cerca in giro per l'Italia comuni, imprese e startup che hanno già risolto un problema e porta le loro soluzioni in incontri pubblici. Dal 2021 ha fatto 56 tappe, da Milano a Catania, con giovani, startupper, sindaci e amministratori locali. All'Assemblea Regionale Siciliana ha fatto nascere il primo intergruppo parlamentare EcoDigital.</p>
+      </div>
+
+      <div class="card" style="background:var(--bg)">
+        <h3>I loghi</h3>
+        <div class="logobox"><img src="img/logo/istituzionale.svg" alt="Logo istituzionale EcoDigital: scritta blu con la barra verde e la barra rossa" width="792" height="109" loading="lazy"></div>
+        <div class="logobox dark"><img src="img/logo/istituzionale-negativo.svg" alt="Logo istituzionale EcoDigital in negativo, scritta bianca su fondo blu" width="792" height="109" loading="lazy"></div>
+        <ul>
+          <li><a class="dl" href="img/logo/istituzionale.svg" download>Logo istituzionale, SVG</a></li>
+          <li><a class="dl" href="img/logo/png/istituzionale.png" download>Logo istituzionale, PNG 2000 px</a></li>
+          <li><a class="dl" href="img/logo/png/istituzionale-negativo.png" download>Logo per fondi blu, PNG 2000 px</a></li>
+          <li><a class="dl" href="img/logo/png/verticale.png" download>Logo verticale, PNG 2000 px</a></li>
+          <li><a class="dl" href="img/logo/png/tondo-blu.png" download>Logo tondo, PNG 2000 px</a></li>
+        </ul>
+        <p class="small">Il logo non va ricolorato né allungato. Sui fondi blu si usa la versione in negativo, sulle foto e sulle sfumature quella tutta bianca.</p>
+      </div>
+
+      <div class="card" style="background:var(--bg)">
+        <h3>Contatti</h3>
+        <ul>
+          <li>Scrivi a <a class="dl" href="mailto:info@ecodigital.it">info@ecodigital.it</a> per interviste, materiali e per il video sulle Aree Marine Protette.</li>
+          <li>Referente stampa: da confermare.</li>
+          <li>Portavoce della rete: Alfonso Pecoraro Scanio, promotore di EcoDigital e presidente della Fondazione UniVerde.</li>
+          <li>Marketing e comunicazione del canale: Alessandro Di Capua.</li>
+        </ul>
+        <p class="small">Rispondiamo in giornata quando possiamo. Per le richieste con scadenza scrivilo nell'oggetto della mail.</p>
+      </div>
+    </div>
+
+    <h3 class="yr" style="font-size:clamp(22px,2.4vw,32px)">Le foto di Venezia, 11 settembre 2026</h3>
+    <p class="say" style="margin-top:0">Quattro foto libere per la stampa, 1000 px sul lato lungo. Credito obbligatorio «Foto: archivio EcoDigital». Chi ha bisogno del file originale lo chieda a <a class="dl" href="mailto:info@ecodigital.it">info@ecodigital.it</a>.</p>
+    <div class="pics">
+      <figure>
+        <img src="img/foto/s-venezia-premio.jpg" alt="Alfonso Pecoraro Scanio, Alessandro Di Capua e Michele D'Orso con l'attestato nella sala dell'Hotel Excelsior" width="640" height="1000" loading="lazy">
+        <figcaption><b>La consegna all'Excelsior</b>Alfonso Pecoraro Scanio con Alessandro Di Capua e Michele D'Orso e l'attestato del Sorriso Diverso Venezia Award. Foto: archivio EcoDigital. <a class="dl" href="img/foto/s-venezia-premio.jpg" download>Apri il file</a></figcaption>
+      </figure>
+      <figure>
+        <img src="img/foto/s-venezia-lido.jpg" alt="I tre della rete con l'attestato davanti al Palazzo del Cinema del Lido" width="562" height="1000" loading="lazy">
+        <figcaption><b>Davanti al Palazzo del Cinema</b>Pecoraro Scanio, Di Capua e D'Orso sul lungomare del Lido, con le bandiere della Mostra. Foto: archivio EcoDigital. <a class="dl" href="img/foto/s-venezia-lido.jpg" download>Apri il file</a></figcaption>
+      </figure>
+      <figure>
+        <img src="img/foto/s-venezia-sala.jpg" alt="I tre seduti allo Spazio Incontri del Venice Production Bridge, sullo schermo una costa" width="1000" height="750" loading="lazy">
+        <figcaption><b>Allo Spazio Incontri</b>La sala del Venice Production Bridge, sullo schermo una scena del video girata a Capri. Foto: archivio EcoDigital. <a class="dl" href="img/foto/s-venezia-sala.jpg" download>Apri il file</a></figcaption>
+      </figure>
+      <figure>
+        <img src="img/foto/s-venezia-selfie.jpg" alt="Alfonso Pecoraro Scanio davanti al Palazzo del Cinema di Venezia" width="1000" height="750" loading="lazy">
+        <figcaption><b>Ritratto al Lido</b>Alfonso Pecoraro Scanio davanti al Palazzo del Cinema, l'11 settembre 2026. Foto: archivio EcoDigital. <a class="dl" href="img/foto/s-venezia-selfie.jpg" download>Apri il file</a></figcaption>
+      </figure>
+    </div>
+    <p class="small">Le foto degli incontri sono dell'archivio della rete e dei volontari che le hanno scattate. Per le immagini delle altre tappe vedi i <a class="dl" href="crediti.html">crediti fotografici</a>.</p>
+  </div></div>
+</section>
+
+<!-- ====================================================== CODA -->
+<section class="scene mid band" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2">Prossimi appuntamenti</p>
+    <h2 class="giant xs">Vuoi seguirci a Rimini?</h2>
+    <p class="say" style="margin-top:18px">Il calendario delle tappe è nella pagina Tappe, le ultime cose fatte nella pagina Notizie. Per accrediti e appuntamenti scrivi a info@ecodigital.it.</p>
+    <div class="acts">
+      <a class="b b-sig" href="eventi.html">Le tappe</a>
+      <a class="b b-line" href="news.html">Le notizie</a>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale che gira l'Italia a cercare le buone notizie ecologiche e digitali e le racconta.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, il canale delle buone notizie ecologiche e digitali · <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

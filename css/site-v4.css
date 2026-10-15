@@ -1,0 +1,519 @@
+/* =====================================================================
+   EcoDigital, foglio del sito v4 (nuova identita, call del 01/10/2026)
+   Base: il foglio della v3 (site-v2.css) con la palette e i caratteri del
+   Brand Book. I token del kit stanno in brand.css, caricato in un livello
+   (layer) basso: le regole di questo foglio e delle pagine vincono sempre.
+
+   Regole:
+   - fondo bianco, inchiostro #14161F, blu #293B8E colore principale,
+     verde #09693A per gli stati positivi, giallo #F7B807 accento,
+     rosso #C0202F raro; sfumatura di brand solo come superficie
+   - titoli in Archivo esteso (wdth 125) maiuscolo, testo in Montserrat
+   - tutto offline: font in ../fonts, nessun CDN, nessuna immagine esterna
+   - tutto isolato sotto body.v2 come nella v3
+   ===================================================================== */
+
+@import url("brand.css?v=20261001") layer(brand);
+
+:root{
+  color-scheme:light;
+  /* i nomi della v3 restano, i valori vengono dal Brand Book */
+  --bg:#FFFFFF; --ink:#14161F; --muted:#5B6070;
+  --forest:#293B8E;          /* era il verde foresta: ora il blu di brand */
+  --signal:#F7B807;          /* accento: giallo */
+  --signal-ink:#09693A;      /* testo positivo su chiaro: verde */
+  --card:#FFFFFF; --line:#E1E3EC; --hero-ink:#FFFFFF; --badge-bg:#E3F1EA;
+  --sea:#293B8E; --sun:#F7B807; --alert:#C0202F;
+  --tenue:#F4F5FA; --blu-tenue:#E9ECF7; --blu-scuro:#1F2D6E;
+
+  --font:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --display:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --wide:125%;
+  --hdr-h:64px;
+}
+
+/* --- logo ufficiale: unica regola che vale anche sulle pagine v1 --- */
+.logomark{height:28px;width:auto;display:block}
+.logomark.big{height:40px}
+
+/* =====================================================================
+   1. Base della v2
+   ===================================================================== */
+.v2{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden}
+.v2 *{box-sizing:border-box}
+.v2 img{max-width:100%;display:block}
+.v2 a{color:inherit}
+.v2 :focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
+.v2 h1,.v2 h2,.v2 h3,.v2 h4{margin:0;color:inherit}
+.v2 h1,.v2 h2{font-family:var(--display);font-stretch:var(--wide);text-transform:uppercase;font-weight:850;letter-spacing:-.01em;line-height:1.02}
+.v2 h3,.v2 h4{font-family:var(--font);font-stretch:normal;text-transform:none;font-weight:700;letter-spacing:-.01em}
+.v2 p{margin:0 0 1em}
+.v2 p:last-child{margin-bottom:0}
+.v2 .logo{gap:0}
+
+.v2 .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px);width:100%}
+.v2 .tnum{font-variant-numeric:tabular-nums}
+.v2 .skip{position:absolute;left:-9999px;top:8px;z-index:200;background:var(--signal);color:#14161F;
+  padding:10px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+.v2 .skip:focus{left:12px}
+
+/* --- tipografia gigante --- */
+.v2 .giant{font-family:var(--display);font-weight:850;font-stretch:var(--wide);
+  text-transform:uppercase;letter-spacing:-.012em;line-height:.98;
+  font-size:clamp(38px,8.4vw,140px);margin:0;text-wrap:balance;overflow-wrap:break-word;hyphens:manual}
+.v2 .giant.sm{font-size:clamp(30px,5.4vw,82px);line-height:1}
+.v2 .giant.xs{font-size:clamp(24px,3.3vw,48px);line-height:1.04}
+.v2 .kick{font-style:italic;font-weight:400;letter-spacing:.01em;
+  font-size:clamp(15px,1.5vw,21px);opacity:.9;margin:0 0 18px}
+.v2 .eyebrow2{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.68rem;font-weight:700;margin:0 0 18px}
+.v2 .eyebrow2::before{content:"";width:26px;height:2px;background:var(--signal);border-radius:2px;flex:none}
+.v2 .claim{font-size:clamp(19px,2.3vw,30px);line-height:1.28;letter-spacing:-.02em;font-weight:600;
+  max-width:22ch;text-wrap:balance}
+.v2 .say{font-size:clamp(15px,1.25vw,18px);line-height:1.6;max-width:46ch}
+.v2 .tiny{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.v2 .note{font-size:.78rem;line-height:1.5;opacity:.62;margin-top:14px}
+
+/* --- bottoni --- */
+.v2 .b{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  font-weight:700;font-size:.93rem;padding:13px 26px;border-radius:999px;border:1px solid transparent;
+  cursor:pointer;font-family:var(--font);letter-spacing:-.01em;
+  transition:transform .16s ease,filter .16s ease,border-color .16s ease}
+.v2 .b:hover{transform:translateY(-1px)}
+.v2 .b-sig{background:var(--signal);color:#14161F;box-shadow:none}
+.v2 .b-blu{background:var(--forest);color:#fff}
+.v2 .b-blu:hover{background:var(--blu-scuro)}
+.v2 .b-sig:hover{filter:brightness(1.07)}
+.v2 .b-line{background:transparent;color:var(--hero-ink);border-color:rgba(255,255,255,.4)}
+.v2 .b-line:hover{border-color:var(--signal)}
+.v2 .b-ghost{background:transparent;color:var(--forest);border:2px solid var(--forest)}
+.v2 .b-ghost:hover{background:var(--blu-tenue)}
+.v2 .b-dark{background:var(--forest);color:var(--hero-ink)}
+.v2 .b-sm{padding:9px 17px;font-size:.82rem}
+
+/* =====================================================================
+   2. Header fisso sottile
+   ===================================================================== */
+.v2 .hdr{position:fixed;top:0;left:0;right:0;z-index:120;height:var(--hdr-h);
+  background:rgba(255,255,255,.96);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);color:var(--ink)}
+.v2 .hdr .in{display:flex;align-items:center;gap:clamp(10px,1.6vw,22px);height:var(--hdr-h);
+  max-width:1440px;margin:0 auto;padding:0 clamp(14px,2.4vw,28px)}
+.v2 .hdr a{text-decoration:none;color:inherit}
+.v2 .hdr .brand{flex:none;display:flex;align-items:center}
+.v2 .hdr .brand img{height:26px;width:auto}
+
+.v2 .ticker{flex:1 1 auto;min-width:0;overflow:hidden;
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.v2 .ticker .run{display:flex;width:max-content;animation:ticker 46s linear infinite}
+.v2 .ticker span{display:inline-flex;align-items:center;gap:9px;padding:0 14px;white-space:nowrap;
+  font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.v2 .ticker span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--signal-ink);opacity:.8}
+@keyframes ticker{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+.v2 .hdr nav{display:flex;gap:1px;flex:none;margin-left:auto}
+.v2 .hdr nav a{font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;
+  padding:8px 9px;border-radius:999px;color:#3A3F52;white-space:nowrap}
+.v2 .hdr nav a:hover,.v2 .hdr nav a[aria-current]{color:var(--forest);background:var(--blu-tenue)}
+.v2 .hdr .b{flex:none}
+@media(max-width:1280px){.v2 .ticker{display:none}}
+@media(max-width:1180px){.v2 .hdr nav a{padding:8px 7px;letter-spacing:.06em}}
+@media(max-width:1060px){.v2{--hdr-h:104px}.v2 .hdr .in{flex-wrap:wrap;height:auto;min-height:0;row-gap:0;padding-top:10px;padding-bottom:4px}
+  .v2 .hdr .b{margin-left:auto}
+  .v2 .hdr nav{order:9;flex:1 1 100%;margin-left:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-top:6px;
+    mask-image:linear-gradient(90deg,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .v2 .hdr nav::-webkit-scrollbar{display:none}.v2 .hdr nav a{padding:7px 9px}}
+@media(max-width:430px){.v2 .hdr .brand img{height:21px}.v2 .hdr .b{padding:8px 13px;font-size:.76rem}}
+
+/* =====================================================================
+   3. Schermate piene e foto a tutto schermo
+   ===================================================================== */
+.v2 .scene{position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  overflow:clip;isolation:isolate;color:var(--hero-ink);background:var(--forest)}
+.v2 .scene.mid{align-items:center}
+.v2 .scene.short{min-height:72svh}
+.v2 .scene .in{position:relative;z-index:3;width:100%;
+  padding:calc(var(--hdr-h) + 46px) 0 clamp(48px,8vh,96px)}
+.v2 .scene.mid .in{padding-top:calc(var(--hdr-h) + 30px)}
+
+.v2 .scene-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--forest)}
+.v2 .scene-bg img{width:100%;height:100%;object-fit:cover;object-position:center 38%;
+  transform:scale(1.06);animation:kb 26s ease-in-out infinite alternate}
+.v2 .scene-bg.blur img{filter:blur(14px) saturate(.85)}
+@keyframes kb{from{transform:scale(1.03) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(0,-1.6%,0)}}
+
+/* velature: sempre blu di brand, mai nero */
+.v2 .veil{position:absolute;inset:0;z-index:1;pointer-events:none}
+.v2 .veil.f70{background:linear-gradient(180deg,rgba(41,59,142,.62) 0%,rgba(41,59,142,.70) 45%,rgba(41,59,142,.90) 100%)}
+.v2 .veil.f80{background:linear-gradient(180deg,rgba(41,59,142,.78) 0%,rgba(41,59,142,.84) 40%,rgba(41,59,142,.97) 100%)}
+.v2 .veil.f85{background:linear-gradient(180deg,rgba(41,59,142,.82) 0%,rgba(41,59,142,.89) 40%,rgba(41,59,142,.97) 100%)}
+.v2 .veil.side{background:linear-gradient(100deg,rgba(41,59,142,.94) 0%,rgba(41,59,142,.80) 42%,rgba(41,59,142,.42) 100%)}
+/* ingresso della home: la sfumatura di brand (verde, blu, giallo) sopra il muro di volti */
+.v2 .veil.entry{background:
+  radial-gradient(55% 80% at 78% 96%,rgba(247,184,7,.78) 0%,rgba(247,184,7,.30) 42%,rgba(247,184,7,0) 78%),
+  radial-gradient(40% 90% at 0% 78%,rgba(9,105,58,.92) 0%,rgba(9,105,58,0) 74%),
+  linear-gradient(100deg,rgba(9,105,58,.86) 0%,rgba(30,79,134,.84) 26%,rgba(41,59,142,.84) 50%,rgba(58,74,146,.80) 68%,rgba(150,120,80,.66) 100%)}
+.v2 .grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px)}
+
+/* ombra morbida sotto il testo: leggibilità anche sui punti chiari della foto */
+.v2 .scene .in :is(h1,h2,p,.giant,.claim,.say,.kick){text-shadow:0 2px 26px rgba(12,18,52,.55)}
+.v2 .scene.light{background:var(--bg);color:var(--ink)}
+.v2 .scene.light .in :is(h1,h2,p,.giant,.claim,.say,.kick){text-shadow:none}
+
+/* freccia «scendi» */
+.v2 .arrow{position:absolute;left:50%;bottom:22px;z-index:5;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;
+  color:rgba(255,255,255,.8);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+.v2 .arrow svg{width:18px;height:26px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.75}50%{transform:translateY(7px);opacity:1}}
+
+/* =====================================================================
+   4. Muro di volti
+   ===================================================================== */
+.v2 .wall{position:absolute;inset:-6% -2%;z-index:0;display:grid;gap:3px;animation:walldrift 70s ease-in-out infinite alternate;
+  grid-template-columns:repeat(var(--cols,8),1fr);align-content:stretch}
+.v2 .wall .t{margin:0;position:relative;overflow:hidden;aspect-ratio:1/1;background:#1F2D6E}
+.v2 .wall img{width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.5) contrast(1.06) brightness(.94);
+  animation:tilein 1.1s cubic-bezier(.2,.7,.2,1) both, tilezoom 30s ease-in-out infinite alternate}
+@keyframes walldrift{from{transform:translate3d(0,-1.5%,0)}to{transform:translate3d(0,1.5%,0)}}
+@keyframes tilein{from{opacity:0;transform:scale(1.16)}to{opacity:1;transform:scale(1)}}
+@keyframes tilezoom{from{transform:scale(1)}to{transform:scale(1.13)}}
+.v2 .wall .t:nth-child(3n) img{animation-delay:.10s,-6s}
+.v2 .wall .t:nth-child(4n) img{animation-delay:.20s,-13s}
+.v2 .wall .t:nth-child(5n) img{animation-delay:.30s,-20s}
+.v2 .wall .t:nth-child(7n) img{animation-delay:.45s,-26s}
+.v2 .wall .t:nth-child(11n) img{animation-delay:.55s,-3s}
+/* su telefono il muro è una parete alta che scorre da sola, tessere piccole e volti interi */
+@media(max-width:760px){
+  .v2 .wall{--cols:4;gap:2px;inset:auto;top:0;left:-1%;right:-1%;height:auto;align-content:start;
+    animation:wallscroll 44s linear infinite alternate;will-change:transform}
+  .v2 .wall img{animation:tilein 1.1s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes wallscroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,calc(100svh - 100%),0)}}
+}
+@media(max-width:430px){.v2 .wall{--cols:4}}
+
+/* muro «vivo» della sezione La rete siamo noi */
+.v2 .facewall{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(96px,11vw,150px),1fr));
+  gap:6px;margin-top:34px}
+.v2 .facewall figure{margin:0;position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:10px;background:#1F2D6E}
+.v2 .facewall img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2);
+  transition:filter .3s ease,transform .5s ease}
+.v2 .facewall figure:hover img{filter:none;transform:scale(1.05)}
+.v2 .facewall figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 8px 7px;
+  font-size:.6rem;line-height:1.2;font-weight:700;color:#fff;
+  background:linear-gradient(180deg,rgba(41,59,142,0),rgba(41,59,142,.92));
+  text-shadow:0 1px 6px rgba(12,18,52,.8)}
+@media(max-width:760px){
+  .v2 .facewall{grid-template-columns:repeat(3,1fr)}
+  .v2 .facewall figcaption{font-size:.55rem;padding:18px 6px 6px}
+}
+
+/* =====================================================================
+   5. Contatori
+   ===================================================================== */
+.v2 .counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:clamp(24px,4vw,56px);margin-top:clamp(30px,5vh,58px)}
+.v2 .counts .c{border-top:2px solid var(--signal);padding-top:16px}
+.v2 .counts b{display:block;font-family:var(--display);font-stretch:var(--wide);font-weight:850;
+  font-size:clamp(38px,5.2vw,76px);line-height:.95;letter-spacing:-.015em;font-variant-numeric:tabular-nums}
+.v2 .counts span{display:block;margin-top:12px;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.14em;font-weight:700;opacity:.78;line-height:1.5}
+.v2 .counts em{font-style:normal;display:block;margin-top:6px;font-size:.7rem;letter-spacing:.04em;
+  text-transform:none;opacity:.6}
+.v2 .dot-ph{border-bottom:1px dotted currentColor;cursor:help}
+
+/* =====================================================================
+   6. Marquee delle città
+   ===================================================================== */
+.v2 .mq{overflow:hidden;border-top:1px solid rgba(255,255,255,.18);
+  border-bottom:1px solid rgba(255,255,255,.18);padding:18px 0;background:var(--forest);color:var(--hero-ink)}
+.v2 .mq .run{display:flex;width:max-content;animation:ticker 60s linear infinite}
+.v2 .mq i{font-style:normal;display:inline-flex;align-items:center;gap:22px;padding:0 22px;white-space:nowrap;
+  font-family:var(--display);font-stretch:var(--wide);font-weight:850;text-transform:uppercase;
+  font-size:clamp(22px,2.8vw,42px);letter-spacing:-.01em;color:rgba(255,255,255,.34)}
+.v2 .mq i::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--signal);flex:none}
+
+/* =====================================================================
+   7. Territori
+   ===================================================================== */
+.v2 .terr{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:clamp(24px,4vw,60px);align-items:end}
+.v2 .terr figure{margin:0}
+.v2 .terr .poster{justify-self:end;max-width:280px;width:100%;border-radius:12px;overflow:hidden;
+  box-shadow:0 26px 60px -26px rgba(10,14,40,.8);border:1px solid rgba(255,255,255,.22)}
+.v2 .terr .poster img{width:100%;height:auto}
+.v2 .terr .poster figcaption{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  padding:9px 11px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.82)}
+@media(max-width:860px){
+  .v2 .terr{grid-template-columns:1fr}
+  .v2 .terr .poster{justify-self:start;max-width:190px;order:-1;margin-bottom:6px}
+}
+.v2 .badge-ln{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;
+  background:rgba(247,184,7,.22);border:1px solid rgba(247,184,7,.55);
+  font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:20px}
+.v2 .badge-ln.sea{background:rgba(41,59,142,.3);border-color:rgba(120,180,220,.55)}
+.v2 .badge-ln.sun{background:rgba(247,184,7,.24);border-color:rgba(247,184,7,.6)}
+
+/* =====================================================================
+   8. Il delfino — poster video
+   ===================================================================== */
+.v2 .poster-v{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 40px 90px -40px rgba(10,14,40,.9)}
+.v2 .poster-v img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.v2 .poster-v::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(41,59,142,.1),rgba(41,59,142,.62))}
+.v2 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+  width:86px;height:86px;border-radius:50%;background:var(--signal);border:0;cursor:pointer;
+  display:grid;place-items:center;box-shadow:0 14px 40px -12px rgba(10,14,40,.8);transition:transform .2s ease}
+.v2 .play:hover{transform:translate(-50%,-50%) scale(1.07)}
+.v2 .play svg{width:26px;height:26px;margin-left:4px}
+.v2 .poster-v .lab{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:18px 22px;
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.86)}
+
+/* =====================================================================
+   9. Tappe — timeline orizzontale
+   ===================================================================== */
+.v2 .rail{display:flex;gap:16px;overflow-x:auto;padding:6px 0 24px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.v2 .rail::-webkit-scrollbar{height:8px}
+.v2 .rail::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25);border-radius:9px}
+.v2 .rail::-webkit-scrollbar-track{background:rgba(255,255,255,.07);border-radius:9px}
+.v2 .rail .stop{flex:0 0 clamp(190px,22vw,232px);scroll-snap-align:start;text-decoration:none;color:inherit}
+.v2 .rail .stop figure{margin:0;border-radius:12px;overflow:hidden;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16);aspect-ratio:3/4}
+.v2 .rail .stop img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.v2 .rail .stop:hover img{transform:scale(1.04)}
+.v2 .rail .when{display:block;margin-top:12px;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:800;color:var(--signal)}
+.v2 .rail .where{display:block;margin-top:5px;font-weight:700;font-size:1rem;letter-spacing:-.02em}
+.v2 .rail .what{display:block;margin-top:3px;font-size:.82rem;line-height:1.35;opacity:.72}
+.v2 .rail-hint{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.6;margin-top:6px}
+
+/* =====================================================================
+   10. Moduli (firma, attivista, startup)
+   ===================================================================== */
+.v2 .formgrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(26px,4vw,56px);align-items:start}
+@media(max-width:860px){.v2 .formgrid{grid-template-columns:1fr}}
+.v2 .fld{margin-bottom:16px}
+.v2 .fld label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:7px;opacity:.75}
+.v2 .fld input[type=text]{width:100%;padding:13px 15px;border-radius:12px;font:inherit;font-size:.95rem;
+  border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:var(--hero-ink)}
+.v2 .fld input::placeholder{color:rgba(255,255,255,.4)}
+.v2 .fld input:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px rgba(247,184,7,.28)}
+.v2 .pick{display:flex;flex-wrap:wrap;gap:8px}
+.v2 .pick label{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;padding:8px 14px;font-size:.84rem;cursor:pointer;text-transform:none;letter-spacing:0;
+  margin:0;opacity:1}
+.v2 .pick input{accent-color:var(--signal)}
+.v2 .pick label:has(input:checked){border-color:var(--signal);background:rgba(247,184,7,.22)}
+.v2 .okmsg{display:none;margin-top:14px;padding:12px 16px;border-radius:12px;
+  background:rgba(247,184,7,.2);border:1px solid var(--signal);font-size:.9rem;font-weight:600}
+.v2 .okmsg.on{display:block}
+/* campi su fondo chiaro */
+.v2 .scene.light .fld input[type=text]{border-color:var(--line);background:var(--bg);color:var(--ink)}
+.v2 .scene.light .fld input::placeholder{color:var(--muted);opacity:.8}
+.v2 .scene.light .fld label{opacity:.9;color:var(--muted)}
+.v2 .scene.light .okmsg{background:var(--badge-bg);border-color:var(--signal);color:var(--forest)}
+.v2 .scene.light .note{color:var(--muted);opacity:1}
+.v2 .scene.light .pick label{border-color:var(--line)}
+
+.v2 .sigwall{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;max-height:280px;overflow:auto}
+.v2 .sigwall .s{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 13px;font-size:.8rem;
+  background:rgba(255,255,255,.06)}
+.v2 .sigwall .s b{font-weight:700}
+.v2 .sigwall .s i{font-style:normal;opacity:.62}
+.v2 .sigwall .s.new{border-color:var(--signal);background:rgba(247,184,7,.24)}
+
+/* =====================================================================
+   11. Impatto — badge del peso
+   ===================================================================== */
+.v2 .weight{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(26px,4vw,56px);align-items:center}
+@media(max-width:860px){.v2 .weight{grid-template-columns:1fr}}
+.v2 .wbadge{border:1px solid rgba(255,255,255,.24);border-radius:18px;padding:clamp(22px,3vw,34px);
+  background:rgba(255,255,255,.06)}
+.v2 .wbadge b{display:block;font-family:var(--display);font-stretch:var(--wide);font-weight:850;
+  font-size:clamp(34px,4.4vw,64px);line-height:.95;letter-spacing:-.015em;font-variant-numeric:tabular-nums}
+.v2 .wbadge .u{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.7;
+  display:block;margin-top:12px}
+.v2 .wbar{margin-top:22px}
+.v2 .wbar .l{display:flex;justify-content:space-between;gap:14px;font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:700;opacity:.7;margin-bottom:7px}
+.v2 .wbar .track{height:10px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden}
+.v2 .wbar .fill{height:100%;border-radius:999px;background:var(--signal);width:0;
+  transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.v2 .wbar .fill.avg{background:rgba(255,255,255,.4)}
+
+/* =====================================================================
+   12. Blocchi a tre, due colonne, ritratto
+   ===================================================================== */
+.v2 .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:clamp(18px,3vw,34px);margin-top:30px}
+.v2 .three .p{border-top:2px solid rgba(255,255,255,.28);padding-top:16px}
+.v2 .three .p b{display:block;font-family:var(--display);font-stretch:var(--wide);font-weight:850;
+  font-size:1.7rem;line-height:1;color:var(--signal);letter-spacing:-.01em;margin-bottom:10px}
+.v2 .scene.light .three .p b{color:var(--forest)}
+.v2 .three .p span{display:block;font-size:.95rem;line-height:1.45;opacity:.85}
+.v2 .scene.light .three .p{border-top-color:var(--line)}
+
+.v2 .split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(26px,4vw,64px);align-items:center}
+@media(max-width:900px){.v2 .split{grid-template-columns:1fr}}
+.v2 .portrait{border-radius:16px;overflow:hidden;max-width:340px;border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 30px 70px -34px rgba(10,14,40,.85)}
+.v2 .portrait img{width:100%;height:auto}
+.v2 .portrait figcaption{padding:12px 15px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;background:rgba(255,255,255,.1);opacity:.85}
+.v2 .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* =====================================================================
+   13. Footer scuro
+   ===================================================================== */
+.v2 .ftr{background:var(--forest);color:var(--hero-ink);padding:clamp(46px,7vw,82px) 0 34px;position:relative}
+.v2 .ftr::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;
+  background:linear-gradient(90deg,#09693A 0 34%,#fff 34% 36%,#C0202F 36% 100%)}
+.v2 .ftr a{color:rgba(255,255,255,.8);text-decoration:none}
+.v2 .ftr a:hover{color:var(--hero-ink)}
+.v2 .ftr .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:clamp(22px,3vw,44px)}
+@media(max-width:900px){.v2 .ftr .grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.v2 .ftr .grid{grid-template-columns:1fr}}
+.v2 .ftr h4{font-size:.68rem;text-transform:uppercase;letter-spacing:.16em;margin:0 0 14px;
+  color:var(--signal)}
+.v2 .ftr li{list-style:none}
+.v2 .ftr ul{margin:0;padding:0;display:grid;gap:7px;font-size:.9rem}
+.v2 .ftr .about{font-size:.88rem;line-height:1.55;opacity:.72;max-width:34ch;margin:16px 0 0}
+.v2 .ftr .partners{background:var(--card);border-radius:14px;padding:14px;margin-top:4px}
+.v2 .ftr .partners img{width:100%;height:auto;border-radius:8px}
+.v2 .ftr .soc{display:flex;gap:10px;margin-top:14px}
+.v2 .ftr .soc a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.26);
+  display:grid;place-items:center}
+.v2 .ftr .soc a:hover{border-color:var(--signal);background:rgba(247,184,7,.2)}
+.v2 .ftr .soc svg{width:17px;height:17px}
+.v2 .ftr .end{margin-top:clamp(34px,5vw,58px);padding-top:22px;border-top:1px solid rgba(255,255,255,.16);
+  display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between;font-size:.76rem;opacity:.62}
+
+/* =====================================================================
+   14. Reveal on scroll (fallback a 1,5 s se il JS non parte)
+   ===================================================================== */
+.js .v2 .rv2{opacity:0;transform:translateY(22px)}
+.js .v2 .rv2.shown{opacity:1;transform:none;
+  transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+
+/* =====================================================================
+   15. La parola ECODIGITAL che si compone
+   ===================================================================== */
+.v2 .compose{display:block;white-space:nowrap;font-style:italic;font-weight:900;letter-spacing:-.02em;line-height:.92}
+.v2 .giant.compose{font-size:clamp(34px,8.6vw,150px)}
+@media(max-width:520px){.v2 .giant.compose{font-size:9.6vw;letter-spacing:-.025em}}
+.v2 .compose span{display:inline-block;will-change:transform,opacity}
+.js .v2 .compose span{opacity:0;transform:translateY(.14em) scaleY(1.08);
+  animation:letter .95s cubic-bezier(.2,.75,.2,1) forwards}
+@keyframes letter{to{opacity:1;transform:none}}
+.js .v2 .compose span:nth-child(1){animation-delay:.10s}
+.js .v2 .compose span:nth-child(2){animation-delay:.17s}
+.js .v2 .compose span:nth-child(3){animation-delay:.24s}
+.js .v2 .compose span:nth-child(4){animation-delay:.31s}
+.js .v2 .compose span:nth-child(5){animation-delay:.38s}
+.js .v2 .compose span:nth-child(6){animation-delay:.45s}
+.js .v2 .compose span:nth-child(7){animation-delay:.52s}
+.js .v2 .compose span:nth-child(8){animation-delay:.59s}
+.js .v2 .compose span:nth-child(9){animation-delay:.66s}
+.js .v2 .compose span:nth-child(10){animation-delay:.73s}
+.v2 .compose .g{color:#fff}
+.v2 .compose-barre{display:block;position:relative;height:clamp(8px,1vw,14px);width:min(100%,8.4em);margin-top:.14em;font-size:clamp(34px,8.6vw,150px)}
+.v2 .compose-barre::before,.v2 .compose-barre::after{content:"";position:absolute;top:0;bottom:0;transform:skewX(-14deg)}
+.v2 .compose-barre::before{left:.04em;width:42%;background:#09693A}
+.v2 .compose-barre::after{right:0;width:38%;background:#C0202F}
+@media(max-width:520px){.v2 .compose-barre{font-size:9.6vw}}
+
+/* =====================================================================
+   16. Movimento ridotto
+   ===================================================================== */
+@media(prefers-reduced-motion:reduce){
+  .v2 *,.v2 *::before,.v2 *::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .v2 .ticker .run,.v2 .mq .run{animation:none;transform:none}
+  .v2 .scene-bg img,.v2 .wall img{animation:none;transform:none}
+  .js .v2 .rv2{opacity:1;transform:none}
+  .js .v2 .compose span{opacity:1;transform:none;animation:none}
+  .v2 .arrow svg{animation:none}
+}
+
+/* =====================================================================
+   17. Stampa — la home diventa un documento chiaro in A4
+   ===================================================================== */
+@media print{
+  .v2 .hdr,.v2 .arrow,.v2 .play,.v2 .skip,.v2 .ticker,.v2 .mq,.v2 .rail-hint{display:none !important}
+  .v2{background:#fff;color:var(--ink);font-size:10.5pt}
+  .v2 .scene{min-height:0;display:block;background:#fff;color:var(--ink);page-break-inside:avoid}
+  .v2 .scene .in{padding:16px 0}
+  .v2 .scene-bg,.v2 .veil,.v2 .grain,.v2 .wall{display:none !important}
+  .v2 .scene .in :is(h1,h2,p,.giant,.claim,.say,.kick){text-shadow:none}
+  .v2 .giant{font-size:26pt;color:var(--forest)}
+  .v2 .giant.sm{font-size:24pt}
+  .v2 .giant.xs{font-size:18pt}
+  .v2 .counts b{font-size:24pt;color:var(--forest)}
+  .v2 .counts .c{border-color:var(--signal)}
+  .v2 .facewall{grid-template-columns:repeat(8,1fr)}
+  .v2 .facewall figcaption{color:var(--ink);background:none;position:static;padding:3px 0;text-shadow:none}
+  .v2 .rail{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible}
+  .v2 .rail .stop figure{border-color:var(--line)}
+  .v2 .terr{grid-template-columns:1fr 200px}
+  .v2 .badge-ln,.v2 .wbadge,.v2 .poster-v{border-color:var(--line);background:#fff;color:var(--ink)}
+  .v2 .ftr{background:#fff;color:var(--ink);border-top:1px solid var(--line)}
+  .v2 .ftr a{color:var(--muted)}
+  .js .v2 .rv2{opacity:1 !important;transform:none !important}
+  .js .v2 .compose span{opacity:1 !important;transform:none !important;animation:none !important}
+  .v2 .b{border:1px solid var(--line);box-shadow:none;color:var(--ink) !important;background:#fff !important}
+  .v2 .scene,.v2 .terr,.v2 .wbadge,.v2 .three .p{break-inside:avoid}
+}
+
+/* =====================================================================
+   18. Novità della v4 (nuova identità, 01/10/2026)
+   ===================================================================== */
+/* titoli blu sulle superfici chiare, bianchi su quelle piene */
+.v2 :is(.band.light,.band.paper,.scene.light) :is(h1,h2,.giant){color:var(--forest)}
+.v2 :is(.band.light,.band.paper,.scene.light) .eyebrow2::before{background:var(--forest)}
+.v2 .eyebrow2::before{width:30px;height:4px;border-radius:0;transform:skewX(-14deg)}
+
+/* superficie con la sfumatura di brand: sopra solo bianco */
+.v2 .grad-brand{background:var(--grad-brand);background-color:var(--forest);color:#fff}
+.v2 .grad-brand :is(h1,h2,h3,.giant){color:#fff}
+.v2 .grad-brand .b-sig{background:#fff;color:var(--forest)}
+.v2 .wordmark-bianco{display:block;height:clamp(30px,3.4vw,46px);width:auto;margin:0 auto 26px}
+
+/* fascia chiara di servizio (era «band card», ora «band paper») */
+.v2 .band.paper{background:var(--tenue);color:var(--ink)}
+
+/* riquadro che rimanda a un'altra parte del sito */
+.v2 .rimando{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 34px;align-items:center;
+  background:#fff;color:var(--ink);border:2px solid var(--forest);border-radius:18px;
+  padding:clamp(20px,3vw,30px) clamp(20px,3vw,34px);box-shadow:0 18px 40px -26px rgba(10,14,40,.45)}
+.v2 .rimando h2{font-size:clamp(20px,2.2vw,30px);line-height:1.05;color:var(--forest);margin:6px 0 8px}
+.v2 .rimando p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.5;max-width:60ch}
+.v2 .rimando .tag{display:inline-block;background:var(--signal);color:var(--ink);border-radius:999px;
+  padding:4px 12px;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:700px){.v2 .rimando{grid-template-columns:1fr}}
+
+/* tre righe con il numero: fascia «Per gli amministratori» */
+.v2 .tre-righe{list-style:none;margin:clamp(22px,3vh,32px) 0 0;padding:0;display:grid;gap:0;max-width:860px}
+.v2 .tre-righe li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px;padding:18px 0;border-top:1px solid var(--line);align-items:baseline}
+.v2 .tre-righe li:last-child{border-bottom:1px solid var(--line)}
+.v2 .tre-righe b{font-family:var(--display);font-stretch:var(--wide);font-weight:850;font-size:1.5rem;line-height:1;color:var(--signal-ink)}
+.v2 .tre-righe span{font-size:clamp(16px,1.3vw,18px);line-height:1.5}
+.v2 .tre-righe strong{color:var(--forest)}
+.v2 .band.dark .tre-righe li{border-color:rgba(255,255,255,.22)}
+.v2 .band.dark .tre-righe b{color:var(--signal)}
+.v2 .band.dark .tre-righe strong{color:#fff}
+.v2 .hdr .b{gap:.3em}
+/* monogrammi (persone senza ritratto) sulle superfici blu */
+.v2 .scene:not(.light) :is(.team,.people) .mono,.v2 .band.dark .people .mono{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff}
+.v2 .scene .in .rimando :is(h2,p){text-shadow:none}
+.v2 .scene .in .rimando p{color:var(--muted)}

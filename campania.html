@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EcoDigital Campania · EcoDigital</title>
+<meta name="description" content="Le 13 tappe campane della rete EcoDigital dal 2023 al 2026: Napoli, Pompei, Vietri sul Mare, Ischia, Cercola, Santa Maria Capua Vetere e Salerno, con l'EcoDigital Tourism Summit e la campagna Make Pizza Not War.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+/* --- fascia chiara con le schede --- */
+.v2 .zone{background:var(--bg);color:var(--ink);padding:clamp(48px,7vw,96px) 0}
+.v2 .zone.thin{padding:clamp(40px,6vw,76px) 0;border-top:1px solid var(--line)}
+.v2 .zone .eyebrow2{color:var(--signal-ink)}
+.v2 .zone h2.giant{color:var(--forest)}
+.v2 .zone p.say{color:var(--muted)}
+.v2 .zone .b-line{color:var(--forest);border-color:var(--line)}
+
+/* --- le due persone del gruppo campano --- */
+.v2 .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:clamp(24px,3.4vh,38px)}
+.v2 .duo article{margin:0;background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(20px,2.6vw,30px)}
+.v2 .duo h3{margin:0;font-size:1.1rem;letter-spacing:-.02em;color:var(--forest)}
+.v2 .duo .rl{display:block;margin-top:6px;font-size:.66rem;text-transform:uppercase;letter-spacing:.13em;
+  font-weight:800;color:var(--signal-ink)}
+.v2 .duo p{margin:12px 0 0;font-size:.93rem;line-height:1.55;color:var(--muted)}
+@media(max-width:620px){.v2 .duo{grid-template-columns:1fr}}
+
+/* --- il summit --- */
+.v2 .summit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:clamp(24px,4vw,54px);
+  align-items:start;margin-top:clamp(26px,4vh,44px)}
+.v2 .summit figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.22)}
+.v2 .summit figure img{width:100%;height:auto;display:block}
+.v2 .summit .righe{margin:22px 0 0;padding:0;list-style:none;font-size:.92rem;line-height:1.5}
+.v2 .summit .righe li{padding:9px 0;border-top:1px solid rgba(255,255,255,.18)}
+.v2 .summit .righe li b{font-weight:700;color:var(--signal)}
+@media(max-width:820px){.v2 .summit{grid-template-columns:1fr}}
+
+/* --- linea del tempo delle tappe campane --- */
+.v2 .tl2{margin-top:clamp(30px,5vh,52px);border-top:1px solid rgba(255,255,255,.18)}
+.v2 .tl2 .anno{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;
+  letter-spacing:-.035em;font-size:clamp(34px,5vw,64px);line-height:1;color:var(--signal);
+  margin:clamp(26px,4vh,46px) 0 0;padding-top:clamp(16px,2.4vh,26px);border-top:2px solid var(--signal);
+  font-variant-numeric:tabular-nums}
+.v2 .tl2 .anno:first-child{margin-top:0;border-top:0;padding-top:clamp(18px,2.6vh,28px)}
+.v2 .tl2 .anno small{display:block;font-family:var(--font);font-stretch:normal;font-weight:700;
+  font-size:.66rem;letter-spacing:.16em;margin-top:9px;color:rgba(255,255,255,.6)}
+.v2 .tl2 .tappa{display:grid;grid-template-columns:132px minmax(0,1fr);gap:clamp(16px,2.4vw,30px);
+  padding:clamp(20px,3vh,30px) 0;border-bottom:1px solid rgba(255,255,255,.18);align-items:start}
+.v2 .tl2 .tappa figure{margin:0;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.07);aspect-ratio:3/4}
+.v2 .tl2 .tappa img{width:100%;height:100%;object-fit:cover}
+.v2 .tl2 .tappa figure.orizz{aspect-ratio:3/4;display:grid;place-items:center}
+.v2 .tl2 .tappa figure.orizz img{object-fit:contain}
+.v2 .tl2 .when{display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:800;color:var(--signal)}
+.v2 .tl2 .when em{font-style:normal;color:rgba(255,255,255,.72)}
+.v2 .tl2 h4{font-size:clamp(19px,1.9vw,25px);line-height:1.16;letter-spacing:-.025em;font-weight:700;
+  margin:9px 0 8px;text-wrap:balance}
+.v2 .tl2 .dove{font-size:.84rem;opacity:.72;margin:0 0 8px}
+.v2 .tl2 .chi{font-size:.86rem;line-height:1.5;opacity:.82;margin:0}
+.v2 .tl2 .chi b{font-weight:700;opacity:.7;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  display:block;margin-bottom:3px}
+@media(max-width:620px){.v2 .tl2 .tappa{grid-template-columns:88px minmax(0,1fr);gap:14px}}
+
+/* --- campagna della pizza --- */
+.v2 .pizza{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:clamp(24px,4vw,50px);
+  align-items:center;margin-top:clamp(24px,3.6vh,42px)}
+.v2 .pizza figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.v2 .pizza figure img{width:100%;height:auto;display:block}
+.v2 .pizza ul{margin:18px 0 0;padding:0;list-style:none;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:4px 22px;font-size:.92rem}
+.v2 .pizza ul li{padding:7px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.v2 .pizza ul li b{color:var(--ink);font-weight:700}
+@media(max-width:760px){.v2 .pizza{grid-template-columns:1fr}}
+
+/* --- rapporto in pdf --- */
+.v2 .pdf{display:inline-flex;align-items:center;gap:14px;margin-top:22px;padding:16px 22px;
+  border:1px solid var(--line);border-radius:14px;background:var(--card);text-decoration:none;color:var(--ink)}
+.v2 .pdf b{display:block;font-size:.98rem;letter-spacing:-.01em}
+.v2 .pdf span{display:block;margin-top:4px;font-size:.76rem;color:var(--muted)}
+.v2 .pdf:hover{border-color:var(--signal-ink)}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html">Rete</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="sfide.html" aria-current="page">Territori</a>
+      <a href="eventi/index.html">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html">Blog</a>
+      <a href="stampa.html">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+<main id="main">
+
+<!-- ====================================================== APERTURA -->
+<section class="scene short">
+  <div class="scene-bg"><img src="img/foto/loc-2025-04-11.jpg" alt="Il tavolo dei relatori di un incontro EcoDigital a Napoli" width="1000" height="749"></div>
+  <div class="veil f80"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="in"><div class="wrap">
+    <p class="kick">Napoli · Pompei · Vietri sul Mare · Ischia · Cercola · Santa Maria Capua Vetere · Salerno</p>
+    <h1 class="giant sm">EcoDigital Campania.</h1>
+    <p class="say" style="margin-top:24px;max-width:58ch">Il gruppo campano è quello che si muove di più: 13 incontri dal 2023 a oggi, quasi tutti su cibo, turismo e territorio, con sindaci, artigiani, chef, startupper e professori seduti allo stesso tavolo. Lo coordina Christian Cutino.</p>
+    <p class="say" style="margin-top:14px;max-width:58ch;opacity:.8">Fino a settembre 2026 questa roba stava su un sito a parte, ecodigitalcampania.it. Quel sito chiude: locandine, nomi e date sono tutti qui.</p>
+    <div class="acts">
+      <a class="b b-sig" href="#tappe">Le tappe campane</a>
+      <a class="b b-line" href="#summit">Il Tourism Summit</a>
+    </div>
+  </div></div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="run">
+  <i>Napoli</i><i>Pompei</i><i>Vietri sul Mare</i><i>Ischia</i><i>Cercola</i><i>Santa Maria Capua Vetere</i><i>Salerno</i>
+  <i>Napoli</i><i>Pompei</i><i>Vietri sul Mare</i><i>Ischia</i><i>Cercola</i><i>Santa Maria Capua Vetere</i><i>Salerno</i>
+</div></div>
+
+<!-- ====================================================== CHI LO TIENE -->
+<section class="zone" id="chi">
+  <div class="wrap">
+    <p class="eyebrow2 rv2">Chi lo tiene</p>
+    <h2 class="giant xs rv2" data-d="1">Due persone, una regione</h2>
+    <div class="duo">
+      <article class="rv2" data-d="2">
+        <h3>Christian Cutino</h3><span class="rl">Coordinatore EcoDigital Campania</span>
+        <p>Food influencer, in rete dal 2023. Modera quasi tutti gli incontri campani e porta sul palco chi lavora davvero: pizzaioli, agricoltori, artigiani, ragazzi con una startup. È salito anche sui palchi nazionali, da Castellammare di Stabia nel 2024 a TuttoFood nel 2026.</p>
+      </article>
+      <article class="rv2" data-d="3">
+        <h3>Emilia Di Girolamo</h3><span class="rl">EcoDigital Campania, MAVV</span>
+        <p>Dirige il Museo dell'arte, del vino e della vite di Portici. Tiene insieme il pezzo enogastronomico del gruppo campano ed è sul palco a Napoli, a Cercola, a Santa Maria Capua Vetere e alla Fabbrica Italiana dell'Innovazione.</p>
+      </article>
+    </div>
+    <p class="say rv2" data-d="3" style="margin-top:26px;max-width:60ch">Hai una buona pratica campana da raccontare, o un posto dove organizzare un incontro? Scrivi ad Alessandro Di Capua o a Michele D'Orso: <b>info@ecodigital.it</b>.</p>
+  </div>
+</section>
+
+<!-- ====================================================== IL SUMMIT -->
+<section class="scene mid" id="summit" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">L'appuntamento più grande</p>
+    <h2 class="giant xs rv2" data-d="1">EcoDigital Tourism Summit 2026</h2>
+    <div class="summit">
+      <div>
+        <p class="say rv2" data-d="2" style="margin-top:0">Il 13 luglio 2026, all'Hotel Bristol di Vietri sul Mare, otto sindaci della Campania e del Cilento sono saliti sullo stesso palco con l'assessore regionale al Turismo, l'Università Federico II e le imprese del territorio, per parlare di comuni smart e turismo diffuso. L'ha promosso <b>SOS Terra ETS</b> con la rete EcoDigital.</p>
+        <ul class="righe rv2" data-d="3">
+          <li><b>Quando</b> lunedì 13 luglio 2026, dalle 18</li>
+          <li><b>Dove</b> Hotel Bristol, via Mazzini 232, Vietri sul Mare</li>
+          <li><b>Saluti</b> Giovanni De Simone, sindaco di Vietri sul Mare, e Vittorio Mendozzi</li>
+          <li><b>I sindaci</b> Frattamaggiore, Gioi, Pollica, Pietrelcina, Santo Stefano del Sole, Castellabate, Ottati, Mercogliano</li>
+          <li><b>Per la Regione</b> Vincenzo Maraio, assessore al Turismo, e Rosanna Romano</li>
+          <li><b>Modera</b> Christian Cutino</li>
+          <li><b>Partner</b> Pro Loco Vietri sul Mare, distretto turistico Costa d'Amalfi, RCS Digital Radio, Campania da Vivere</li>
+        </ul>
+      </div>
+      <figure class="rv2" data-d="2">
+        <img src="img/foto/ec-ets-lineup.jpg" alt="Locandina con il programma completo dell'EcoDigital Tourism Summit del 13 luglio 2026 a Vietri sul Mare" width="800" height="1000" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== LE TAPPE -->
+<section class="scene" id="tappe" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">L'archivio campano</p>
+    <h2 class="giant xs rv2" data-d="1">Dal 2026 al 2023.</h2>
+    <p class="say rv2" data-d="2" style="margin-top:18px;max-width:58ch">Nomi, date e luoghi vengono dalle locandine e dalle registrazioni di Radio Radicale. Le stesse tappe stanno anche nell'archivio nazionale, in <a href="eventi.html" style="color:var(--signal)">Tappe</a>.</p>
+    <div class="tl2">
+
+      <h3 class="anno rv2">2026<small>Due tappe</small></h3>
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2026-07-13.jpg" alt="Locandina dell'EcoDigital Tourism Summit del 13/07/2026 all'Hotel Bristol di Vietri sul Mare" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">13.07.2026 <em>Vietri sul Mare</em></p>
+          <h4>EcoDigital Tourism Summit 2026: comuni smart, turismo diffuso e sostenibile</h4>
+          <p class="dove">Hotel Bristol, via Mazzini 232 · dalle 18, promosso da SOS Terra ETS con la rete EcoDigital</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Giovanni De Simone, sindaco di Vietri sul Mare, e Vittorio Mendozzi, consigliere con delega al turismo. Interventi di Alfonso Pecoraro Scanio, Vincenzo Maraio (assessore al Turismo della Regione Campania), Rosanna Romano (direttore generale politiche culturali e turismo della Regione), Valentina Della Corte (Federico II), Vincenzo Lipardi (Fabbrica Italiana dell'Innovazione), Luciano Pignataro; i sindaci Luigi Del Prete (Frattamaggiore), Maria Teresa Scarpa (Gioi), Stefano Pisani (Pollica), Salvatore Mazzone (Pietrelcina), Gerardo Santoli (Santo Stefano del Sole), Marco Rizzo (Castellabate), Elio Guadagno (Ottati), Vittorio D'Alessio (Mercogliano); poi Andrea Ferraioli (distretto turistico Costa d'Amalfi), Giovanni Molinari (Campania da Vivere), Teresa Del Giudice (Federico II), Donatella Taurino (Laviano), Valerio Calabrese (Museo Vivente della dieta mediterranea), Giuseppe Zaccaria (ristoratori vietresi), Cosmo Di Mauro (Pro Loco Vietri sul Mare). Modera Christian Cutino.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2026-02-17.jpg" alt="Locandina dell'incontro «Turismo, territorio e innovazione ecodigital in Campania» del 17/02/2026 a Napoli" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">17.02.2026 <em>Napoli</em></p>
+          <h4>Turismo, territorio e innovazione ecodigital in Campania</h4>
+          <p class="dove">Fabbrica Italiana dell'Innovazione, via Ponte dei Granili 24 · ore 15:30, pitch e best practice</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Vincenzo Lipardi, Alfonso Pecoraro Scanio, Vincenzo Maraio e Teresa Armato (assessora al Turismo del Comune di Napoli). Moderano Francesco Castagna ed Eugenio Gervasio. Interventi di Vito Grassi, Valentina Della Corte, Luciano Pignataro, Christian Cutino, Emilia Di Girolamo. Best practice e pitch di Raffaele De Luca, Annamaria Oliviero, Salvatore Mazzone, Stefano Giaquinto, Salvatore Santangelo, Rino Ricciardelli, Marco Razzano, Peppino Pagano, Vincenzo Castaldo, Giovanni Molinari, Alberto Carrato, Alessandro Di Capua, Riccardo Del Prete, Federico Quagliuolo.</p>
+        </div>
+      </article>
+
+      <h3 class="anno rv2">2025<small>Dieci tappe</small></h3>
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-12-28.jpg" alt="Locandina del Christmas Wine Art Fest del 28/12/2025 al Teatro Comunale di Cercola" width="705" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">28.12.2025 <em>Cercola</em></p>
+          <h4>Christmas Wine Art Fest: i prodotti tradizionali dell'area vesuviana</h4>
+          <p class="dove">Teatro Comunale, viale dei Platani · ore 17:30, con il Comune di Cercola, l'Irvat e il MAVV</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Biagio Rossi (sindaco di Cercola), Raffaele De Luca (Parco nazionale del Vesuvio) e Ciro Costagliola (Irvat). Al convegno «I PAT dell'area vesuviana: valorizzazione, tutela e salute» Gianni Cicia, Annamaria Colao, Teresa Del Giudice, Christian Cutino ed Emilia Di Girolamo per EcoDigital Campania, Alfonso Pecoraro Scanio, Eugenio Gervasio, Dario Duro, Toti Lange, Oscar Leonessa, Giovanni Molinari; modera Antonio Vastarelli.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="1">
+        <figure class="orizz"><img src="img/foto/loc-2025-12-20.jpg" alt="Christian Cutino parla al microfono davanti agli studenti durante la Festa del Mandarino Flegreo" width="1000" height="779" loading="lazy"></figure>
+        <div>
+          <p class="when">20.12.2025 <em>Ischia</em></p>
+          <h4>Festa del Mandarino Flegreo: gli studenti e le eccellenze agroalimentari</h4>
+          <p class="dove">Istituto Professionale «V. Telese»</p>
+          <p class="chi"><b>Per la rete</b>Christian Cutino con gli studenti dell'istituto, su come un approccio ecodigital tutela le produzioni locali e aiuta a far nascere imprese giovani.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2025-12-12.jpg" alt="Locandina dell'incontro «Costruire il futuro» del 12/12/2025 a Santa Maria Capua Vetere" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">12.12.2025 <em>Santa Maria Capua Vetere</em></p>
+          <h4>Costruire il futuro: proposte ecodigital per una regione giovane</h4>
+          <p class="dove">Amico Bio, piazza Adriano 35 · ore 18, pitch di esperti, startupper, artigiani e innovatori</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Jose Marano (presidente dell'Intergruppo EcoDigital all'ARS), i consiglieri regionali Raffaele Aveta, Gennaro Saiello e Davide D'Errico, Enrico Amico (Amico Bio, Coldiretti Caserta), Francesco Castagna (Agilea), Emilia Di Girolamo (MAVV), Manuel Lombardi (Le Campestre, Terranostra), Gianluca Pirro (pizzaioli napoletani); modera Christian Cutino.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-12-08.jpg" alt="Locandina dell'incontro «Verso #CucinaItalianaUnesco» dell'8/12/2025 a Vietri sul Mare" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">08.12.2025 <em>Vietri sul Mare</em></p>
+          <h4>Verso #CucinaItalianaUnesco: cibo, artigianato e biodiversità</h4>
+          <p class="dove">Ristorante Dal Pescatore, via Cristoforo Colombo 50 · ore 17, con la ceramica del maestro Lucio Ronca per gli otto anni dell'arte del pizzaiuolo napoletano patrimonio Unesco</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Alfonso Pecoraro Scanio, Giovanni De Simone, Luciano Pignataro e Vittorio Mendozzi. Interventi di Giuseppe Zaccaria, Cosmo di Mauro, Lucio Ronca, Iolanda Busillo, Fabio Amato, Roberta Di Giovanni e Gaetano Cataldo; modera Christian Cutino.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="1">
+        <figure><img src="img/foto/loc-2025-11-08.jpg" alt="Locandina dell'incontro «Il futuro è adesso» dell'8/11/2025 al Teatro Sannazaro di Napoli" width="800" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">08.11.2025 <em>Napoli</em></p>
+          <h4>Il futuro è adesso: giovani e innovazione per una Campania da vivere</h4>
+          <p class="dove">Teatro Sannazaro, via Chiaia 157 · ore 10:30, incontro pubblico</p>
+          <p class="chi"><b>Sul palco</b>Saluti di Gaetano Manfredi (sindaco di Napoli), Roberto Fico, Alfonso Pecoraro Scanio, Jose Marano, Lara Sansone (Teatro Sannazaro) e Christian Cutino; modera Luciano Pignataro. Interventi di Franco Manna, Lello Esposito, Emilia Di Girolamo, Carmine Esposito, Vincenzo Durazzo, Luca Coppola, Lello Savonardo, Patrizio Rispo, Antonio Evangelista, Mario Talarico, Errico Porzio, Anselmo Pellizzi, Angelica De Ieso, Nando Salemme, Daniele Famengo, Bruno Zarzaca, Giuseppe Russo, Giovanni Molinari, Ettore Paternìti, Federico Quagliuolo e Gianluca Calazzo.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure><img src="img/foto/loc-2025-10-20.jpg" alt="Locandina della campagna «Make Pizza Not War» del 20/10/2025 al Gambrinus di Napoli" width="801" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">20.10.2025 <em>Napoli</em></p>
+          <h4>Make Pizza Not War: campagna #NoFakeFood e #StopWar</h4>
+          <p class="dove">Bar Gambrinus, via Chiaia 1 · ore 11</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Luciano Pignataro, Christian Cutino, Luca Imbimbo (StarPack) e Vincenzo Durazzo (Napolimania); modera Emilia Di Girolamo, direttrice del Museo dell'arte, del vino e della vite.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="3">
+        <figure><img src="img/foto/loc-2025-10-18.jpg" alt="Locandina dell'incontro «Turismo, cibo e territorio» del 18/10/2025 a Pompei" width="801" height="1000" loading="lazy"></figure>
+        <div>
+          <p class="when">18.10.2025 <em>Pompei</em></p>
+          <h4>Turismo, cibo e territorio: le sfide per una Campania ecodigital</h4>
+          <p class="dove">Hotel del Sole, Sala Hermes, via Plinio 15 · ore 17</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Christian Cutino, Nunzia Valente (progetto Smartland Pompei), Fabio Postiglione (O.P. Mytilus Campaniae), Francesco Varnelli (Hotel del Sole, Varnelli Bistrot), Margherita Di Somma (Bosco de' Medici), Armando La Mura (azienda Cannavacciuolo), Vincenzo Malafronte (florovivaisti campani), Federico Quagliuolo (Storie di Napoli, app Ferdinando), Eugenio Gervasio (MAVV di Portici); modera Alfonso Del Forno.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="1">
+        <figure class="orizz"><img src="img/foto/loc-2025-09-30.jpg" alt="Il tavolo dei relatori dell'incontro «Giovani e futuro» del 30/09/2025 a Napoli" width="1000" height="538" loading="lazy"></figure>
+        <div>
+          <p class="when">30.09.2025 <em>Napoli</em></p>
+          <h4>Giovani e futuro: turismo, cultura e innovazione</h4>
+          <p class="dove">Ore 11:07, con il patrocinio della Fondazione UniVerde e il contributo dell'Osservatorio Giovani della Federico II · ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Christian Cutino, Alfonso Pecoraro Scanio, Lello Savonardo (Osservatorio Giovani, Federico II), Carmine Esposito (La Compagnia dei Figliuoli), Francesco Pio Fiorillo (Lympha), Sveva Schiassi (Rural Hack), Antonio Evangelista (Space Factory), Claudio Marcedula (Nea Connect), Julia Gulisano (I cook for you), Emilia Di Girolamo (MAVV), Vincenzo Parente (Apple Training Center del liceo Caccioppoli), Alessandro Di Capua.</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="2">
+        <figure class="orizz"><img src="img/foto/loc-2025-04-11.jpg" alt="Il tavolo dei relatori del dibattito «Campania innovazioni in rete» dell'11/04/2025 a Napoli" width="1000" height="749" loading="lazy"></figure>
+        <div>
+          <p class="when">11.04.2025 <em>Napoli</em></p>
+          <h4>Campania innovazioni in rete</h4>
+          <p class="dove">Ore 16:33, dibattito della rete EcoDigital ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Luana Cotena (Alare), Tommaso Marrone (CSF), Raffaele Esposito (Parco parlante), Ivan Acampora (Greenverse), Alfonso Pecoraro Scanio, Raffaele De Luca (Parco nazionale del Vesuvio), Vincenzo Martino (VeniVerso), Annalisa Buffardi (INDIRE), Stefano Cinti (Federico II), Rosario Palumbo (Comune di Napoli), Sossio Aversana (Focus Green), Federico Quagliuolo (Storie di Napoli), Flavia Sorrentino (Consiglio comunale di Napoli), Christian Cutino, Gennaro Saiello (Consiglio regionale della Campania), Raffaele Savonardo (Federico II), Emilia Di Girolamo (MAVV).</p>
+        </div>
+      </article>
+      <article class="tappa rv2" data-d="3">
+        <figure class="orizz"><img src="img/foto/loc-2025-01-30.jpg" alt="Il tavolo dei relatori del convegno «Agrifood e turismo» del 30/01/2025 a Salerno" width="1000" height="537" loading="lazy"></figure>
+        <div>
+          <p class="when">30.01.2025 <em>Salerno</em></p>
+          <h4>Agrifood e turismo: la sfida ecodigital a Salerno</h4>
+          <p class="dove">Ore 16:28, convegno di EcoDigital con la Fondazione UniVerde · ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Christian Cutino, Alfonso Pecoraro Scanio, Luciano Pignataro, Giuseppe Pagano (azienda agricola San Giuseppe), Giuseppe Coletti (Authentico), Iolanda Busillo (Lemonline), Piercamillo Falasca (Enzima12), Maurizio Vessa (Comune di Salerno), Giampaolo Iacomino (Riso Ellebi), Giampaolo Raimondi ed Emilio Di Stasi (Torre Lama), Gianluca Quaranta (Alburn Natura), Alessandro Di Capua, Alfonso Del Forno.</p>
+        </div>
+      </article>
+
+      <h3 class="anno rv2">2023<small>Una tappa</small></h3>
+      <article class="tappa rv2" data-d="1">
+        <figure class="orizz"><img src="img/foto/loc-2023-07-17.jpg" alt="Il tavolo dei relatori del convegno «La rivoluzione ecodigital» del 17/07/2023 a Roma" width="1000" height="536" loading="lazy"></figure>
+        <div>
+          <p class="when">17.07.2023 <em>Roma</em></p>
+          <h4>La rivoluzione ecodigital: best practice per la transizione ecologica e digitale</h4>
+          <p class="dove">Ore 16:45, convegno della rete ripreso da Radio Radicale</p>
+          <p class="chi"><b>Sul palco</b>Alfonso Pecoraro Scanio, Alfonso Celotto (Roma Tre), Loredana De Petris, Agostino Santillo, Costanza Andreini (Meta), Marco Colarossi, Matteo Molesti, Giuseppe Conte, Luca Carabetta, Matteo Testi (Deep Learning Italia), Luca Lopomo (sindaco di Crispiano), Francesco Paolo Russo (ANGI), Andrea Grieco (AWorld), Anselmo Pellizzi, Irene Licastro (Aspire Institute), Gabriele Carneglia e Angelo Di Mauro (LUISS), Leonardo Ruzzante, Arash Moazenchi (Rcoffee), Chiara Cinelli, Manuel Urzì, Diana Zagarella (Olivair), Christian Cutino, Luigi Bisogno.</p>
+        </div>
+      </article>
+
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== MAKE PIZZA NOT WAR -->
+<section class="zone" id="pizza">
+  <div class="wrap">
+    <p class="eyebrow2 rv2">La campagna</p>
+    <h2 class="giant xs rv2" data-d="1">Make Pizza Not War</h2>
+    <div class="pizza">
+      <figure class="rv2" data-d="2">
+        <img src="img/foto/ec-pizza-campagna.jpg" alt="Grafica della campagna Make Pizza Not War con il cartone della pizza disegnato da Napolimania e l'elenco delle pizzerie" width="804" height="1000" loading="lazy">
+      </figure>
+      <div>
+        <p class="say rv2" data-d="2" style="margin-top:0">Partita il 20 ottobre 2025 al Gambrinus di Napoli con gli hashtag <b>#NoFakeFood</b> e <b>#StopWar</b>: cibo vero e niente guerre, sulla stessa scatola. Il 29 e il 30 ottobre le pizzerie che hanno aderito hanno servito le pizze nel cartone disegnato da Napolimania.</p>
+        <ul class="rv2" data-d="3">
+          <li><b>Alleria</b> Pompei</li>
+          <li><b>Varnelli</b> Pompei</li>
+          <li><b>Teresa Iorio</b> Napoli</li>
+          <li><b>Donna Brigida</b> Cercola</li>
+          <li><b>Maturazioni</b> San Giuseppe Vesuviano</li>
+          <li><b>Pizza Guys</b> Caserta</li>
+          <li><b>Antica Pizzeria da Michele</b> Salerno e Pompei</li>
+        </ul>
+        <p class="say rv2" data-d="3" style="margin-top:20px;font-size:.95rem">Sul palco del lancio: Alfonso Pecoraro Scanio, Luciano Pignataro, Christian Cutino, Luca Imbimbo di StarPack e Vincenzo Durazzo di Napolimania; modera Emilia Di Girolamo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== IL RAPPORTO -->
+<section class="zone thin" id="rapporto">
+  <div class="wrap">
+    <p class="eyebrow2 rv2">Il documento</p>
+    <h2 class="giant xs rv2" data-d="1">Made in Italy, cucina italiana e tutela del sistema agroalimentare</h2>
+    <p class="say rv2" data-d="2" style="margin-top:18px;max-width:62ch">Il rapporto di marzo 2026 che il gruppo campano porta agli incontri sul cibo: cosa chiedono i cittadini su etichette, tracciabilità e difesa del made in Italy. È il documento citato a TuttoFood il 12 maggio 2026 e a Vietri sul Mare.</p>
+    <a class="pdf rv2" data-d="2" href="doc/rapporto-made-in-italy-cucina-italiana-marzo-2026.pdf" download>
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M6 2h8l4 4v16H6zm8 1.5V7h3.5z" opacity=".22"/><path fill="none" stroke="currentColor" stroke-width="1.7" d="M6.8 2.8h7l4.2 4.2v14.2H6.8z"/><path fill="none" stroke="currentColor" stroke-width="1.7" d="M13.6 2.9V7.4h4.5"/></svg>
+      <span><b>Il rapporto in PDF</b><span>Marzo 2026 · 446 KB</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ====================================================== CHIUSURA -->
+<section class="scene mid short" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow2 rv2">Il sito regionale</p>
+        <h2 class="giant xs rv2" data-d="1">ecodigitalcampania.it chiude qui</h2>
+        <p class="say rv2" data-d="2" style="margin-top:20px">Le locandine, i nomi, le date e il rapporto in PDF che stavano sul sito campano sono tutti su queste pagine. Chi cercava il sito regionale trova qui le stesse cose, dentro l'archivio di tutta la rete.</p>
+        <div class="acts">
+          <a class="b b-sig rv2" data-d="3" href="eventi.html">L'archivio di tutte le tappe</a>
+          <a class="b b-line rv2" data-d="3" href="sfide.html">Le buone notizie dai territori</a>
+        </div>
+      </div>
+      <figure class="rv2" data-d="2" style="margin:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.22);background:#fff">
+        <img src="img/foto/ec-logo.jpg" alt="Logo di EcoDigital Campania" width="1000" height="379" loading="lazy" style="width:100%;height:auto;display:block">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale della transizione ecologica e digitale. Dal 2021 giriamo l'Italia con amministratori, imprese, startup e studenti.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, il canale delle buone notizie ecologiche e digitali · <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.rv2'));
+  if(!items.length) return;
+  if(!('IntersectionObserver' in window)){ items.forEach(function(n){n.classList.add('shown');}); return; }
+  setTimeout(function(){ items.forEach(function(n){n.classList.add('shown');}); }, 1500);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){
+      var i=+(en.target.getAttribute('data-d')||0);
+      setTimeout(function(){en.target.classList.add('shown');}, i*80);
+      io.unobserve(en.target); } });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+  items.forEach(function(n){io.observe(n);});
+})();
+</script>
+
+</body>
+</html>

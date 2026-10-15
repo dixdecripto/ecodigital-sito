@@ -1,0 +1,30 @@
+EcoDigital · mozione tipo M3 · Dati aperti in 30 giorni
+Proposta 02 del mazzo · Dati
+Bozza da adattare. Le parti tra [ ] si completano con i dati del Comune.
+Contatti: Alessandro Di Capua e Michele D'Orso, info@ecodigital.it
+
+Mozione: i dati raccolti con soldi pubblici escono in formato aperto entro 30 giorni
+
+Il Consiglio comunale di [Comune],
+
+Premesso che
+
+  • il Comune raccoglie o fa raccogliere dati con sensori, centraline, droni e telecamere, per [qualità dell'aria, traffico, rumore, acqua, rifiuti];
+  • a Taranto il progetto europeo Prometheus mette il Comune accanto a partner italiani e greci, con sensori e siti pilota tra il Mar Piccolo e San Vito;
+  • quei dati riguardano chi vive nel territorio e sono pagati con risorse pubbliche.
+
+Considerato che
+
+  • le norme sui dati aperti delle pubbliche amministrazioni [riferimento da verificare] già chiedono di pubblicare i dati in formato aperto;
+  • un tempo certo, 30 giorni dalla raccolta, rende la regola verificabile;
+  • i dati personali e quelli che riguardano la sicurezza restano protetti e si pubblicano solo in forma aggregata e anonima.
+
+Impegna il Sindaco e la Giunta a
+
+  • fare entro sei mesi l'elenco dei dati raccolti da sensori, droni e telecamere finanziati con risorse pubbliche;
+  • pubblicarli in formato aperto sul sito del Comune entro 30 giorni dalla raccolta, con una pagina che spieghi cosa misurano;
+  • inserire l'obbligo nei contratti e nelle convenzioni future con fornitori e partner di progetto;
+  • escludere i dati personali e quelli che riguardano la sicurezza, pubblicandoli solo in forma aggregata e anonima;
+  • riferire al Consiglio ogni 12 mesi su quanti dati sono stati pubblicati.
+
+Fatto citato: progetto europeo Prometheus, Comune di Taranto.

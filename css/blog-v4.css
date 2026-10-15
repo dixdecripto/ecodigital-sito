@@ -1,0 +1,71 @@
+/* =====================================================================
+   EcoDigital, sito v4: pelle nuova degli editoriali (blog/*.html)
+   Si carica DOPO lo stile interno di ogni editoriale e lo corregge.
+   brand.css sta in un livello basso: queste regole vincono sempre.
+   ===================================================================== */
+@import url("brand.css?v=20261001") layer(brand);
+
+:root{--wide:125%;--tenue:#F4F5FA;--blu-tenue:#E9ECF7;--blu-scuro:#1F2D6E}
+body{background:#fff}
+
+/* titoli: Archivo esteso, maiuscolo, blu */
+h1,h2{font-family:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;font-stretch:var(--wide);
+  text-transform:uppercase;font-weight:850;letter-spacing:-.01em;color:var(--forest)}
+h3,h4{font-family:var(--font);text-transform:none;font-stretch:normal;color:inherit}
+.article h1{font-size:clamp(1.7rem,3.9vw,2.85rem);line-height:1.04;max-width:none;overflow-wrap:break-word}
+.article h2{font-size:clamp(1.08rem,1.9vw,1.36rem);line-height:1.15;letter-spacing:0;margin:42px 0 12px}
+.article .eyebrow{color:var(--signal-ink)}
+.ask h2{font-size:clamp(1.15rem,2.2vw,1.5rem)}
+.summary{border-left-color:var(--forest)}
+.eyebrow::before{background:var(--forest)}
+
+/* header bianco con il logo istituzionale */
+.site{background:rgba(255,255,255,.96)}
+.site .bar{gap:14px;padding:12px 0}
+.logo{height:auto;display:inline-flex}
+.logo img{height:24px;width:auto;display:block}
+nav.main{margin-left:auto}
+nav.main a{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#3A3F52;padding:7px 8px}
+nav.main a:hover,nav.main a[aria-current="page"]{color:var(--forest);background:var(--blu-tenue)}
+.kicker{display:none}
+.btn{min-height:0}
+.btn-p{background:var(--signal);color:#14161F}
+.btn-d{background:var(--forest);color:#fff}
+@media(max-width:1100px){
+  .site .bar{flex-wrap:wrap;gap:8px 10px}
+  nav.main{order:3;width:100%;margin-left:-4px;padding-bottom:2px}
+  .site .btn{margin-left:auto}
+}
+@media(max-width:430px){.logo img{height:20px}}
+
+/* chiusura «Diventa follower»: sfumatura di brand con il wordmark bianco */
+.signcta{background:var(--grad-brand);background-color:var(--forest);color:#fff;position:relative;overflow:hidden}
+.signcta::before{content:"";display:block;width:min(220px,60%);aspect-ratio:791.51/109.37;margin:0 auto 18px;
+  background:url("../img/logo/mono-bianco.svg") center/contain no-repeat}
+.signcta .eyebrow{color:#fff !important}
+.signcta .eyebrow::before{background:#fff}
+.signcta h2{color:#fff}
+.signcta p{color:rgba(255,255,255,.92)}
+.signcta .btn-p{background:#fff;color:var(--forest)}
+
+/* riquadri e piede */
+.ask{border-color:var(--forest)}
+.ask li::before{background:var(--blu-tenue);color:var(--forest)}
+.crumb:hover,.nextpost a:hover .t,.press a:hover .t{color:var(--forest)}
+.crumb:hover{border-color:var(--forest)}
+footer.site{background:#fff;border-top:0;position:relative}
+footer.site::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;
+  background:linear-gradient(90deg,#09693A 0 34%,#fff 34% 36%,#C0202F 36% 100%)}
+footer.site h4{color:var(--forest)}
+footer.site a:hover{color:var(--forest)}
+.impact-badge b{color:var(--forest)}
+.hero{background:var(--forest)}
+
+@media print{
+  .signcta{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .signcta::before{display:none}
+  .signcta h2,.signcta .eyebrow{color:var(--ink) !important}
+}
+.article .ask h2,.article .signcta h2{margin-top:0}
+.article .ask h2{margin-bottom:18px}
+footer.site a.impact-badge{display:inline-flex;padding:9px 8px 9px 16px}

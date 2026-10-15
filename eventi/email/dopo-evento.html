@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<title>Grazie: {{titolo}}</title>
+</head>
+<body style="margin:0;padding:0;background:#F4F5FA;-webkit-text-size-adjust:100%;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#F4F5FA;">Le foto, la prossima tappa e come seguirci.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F4F5FA;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#FFFFFF;border-radius:14px;overflow:hidden;font-family:Montserrat,Arial,Helvetica,sans-serif;color:#14161F;">
+  <!-- logo istituzionale in testo: wordmark blu, barra verde e barra rossa -->
+  <tr><td style="padding:26px 32px 18px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+      <tr><td colspan="3" style="font-family:'Arial Black',Arial,Helvetica,sans-serif;font-weight:900;font-style:italic;font-size:26px;line-height:26px;letter-spacing:-0.5px;color:#293B8E;">ECODIGITAL</td></tr>
+      <tr>
+        <td width="74" height="5" style="background:#09693A;font-size:0;line-height:0;">&nbsp;</td>
+        <td width="34" height="5" style="font-size:0;line-height:0;">&nbsp;</td>
+        <td width="62" height="5" style="background:#C0202F;font-size:0;line-height:0;">&nbsp;</td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td style="background:#293B8E;padding:30px 32px;color:#FFFFFF;">
+    <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#F7B807;">Grazie</p>
+    <h1 style="margin:0;font-family:'Arial Black',Arial,Helvetica,sans-serif;font-weight:900;font-size:28px;line-height:32px;text-transform:uppercase;">{{titolo}}</h1>
+    <p style="margin:10px 0 0;font-size:16px;line-height:22px;color:#E6E9F5;">{{quando}} · {{citta}}</p>
+  </td></tr>
+  {{#foto_url}}<tr><td style="padding:0;"><img src="{{foto_url}}" width="600" alt="Una foto dell'incontro" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>{{/foto_url}}
+  <tr><td style="padding:28px 32px 6px;font-size:16px;line-height:25px;">
+    <p style="margin:0 0 14px;">Ciao {{nome}},</p>
+    <p style="margin:0 0 14px;">grazie di essere stato dei nostri a {{citta}}.{{#presenti}} In sala eravamo in {{presenti}}.{{/presenti}} Le buone pratiche raccontate in sala le riprendiamo sul canale, con i nomi di chi le ha portate.</p>
+    {{#link_foto}}<p style="margin:0 0 18px;">Le foto sono già online: se ti ritrovi in uno scatto puoi scaricarlo e condividerlo.</p>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="background:#293B8E;border-radius:999px;"><a href="{{link_foto}}" style="display:inline-block;padding:13px 24px;font-size:15px;font-weight:700;color:#FFFFFF;text-decoration:none;">Guarda le foto</a></td>
+    </tr></table>{{/link_foto}}
+  </td></tr>
+  {{#prossimo_titolo}}<tr><td style="padding:22px 32px 6px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F4F5FA;border-radius:12px;">
+      <tr><td style="padding:18px 20px;">
+        <p style="margin:0;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#5B6070;">La prossima tappa</p>
+        <p style="margin:6px 0 2px;font-size:18px;font-weight:700;color:#14161F;">{{prossimo_titolo}}</p>
+        <p style="margin:0 0 12px;font-size:14px;color:#5B6070;">{{prossimo_quando}}</p>
+        <a href="{{prossimo_link}}" style="font-size:15px;font-weight:700;color:#293B8E;">Iscriviti</a>
+      </td></tr>
+    </table>
+  </td></tr>{{/prossimo_titolo}}
+  <tr><td style="padding:24px 32px 6px;font-size:15px;line-height:23px;">
+    <p style="margin:0 0 16px;">Sul canale raccontiamo le buone notizie ecologiche e digitali che troviamo in giro per l'Italia. Se ti va di seguirle:</p>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="background:#F7B807;border-radius:999px;"><a href="{{link_follower}}" style="display:inline-block;padding:13px 24px;font-size:15px;font-weight:700;color:#14161F;text-decoration:none;">Diventa follower</a></td>
+    </tr></table>
+  </td></tr>
+  <tr><td style="padding:24px 32px 26px;font-size:15px;line-height:23px;">
+    <p style="margin:0;">Alla prossima,<br><b>Alessandro e Michele</b><br><span style="color:#5B6070;">EcoDigital</span></p>
+  </td></tr>
+  <tr><td style="padding:22px 32px 28px;border-top:1px solid #E1E3EC;font-size:12px;line-height:18px;color:#5B6070;">
+    EcoDigital, il canale delle buone notizie ecologiche e digitali, a cura di Alessandro Di Capua e Michele D'Orso.<br>
+    Ricevi questa email perché ti sei iscritto a un incontro EcoDigital. Per domande rispondi a questa email o scrivi a {{contatto}}.
+    <a href="{{link_privacy}}" style="color:#5B6070;">Informativa privacy</a>.
+  </td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>

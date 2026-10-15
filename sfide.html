@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le buone notizie dai territori · EcoDigital</title>
+<meta name="description" content="Capri e l'Area Marina Protetta del 4 agosto 2026, i terrazzamenti della Costiera riconosciuti dalla FAO nel 2025, MITICA e Prometheus a Taranto, l'intergruppo dell'ARS con 13 deputati, il metodo di Santa Maria Capua Vetere.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+/* --- fascia chiara con le schede dei territori --- */
+.v2 .zone{background:var(--bg);color:var(--ink);padding:clamp(48px,7vw,96px) 0}
+.v2 .zone.thin{padding:clamp(40px,6vw,76px) 0;border-top:1px solid var(--line)}
+.v2 .zone .eyebrow2{color:var(--signal-ink)}
+.v2 .zone .intro{margin-top:18px;max-width:58ch;color:var(--muted);
+  font-size:clamp(15px,1.2vw,17.5px);line-height:1.6}
+.v2 .zone .acts{margin-top:24px}
+.v2 .zone .b-line{color:var(--forest);border-color:var(--line)}
+.v2 .zone .b-line:hover{border-color:var(--signal-ink)}
+
+.v2 .card{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);
+  background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  margin-top:clamp(26px,4vw,44px);box-shadow:0 24px 54px -42px rgba(10,14,40,.65)}
+.v2 .card .ph{margin:0;background:var(--forest)}
+.v2 .card .ph img{width:100%;height:100%;object-fit:cover}
+.v2 .card .body{padding:clamp(24px,3vw,42px);min-width:0}
+.v2 .card .place{display:inline-flex;align-items:center;gap:9px;padding:6px 14px;border-radius:999px;
+  background:var(--badge-bg);border:1px solid rgba(247,184,7,.4);color:var(--signal-ink);
+  font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:16px}
+.v2 .card h2{font-family:var(--display);font-stretch:125%;font-weight:800;
+  font-size:clamp(21px,2.2vw,32px);line-height:1.06;letter-spacing:-.01em;color:var(--forest);
+  margin:0 0 16px;text-wrap:balance}
+.v2 .card p{font-size:clamp(14.5px,1.05vw,16.5px);line-height:1.65;color:var(--muted);
+  margin:0 0 .95em;max-width:72ch}
+.v2 .card p b{color:var(--ink);font-weight:700}
+@media(min-width:861px){
+  .v2 .card .ph{position:relative;min-height:360px}
+  .v2 .card .ph img{position:absolute;inset:0}
+}
+@media(max-width:860px){
+  .v2 .card{grid-template-columns:1fr}
+  .v2 .card .ph img{aspect-ratio:4/3;height:auto}
+}
+/* scheda lunga: foto in alto, a tutta larghezza */
+.v2 .card.alta{grid-template-columns:minmax(0,1fr)}
+.v2 .card.alta .ph{position:static;min-height:0}
+.v2 .card.alta .ph img{position:static;width:100%;height:auto;aspect-ratio:21/9;
+  object-fit:cover;object-position:center 46%}
+@media(max-width:860px){.v2 .card.alta .ph img{aspect-ratio:16/10}}
+
+/* foto dentro la scheda */
+.v2 .inset{margin:20px 0 22px;border-radius:14px;overflow:hidden;border:1px solid var(--line);max-width:520px}
+.v2 .inset img{width:100%;height:auto}
+.v2 .inset figcaption{padding:12px 15px;font-size:.8rem;line-height:1.5;color:var(--muted);background:var(--bg)}
+.v2 .loc{float:right;width:clamp(130px,16vw,178px);margin:4px 0 16px 22px;border-radius:12px;
+  overflow:hidden;border:1px solid var(--line)}
+.v2 .loc img{width:100%;height:auto}
+.v2 .loc figcaption{padding:8px 10px;font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;
+  font-weight:800;color:var(--muted);background:var(--bg);line-height:1.35}
+@media(max-width:520px){.v2 .loc{float:none;width:150px;margin:4px 0 18px}}
+
+/* citazione */
+.v2 .cit{margin:18px 0 22px;padding:14px 0 4px 18px;border-left:3px solid var(--signal)}
+.v2 .cit p{color:var(--ink);font-size:clamp(15px,1.15vw,17.5px);line-height:1.55}
+.v2 .cit .chi{display:block;margin-top:6px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:800;color:var(--signal-ink)}
+
+/* cosa si può copiare */
+.v2 .copia{margin-top:24px;border-top:2px solid var(--signal-ink);padding-top:16px;clear:both;max-width:62ch}
+.v2 .copia h3{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;
+  color:var(--signal-ink);margin-bottom:12px}
+.v2 .copia ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.v2 .copia li{display:flex;gap:11px;font-size:.94rem;line-height:1.5;color:var(--ink)}
+.v2 .copia li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;
+  background:var(--signal-ink);margin-top:.55em}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html">Rete</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="sfide.html" aria-current="page">Territori</a>
+      <a href="eventi/index.html">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html">Blog</a>
+      <a href="stampa.html">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ====================================================== APERTURA -->
+<section class="scene short">
+  <div class="scene-bg"><img src="img/foto/s-mare.jpg" alt="Un delfino nel mare del Mediterraneo" width="950" height="634"></div>
+  <div class="veil f80"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="in"><div class="wrap">
+    <p class="kick">Capri · Costiera · Taranto · Sicilia · Santa Maria Capua Vetere</p>
+    <h1 class="giant sm">Le buone notizie dai territori.</h1>
+    <p class="say" style="margin-top:24px;max-width:58ch">Cinque posti dove una cosa è già successa, con la data e il nome di chi l'ha fatta. Sotto ogni scheda trovi le tre cose che un'altra città può copiare domani.</p>
+    <div class="acts">
+      <a class="b b-sig" href="#capri">Comincia da Capri</a>
+      <a class="b b-line" href="attivista.html">Segnalaci una buona notizia</a>
+    </div>
+  </div></div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="run">
+  <i>Capri</i><i>Costiera amalfitana</i><i>Costiera sorrentina</i><i>Taranto</i><i>Sicilia</i><i>Santa Maria Capua Vetere</i>
+  <i>Capri</i><i>Costiera amalfitana</i><i>Costiera sorrentina</i><i>Taranto</i><i>Sicilia</i><i>Santa Maria Capua Vetere</i>
+</div></div>
+
+<!-- ====================================================== CAPRI -->
+<section class="zone" id="capri">
+  <div class="wrap">
+    <p class="eyebrow2 rv2">Il primo territorio</p>
+
+    <article class="card alta rv2" data-d="1">
+      <figure class="ph"><img src="img/foto/s-capri.jpg" alt="I Faraglioni di Capri visti dal mare" width="1000" height="693" loading="lazy"></figure>
+      <div class="body">
+        <p class="place">Capri · Area Marina Protetta</p>
+        <h2>Il mare di Capri ha un perimetro di legge dal 4 agosto 2026.</h2>
+        <p>La legge sull'Area Marina Protetta dell'Isola di Capri è stata approvata il <b>4 agosto 2026</b>. Da quel giorno il mare intorno all'isola ha confini scritti, regole e qualcuno che deve misurare se funzionano.</p>
+        <p>Il 27 agosto 2026 Alfonso Pecoraro Scanio ha chiesto al Governo di istituire le aree marine protette che mancano ancora, e il lancio è stato ripreso da askanews, Italpress, Il Tempo e Capri Press. L'obiettivo si chiama <b>30x30</b>: il 30% del mare protetto entro il 2030.</p>
+        <p>L'11 settembre 2026, alle 16:30, allo Spazio Incontri del Venice Production Bridge dell'Hotel Excelsior, al Lido di Venezia, il video della rete sulle Aree Marine Protette ha ricevuto un riconoscimento del <b>Sorriso Diverso Venezia Award, XVI edizione</b>, nei giorni della 83ª Mostra Internazionale d'Arte Cinematografica. Il premio è organizzato da Università Cerca Lavoro, presieduta da Ilaria Battistelli, con Dream On, con il contributo del Ministero della Cultura e il patrocinio di Rai per la Sostenibilità ESG.</p>
+
+        <figure class="inset">
+          <img src="img/foto/s-venezia-sala.jpg" alt="Alfonso Pecoraro Scanio, Alessandro Di Capua e Michele D'Orso seduti allo Spazio Incontri del Venice Production Bridge, sullo schermo un fotogramma del video con la costa di Capri" width="1000" height="750" loading="lazy">
+          <figcaption>Lido di Venezia, 11 settembre 2026. Alfonso Pecoraro Scanio, Alessandro Di Capua e Michele D'Orso allo Spazio Incontri del Venice Production Bridge, sullo schermo i Faraglioni di Capri.</figcaption>
+        </figure>
+
+        <p>È il terzo anno di fila che la rete e la Fondazione UniVerde portano un video alla Mostra: nel settembre 2024 lo spot sul turismo sostenibile, il 6 settembre 2025 il video «Mare Nostrum» per «Mediterraneo da remare».</p>
+
+        <div class="cit">
+          <p>«Premio a Venezia al video Ecodigital Verso il 2050 per le aree marine protette. Bello vedere soddisfazione di Ale e Michele che hanno reso concreto il progetto 30X30. Entro il 2030 30% di aree marine protette.»</p>
+          <span class="chi">Alfonso Pecoraro Scanio, 11 settembre 2026</span>
+        </div>
+
+        <div class="copia"><h3>Cosa si può copiare</h3>
+          <ul>
+            <li>Scrivere il perimetro dell'area protetta dentro una legge, con una data.</li>
+            <li>Pubblicare i dati del monitoraggio in formato aperto e aggiornarli.</li>
+            <li>Chiedere insieme le aree marine che mancano, come il 27 agosto 2026.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ====================================================== IL DELFINO -->
+<section class="scene mid short" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow2 rv2">Il video</p>
+        <h2 class="giant xs rv2" data-d="1">«Il Viaggio del Delfino», da Capri a Taranto.</h2>
+        <p class="say rv2" data-d="2" style="margin-top:20px">Un delfino fatto con l'intelligenza artificiale parte da Capri e attraversa le aree marine protette italiane fino al Mar Piccolo. Gli autori sono Alessandro Di Capua e Michele D'Orso.</p>
+        <p class="say rv2" data-d="2" style="opacity:.82">Nessun drone ha inseguito un animale vero per girarlo. Il video è del progetto 30x30 e l'11 settembre 2026 ha ricevuto il riconoscimento di Venezia.</p>
+      </div>
+      <figure class="poster-v rv2" data-d="2" style="margin:0">
+        <img src="img/foto/s-delfino.jpg" alt="Fotogramma del mare del Mar Piccolo, poster del video Il Viaggio del Delfino" width="950" height="534" loading="lazy">
+        <button class="play" type="button" aria-label="Riproduci Il Viaggio del Delfino">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#14161F" d="M7 4.5v15l13-7.5z"/></svg>
+        </button>
+        <span class="lab">Il Viaggio del Delfino · segnaposto, il file video non è ancora collegato</span>
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== COSTIERA, TARANTO, SICILIA, SMCV -->
+<section class="zone" id="costiera">
+  <div class="wrap">
+
+    <article class="card rv2" data-d="1">
+      <figure class="ph"><img src="img/foto/s-terrazze.jpg" alt="I terrazzamenti a muretto a secco della Costiera amalfitana" width="1000" height="733" loading="lazy"></figure>
+      <div class="body">
+        <p class="place">Costiera amalfitana e sorrentina</p>
+        <h2>Nel 2025 la FAO ha messo i terrazzamenti della Costiera nella rete GIAHS.</h2>
+        <figure class="loc">
+          <img src="img/foto/loc-2024-05-18.jpg" alt="Locandina dell'incontro Castellammare di Stabia EcoDigital, giovani, turismo e innovazione, 18 maggio 2024" width="240" height="340" loading="lazy">
+          <figcaption>18 maggio 2024 · Castellammare di Stabia</figcaption>
+        </figure>
+        <p>Il riconoscimento della FAO come <b>patrimonio agricolo mondiale</b> è arrivato nel 2025: i terrazzamenti della Costiera amalfitana sono il terzo sito italiano nella rete GIAHS.</p>
+        <p>Muretti a secco, limoneti e viti tengono su il versante. Ogni muretto trattiene terra e acqua, quindi chi lo ripara fa manutenzione di tutto il versante oltre che del suo limoneto.</p>
+        <p>Intanto comuni, albergatori, guide e ragazzi della Costiera amalfitana e di quella sorrentina provano a contare i flussi turistici invece di subirli, giorno per giorno. La tappa di Castellammare di Stabia del <b>18 maggio 2024</b>, con Christian Cutino di EcoDigital Campania sul palco, è nata da questa domanda.</p>
+        <div class="copia"><h3>Cosa si può copiare</h3>
+          <ul>
+            <li>Contare le presenze reali giorno per giorno e dirle in anticipo.</li>
+            <li>Misurare l'acqua comune per comune e pubblicare il numero.</li>
+            <li>Pagare chi tiene in piedi i terrazzamenti, perché è manutenzione.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="card rv2" data-d="1" id="taranto">
+      <figure class="ph"><img src="img/foto/s-marpiccolo.jpg" alt="Il Mar Piccolo di Taranto con le strutture della mitilicoltura" width="1000" height="667" loading="lazy"></figure>
+      <div class="body">
+        <p class="place">Taranto · due mari</p>
+        <h2>Nel Mar Piccolo la mitilicoltura lavora insieme alla ricerca.</h2>
+        <p>Il mestiere dei mitilicoltori del Mar Piccolo resiste da generazioni. <b>MITICA</b>, progetto della Regione Puglia sulla mitilicoltura integrata, gli mette accanto la ricerca, per tenere insieme tutela dell'ambiente, innovazione e capacità di adattarsi a un mare che cambia.</p>
+        <p>Nella stessa città il progetto europeo <b>Prometheus</b> mette il Comune di Taranto accanto a partner italiani e greci: sensori, droni e intelligenza artificiale per guardare il territorio, con siti pilota tra il Mar Piccolo e San Vito.</p>
+        <p>Sono partiti anche i corsi del <b>Just Transition Fund</b>: 750 lavoratori dell'indotto industriale in formazione gratuita su green economy, blue economy, cultura e innovazione, mentre la Camera di commercio certifica le competenze della doppia transizione.</p>
+        <p>Taranto è l'ultima tappa del video «Il Viaggio del Delfino», che parte da Capri e finisce qui.</p>
+        <div class="copia"><h3>Cosa si può copiare</h3>
+          <ul>
+            <li>Elencare i mestieri che serviranno prima di fissare il calendario dei corsi.</li>
+            <li>Scrivere in casa il progetto europeo, con siti pilota veri in città.</li>
+            <li>Rendere pubblici i dati ambientali in formato aperto.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="card rv2" data-d="1" id="sicilia">
+      <figure class="ph"><img src="img/foto/s-ars.jpg" alt="Palazzo dei Normanni a Palermo, sede dell'Assemblea Regionale Siciliana" width="1000" height="750" loading="lazy"></figure>
+      <div class="body">
+        <p class="place">Sicilia · Assemblea Regionale Siciliana</p>
+        <h2>All'ARS 13 deputati di otto gruppi siedono nello stesso intergruppo.</h2>
+        <figure class="loc">
+          <img src="img/foto/loc-2024-12-18.jpg" alt="Locandina dell'incontro Sicilia EcoDigital, l'educazione alla transizione ecologica e digitale, Palermo, 18 dicembre 2024" width="236" height="340" loading="lazy">
+          <figcaption>18 dicembre 2024 · Palermo, Palazzo Reale</figcaption>
+        </figure>
+        <p>L'intergruppo EcoDigital dell'Assemblea Regionale Siciliana è nato il <b>13 settembre 2024</b>: 13 deputati di otto gruppi diversi, con la presidenza della deputata <b>Jose Marano</b>. LiveSicilia ne ha dato notizia il giorno dopo.</p>
+        <p>È il primo intergruppo EcoDigital d'Italia. Il tavolo si mette d'accordo su una cosa sola, tenere insieme transizione ecologica e digitale, e da lì lavora.</p>
+        <p>Gli altri consigli regionali lo possono ricopiare senza cambiare maggioranza. Il 18 dicembre 2024, a Palermo, la rete ha portato il tema fuori dall'aula con l'incontro sull'educazione alla transizione ecologica e digitale.</p>
+        <div class="copia"><h3>Cosa si può copiare</h3>
+          <ul>
+            <li>Un tavolo solo, su un tema solo, aperto a gruppi diversi.</li>
+            <li>Una presidenza dichiarata, così si sa a chi chiedere.</li>
+            <li>Incontri pubblici nelle città della regione, fuori dall'aula.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="card rv2" data-d="1" id="smcv">
+      <figure class="ph"><img src="img/foto/s-smcv.jpg" alt="L'Anfiteatro Campano di Santa Maria Capua Vetere" width="1000" height="667" loading="lazy"></figure>
+      <div class="body">
+        <p class="place">Santa Maria Capua Vetere · il metodo</p>
+        <h2>A Santa Maria Capua Vetere il gruppo campano lavora a riunioni aperte.</h2>
+        <p>Qui il gruppo campano ha messo a punto il modo di lavorare che la rete usa in tutte le città: riunioni aperte, verbali pubblici, una cosa alla volta con una data.</p>
+        <p>Non servono statuto, sede o permessi. Servono una stanza, un ordine del giorno di tre righe e qualcuno che scriva quello che si è deciso.</p>
+        <p>È la parte della rete che ci chiedono più spesso. Chi vuole aprire un gruppo nella sua città parte da qui e scrive a info@ecodigital.it.</p>
+        <div class="copia"><h3>Cosa si può copiare</h3>
+          <ul>
+            <li>Riunioni aperte: chi passa entra e si siede.</li>
+            <li>Verbali pubblici, anche scritti male.</li>
+            <li>Una cosa alla volta, con una data e un modo di misurarla.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="card rv2" data-d="2" id="campania">
+      <figure class="ph"><img src="img/foto/loc-2025-11-08.jpg" alt="Locandina dell'incontro «Il futuro è adesso» al Teatro Sannazaro di Napoli" width="800" height="1000" loading="lazy"></figure>
+      <div class="body">
+        <p class="place">Campania · 13 tappe</p>
+        <h2>In Campania la rete si muove ogni mese.</h2>
+        <p>Dal 2023 il gruppo campano ha fatto <b>13 incontri</b> fra Napoli, Pompei, Vietri sul Mare, Ischia, Cercola, Santa Maria Capua Vetere e Salerno, quasi tutti su cibo, turismo e territorio. Il 13 luglio 2026, a Vietri sul Mare, l'EcoDigital Tourism Summit ha portato otto sindaci sullo stesso palco con l'assessore regionale al Turismo.</p>
+        <p>Lo coordina <b>Christian Cutino</b>, con Emilia Di Girolamo del MAVV di Portici. Fino a settembre 2026 il gruppo aveva un sito suo, ecodigitalcampania.it: quel sito chiude e tutto quello che c'era sopra, locandine comprese, sta in una pagina di questo sito.</p>
+        <div class="acts" style="margin-top:22px">
+          <a class="b b-line" href="campania.html">La pagina di EcoDigital Campania</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ====================================================== CHIUSURA -->
+<section class="zone thin">
+  <div class="wrap">
+    <p class="eyebrow2 rv2">La prossima</p>
+    <h2 class="giant xs rv2" data-d="1" style="color:var(--forest)">Il prossimo territorio ce lo segnali tu.</h2>
+    <p class="intro rv2" data-d="2">Un comune che ha aperto i dati, un'impresa che ha cambiato processo, una scuola che insegna le due transizioni insieme, una startup che risolve un pezzo di problema. Se l'hai vista, scrivicelo a info@ecodigital.it: andiamo a verificarla e finisce in questa pagina.</p>
+    <div class="acts">
+      <a class="b b-sig rv2" data-d="3" href="attivista.html">Segnala una best practice</a>
+      <a class="b b-dark rv2" data-d="3" href="rete.html#startup">Candida la tua startup</a>
+    </div>
+    <p class="note rv2" data-d="3" style="color:var(--muted);opacity:1;max-width:72ch">Fonti dei fatti citati: legge sull'Area Marina Protetta dell'Isola di Capri del 4 agosto 2026; riconoscimento FAO GIAHS dei terrazzamenti della Costiera, 2025; progetto MITICA della Regione Puglia; progetto europeo Prometheus con il Comune di Taranto; corsi del Just Transition Fund per l'indotto tarantino; intergruppo EcoDigital dell'Assemblea Regionale Siciliana dal 13 settembre 2024; riconoscimento del Sorriso Diverso Venezia Award dell'11 settembre 2026 (Easy News Press Agency, MyWhere). Lo stato di avanzamento va riverificato prima della pubblicazione.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale della transizione ecologica e digitale. Dal 2021 giriamo l'Italia con amministratori, imprese, startup e studenti.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, il canale delle buone notizie ecologiche e digitali · <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.rv2'));
+  if(!items.length) return;
+  if(!('IntersectionObserver' in window)){ items.forEach(function(n){n.classList.add('shown');}); return; }
+  setTimeout(function(){ items.forEach(function(n){n.classList.add('shown');}); }, 1500);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){
+      var i=+(en.target.getAttribute('data-d')||0);
+      setTimeout(function(){en.target.classList.add('shown');}, i*80);
+      io.unobserve(en.target); } });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+  items.forEach(function(n){io.observe(n);});
+})();
+</script>
+
+<script>
+/* ---- bottone play: è un segnaposto, si dichiara ---- */
+(function(){
+  var p=document.querySelector('.play'); if(!p) return;
+  p.addEventListener('click',function(){
+    var l=document.querySelector('.poster-v .lab');
+    if(l) l.textContent='Il file video non è ancora collegato. Questo è un segnaposto del prototipo.';
+  });
+})();
+</script>
+
+</body>
+</html>

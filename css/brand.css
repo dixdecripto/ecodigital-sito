@@ -1,0 +1,233 @@
+/* EcoDigital, kit grafico della nuova identita (Brand Book, call del 01/10/2026)
+   Token, font locali e pochi componenti leggeri. Tema chiaro soltanto.
+   Uso: <link rel="stylesheet" href="../kit/brand.css"> dalle cartelle sorelle. */
+
+/* Font locali, Open Font License (file in fonts/) */
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/Archivo-wdth-wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/Archivo-Italic-wdth-wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Italic-wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Palette del Brand Book, pagina 16 */
+  --blu: #293B8E;
+  --giallo: #F7B807;
+  --verde: #09693A;
+  --rosso: #C0202F;
+  --bianco: #FFFFFF;
+
+  /* Neutri derivati (non nel book) */
+  --inchiostro: #14161F;
+  --grigio: #5B6070;
+  --line: #E1E3EC;
+  --tenue: #F4F5FA;
+
+  /* Varianti di servizio, solo per stati hover e fondi chiari */
+  --blu-scuro: #1F2D6E;
+  --blu-tenue: #E9ECF7;
+  --giallo-scuro: #DFA500;
+  --giallo-tenue: #FEF4D6;
+  --verde-tenue: #E3F1EA;
+
+  /* Sfumatura di brand: verde, blu, giallo, morbida tipo aurora (pagine 5 e 17) */
+  --grad-brand:
+    radial-gradient(55% 90% at 72% 92%, rgba(247, 184, 7, 0.85) 0%, rgba(247, 184, 7, 0.35) 40%, rgba(247, 184, 7, 0) 80%),
+    radial-gradient(38% 80% at 34% 72%, rgba(41, 59, 142, 1) 0%, rgba(41, 59, 142, 0) 72%),
+    radial-gradient(34% 95% at 0% 70%, rgba(9, 105, 58, 1) 0%, rgba(9, 105, 58, 0) 75%),
+    radial-gradient(60% 70% at 100% 0%, rgba(68, 78, 150, 0.9) 0%, rgba(68, 78, 150, 0) 70%),
+    linear-gradient(100deg, #09693A 0%, #1E4F86 26%, #3A4A92 46%, #7B6A8A 64%, #D9A43A 84%, #B98F72 100%);
+  /* Versione lineare semplice, per barre sottili e bordi */
+  --grad-brand-lineare: linear-gradient(90deg, var(--verde) 0%, var(--blu) 50%, var(--giallo) 100%);
+
+  /* Tipografia */
+  --font-display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --display-stretch: 125%;
+  --display-weight: 850;
+  --display-tracking: -0.01em;
+
+  --fs-h1: 72px;
+  --fs-h2: 44px;
+  --fs-h3: 26px;
+  --fs-testo: 17px;
+  --fs-piccolo: 14px;
+  --fs-etichetta: 12px;
+  --lh-titolo: 1.02;
+  --lh-testo: 1.6;
+
+  /* Forma e spazio */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  --ombra: 0 1px 2px rgba(20, 22, 31, 0.06), 0 8px 24px rgba(20, 22, 31, 0.06);
+  --spazio: 24px;
+  --max: 1200px;
+
+  /* Logo */
+  --logo-h: 28px;
+  --logo-h-grande: 48px;
+}
+
+@media (max-width: 1024px) {
+  :root { --fs-h1: 56px; --fs-h2: 36px; --fs-h3: 22px; }
+}
+@media (max-width: 640px) {
+  :root { --fs-h1: 40px; --fs-h2: 28px; --fs-h3: 20px; --fs-testo: 16px; }
+}
+
+/* Base */
+body {
+  margin: 0;
+  background: var(--bianco);
+  color: var(--inchiostro);
+  font-family: var(--font-body);
+  font-size: var(--fs-testo);
+  line-height: var(--lh-testo);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-stretch: var(--display-stretch);
+  font-weight: var(--display-weight);
+  text-transform: uppercase;
+  letter-spacing: var(--display-tracking);
+  line-height: var(--lh-titolo);
+  color: var(--blu);
+  margin: 0 0 0.4em;
+}
+h1 { font-size: var(--fs-h1); font-weight: 900; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); font-weight: 800; letter-spacing: 0; }
+p { margin: 0 0 1em; }
+a { color: var(--blu); text-underline-offset: 3px; }
+.didascalia { font-size: var(--fs-piccolo); color: var(--grigio); line-height: 1.5; }
+.occhiello {
+  font-family: var(--font-body);
+  font-size: var(--fs-etichetta);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grigio);
+}
+
+/* Bottoni */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.btn:focus-visible { outline: 3px solid var(--giallo); outline-offset: 2px; }
+.btn-primario { background: var(--blu); color: var(--bianco); }
+.btn-primario:hover { background: var(--blu-scuro); }
+.btn-secondario { background: var(--giallo); color: var(--inchiostro); }
+.btn-secondario:hover { background: var(--giallo-scuro); }
+.btn-fantasma { background: transparent; color: var(--blu); border-color: var(--blu); }
+.btn-fantasma:hover { background: var(--blu-tenue); }
+.grad .btn-fantasma, .su-blu .btn-fantasma { color: var(--bianco); border-color: rgba(255, 255, 255, .8); }
+.grad .btn-fantasma:hover, .su-blu .btn-fantasma:hover { background: rgba(255, 255, 255, .12); }
+
+/* Etichetta / pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--blu-tenue);
+  color: var(--blu);
+  font-family: var(--font-body);
+  font-size: var(--fs-etichetta);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.pill-giallo { background: var(--giallo); color: var(--inchiostro); }
+.pill-verde { background: var(--verde-tenue); color: var(--verde); }
+.pill-blu { background: var(--blu); color: var(--bianco); }
+.pill-linea { background: transparent; border: 1px solid var(--line); color: var(--grigio); }
+
+/* Card */
+.card {
+  background: var(--bianco);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--spazio);
+}
+.card-tenue { background: var(--tenue); border-color: transparent; }
+
+/* Logo: <img class="logo" src="../kit/logo/istituzionale.svg" alt="EcoDigital"> */
+.logo { display: block; height: var(--logo-h); width: auto; }
+.logo-grande { height: var(--logo-h-grande); }
+
+/* Motivo delle due barre inclinate, separatore decorativo */
+.barre {
+  position: relative;
+  display: block;
+  width: var(--barre-w, 120px);
+  height: var(--barre-h, 8px);
+  margin: var(--barre-margine, 16px 0);
+}
+.barre::before,
+.barre::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 34%;
+  transform: skewX(-11deg);
+}
+.barre::before { left: 0; background: var(--verde); }
+.barre::after { right: 0; background: var(--rosso); }
+.barre-centro { margin-left: auto; margin-right: auto; }
+.barre-larghe { --barre-w: 240px; --barre-h: 10px; }
+
+/* Superficie sfumata: sopra va solo il wordmark bianco */
+.grad {
+  background: var(--grad-brand);
+  background-color: var(--blu);
+  color: var(--bianco);
+}
+.grad h1, .grad h2, .grad h3, .grad .display, .su-blu h1, .su-blu h2, .su-blu h3 { color: var(--bianco); }
+.grad .occhiello, .grad .didascalia { color: rgba(255, 255, 255, .85); }
+.grad .logo { filter: brightness(0) invert(1); }
+.su-blu { background: var(--blu); color: var(--bianco); }
+.su-tenue { background: var(--tenue); }

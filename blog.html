@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog · EcoDigital</title>
+<meta name="description" content="Gli editoriali della rete EcoDigital: uno a settimana, il mercoledì, dal 16 settembre 2026. Ogni volta una cosa che in Italia funziona già, con i nomi, i luoghi e i numeri per verificarla.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+/* ---------- blog: apertura ---------- */
+.v2 .blog-top{background:var(--forest);color:var(--hero-ink);
+  padding:calc(var(--hdr-h) + clamp(46px,7vw,88px)) 0 clamp(36px,5.5vw,62px)}
+.v2 .blog-top h1{font-size:clamp(30px,4vw,56px);line-height:1;letter-spacing:-.01em;
+  font-family:var(--display);font-stretch:125%;font-weight:800;max-width:16ch}
+.v2 .blog-top .say{max-width:64ch;margin-top:20px}
+.v2 .blog-top .say+.say{margin-top:12px}
+.v2 .blog-meta{margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);
+  font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;opacity:.76}
+
+/* ---------- blog: corpo chiaro ---------- */
+.v2 .blog-body{background:var(--bg);color:var(--ink);
+  padding:clamp(38px,5.5vw,70px) 0 clamp(46px,7vw,88px)}
+.v2 .blog-body .eyebrow2{color:var(--signal-ink)}
+
+/* ---------- editoriale in evidenza ---------- */
+.v2 .lead-post{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+  gap:0;align-items:stretch;text-decoration:none;color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:16px}
+.v2 .lead-post img{width:100%;height:100%;min-height:250px;object-fit:cover}
+.v2 .lead-post .txt{padding:clamp(22px,3vw,38px);align-self:center}
+.v2 .lead-post .when{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--signal-ink)}
+.v2 .lead-post h2{font-size:clamp(21px,2.2vw,30px);line-height:1.06;letter-spacing:-.01em;
+  font-weight:800;margin:10px 0 12px;text-wrap:balance}
+.v2 .lead-post:hover h2{color:var(--signal-ink)}
+.v2 .lead-post p{font-size:.98rem;line-height:1.55;color:var(--muted);margin:0}
+.v2 .lead-post .go{display:inline-block;margin-top:18px;font-size:.76rem;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:800;color:var(--signal-ink);
+  border-bottom:2px solid var(--signal);padding-bottom:3px}
+@media(max-width:760px){
+  .v2 .lead-post{grid-template-columns:1fr}
+  .v2 .lead-post img{min-height:0;aspect-ratio:16/9}
+}
+
+/* ---------- indice dei 15 ---------- */
+.v2 .idx-title{font-size:clamp(19px,1.9vw,26px);letter-spacing:-.025em;font-weight:800;
+  color:var(--forest);margin:clamp(36px,5vw,60px) 0 0}
+.v2 .idx-note{font-size:.86rem;color:var(--muted);margin:8px 0 0;max-width:66ch}
+.v2 .idx{display:grid;gap:0;margin-top:18px;border-top:1px solid var(--line)}
+.v2 .idx a{display:grid;grid-template-columns:76px 108px minmax(0,1fr);gap:clamp(14px,2vw,26px);
+  align-items:center;padding:16px 0;border-bottom:1px solid var(--line);
+  text-decoration:none;color:var(--ink)}
+.v2 .idx a:hover h3{color:var(--signal-ink)}
+.v2 .idx .when{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;
+  color:var(--signal-ink);font-variant-numeric:tabular-nums}
+.v2 .idx img{width:108px;height:74px;object-fit:cover;border-radius:9px;border:1px solid var(--line)}
+.v2 .idx h3{font-size:clamp(16px,1.5vw,20px);line-height:1.2;letter-spacing:-.02em;
+  font-weight:700;margin:0 0 5px;text-wrap:balance}
+.v2 .idx p{font-size:.88rem;line-height:1.45;color:var(--muted);margin:0}
+.v2 .idx .coll{display:inline-block;margin-top:7px;font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:700;color:var(--sea);
+  border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+@media(max-width:640px){
+  .v2 .idx a{grid-template-columns:70px minmax(0,1fr);row-gap:6px}
+  .v2 .idx img{display:none}
+}
+.v2 .blog-body .note{color:var(--muted);opacity:1;margin-top:24px;max-width:70ch}
+.v2 .blog-acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html">Rete</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="sfide.html">Territori</a>
+      <a href="eventi/index.html">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="stampa.html">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ====================================================== APERTURA -->
+<section class="blog-top">
+  <div class="wrap">
+    <p class="eyebrow2">Blog</p>
+    <h1>Gli editoriali del mercoledì</h1>
+    <p class="say">Esce un editoriale a settimana, il mercoledì, dal 16 settembre 2026. Ogni volta prendiamo una cosa che in Italia funziona già e la scriviamo con i nomi, i luoghi e i numeri per andarla a verificare.</p>
+    <p class="say">In fondo a ogni pezzo ci sono tre pratiche che un comune, una scuola o un'impresa possono copiare così come sono. Chi ne ha una da segnalarci scriva a info@ecodigital.it.</p>
+    <p class="blog-meta">15 editoriali · dal 16 settembre al 23 dicembre 2026 · quattro scritti con TheAtena</p>
+  </div>
+</section>
+
+<!-- ====================================================== IN EVIDENZA + INDICE -->
+<section class="blog-body">
+  <div class="wrap">
+
+    <p class="eyebrow2">Il primo</p>
+    <a class="lead-post" href="blog/2026-09-16-un-delfino-per-capire-il-mare.html">
+      <img src="img/ed/delfino-1.jpg" alt="Una stenella striata nel Santuario Pelagos" width="640" height="427">
+      <span class="txt">
+        <span class="when">Mercoledì 16 settembre 2026 · con TheAtena</span>
+        <h2>Un delfino per capire il mare</h2>
+        <p>Il video della rete sulle Aree Marine Protette premiato a Venezia l'11 settembre, i catamarani che escono da Taranto per contare i cetacei e gli archivi aperti da oltre 15 anni.</p>
+        <span class="go">Leggi l'editoriale</span>
+      </span>
+    </a>
+
+    <h2 class="idx-title">Tutti gli editoriali</h2>
+    <p class="idx-note">Dal 16 settembre al 23 dicembre 2026, in ordine di uscita. Ogni pagina si apre anche senza connessione e non carica niente da server esterni.</p>
+
+    <div class="idx">
+
+      <a href="blog/2026-09-16-un-delfino-per-capire-il-mare.html">
+        <span class="when">16 set</span>
+        <img src="img/ed/delfino-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Un delfino per capire il mare</h3><p>Il video premiato a Venezia, i catamarani che da Taranto contano i cetacei e gli archivi aperti da oltre 15 anni.</p><span class="coll">con TheAtena</span></span>
+      </a>
+
+      <a href="blog/2026-09-23-la-citta-senza-auto.html">
+        <span class="when">23 set</span>
+        <img src="img/ed/citta-auto-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>La città che ha misurato le sue strade</h3><p>Bologna pubblica i numeri di Città 30, Pontevedra misura da 25 anni. Due metodi che un comune può copiare.</p></span>
+      </a>
+
+      <a href="blog/2026-09-30-il-peso-invisibile-di-una-email.html">
+        <span class="when">30 set</span>
+        <img src="img/ed/email-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Chi pesa le pagine prima di pubblicarle</h3><p>La Green Web Foundation si dà un tetto di peso, la Francia ha messo l'ecoprogettazione per iscritto nel 2024.</p></span>
+      </a>
+
+      <a href="blog/2026-10-07-un-manifesto-in-40-kb.html">
+        <span class="when">7 ott</span>
+        <img src="img/ed/manifesto-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Perché abbiamo rifatto il sito: un manifesto in 40 KB</h3><p>Niente font esterni, niente tracciatori, niente banner dei cookie. Il peso di ogni pagina è scritto in fondo.</p></span>
+      </a>
+
+      <a href="blog/2026-10-14-fast-tech.html">
+        <span class="when">14 ott</span>
+        <img src="img/ed/fast-tech-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>I riparatori che rimettono in vita i telefoni</h3><p>62 milioni di tonnellate di rifiuti elettronici in un anno, i repair café italiani e l'etichetta europea di riparabilità.</p></span>
+      </a>
+
+      <a href="blog/2026-10-21-taranto-non-e-uno-slogan.html">
+        <span class="when">21 ott</span>
+        <img src="img/ed/taranto-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Taranto, la città che riparte dai suoi due mari</h3><p>I citri del Mar Piccolo, il ponte girevole del 1887 e il centro Kētos dentro Palazzo Amati.</p><span class="coll">con TheAtena</span></span>
+      </a>
+
+      <a href="blog/2026-10-28-data-center-l-acqua-che-non-vediamo.html">
+        <span class="when">28 ott</span>
+        <img src="img/ed/data-center-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Il data center che riscalda cinquemila case</h3><p>A Rozzano il calore dei server arriva in oltre 5.000 abitazioni, a Brescia entra nel teleriscaldamento cittadino.</p></span>
+      </a>
+
+      <a href="blog/2026-11-04-cosa-portiamo-a-ecomondo.html">
+        <span class="when">4 nov</span>
+        <img src="img/ed/ecomondo-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Cosa andiamo a cercare a Ecomondo</h3><p>A Rimini, dal 3 al 6 novembre, cerchiamo le imprese che accanto alla parola «sostenibile» mettono un numero.</p></span>
+      </a>
+
+      <a href="blog/2026-11-11-cop31-spiegata-a-chi-lavora.html">
+        <span class="when">11 nov</span>
+        <img src="img/ed/cop31-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Da Antalya al tuo comune: cosa si può già fare</h3><p>Mentre ad Antalya si negozia fino al 20 novembre, le cose che un comune o un'impresa possono fare da soli.</p></span>
+      </a>
+
+      <a href="blog/2026-11-18-gli-alberi-che-hanno-fatto-l-italia.html">
+        <span class="when">18 nov</span>
+        <img src="img/ed/alberi-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Gli alberi che hanno fatto l'Italia</h3><p>La legge sul verde urbano del 2013, il Castagno dei Cento Cavalli, l'Olivastro di Luras e l'Italus del Pollino.</p><span class="coll">con TheAtena</span></span>
+      </a>
+
+      <a href="blog/2026-11-25-meno-rifiuti-piu-dati.html">
+        <span class="when">25 nov</span>
+        <img src="img/ed/rifiuti-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>I 49 comuni che pagano i rifiuti a consumo</h3><p>Nel Trevigiano la tariffa puntuale va avanti da anni e la raccolta differenziata sta sopra l'85 per cento.</p></span>
+      </a>
+
+      <a href="blog/2026-12-02-il-suolo-e-un-infrastruttura.html">
+        <span class="when">2 dic</span>
+        <img src="img/ed/suolo-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>I comuni che restituiscono suolo alla città</h3><p>In Italia si consumano più di due metri quadrati di suolo al secondo. Alcuni comuni hanno invertito il conto.</p></span>
+      </a>
+
+      <a href="blog/2026-12-09-ia-responsabile.html">
+        <span class="when">9 dic</span>
+        <img src="img/ed/ia-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Le tre righe che rendono buona una gara sull'IA</h3><p>Quanto consuma, su quali dati è addestrato, chi risponde se sbaglia: tre domande da mettere nel capitolato.</p></span>
+      </a>
+
+      <a href="blog/2026-12-16-natale-ecodigital.html">
+        <span class="when">16 dic</span>
+        <img src="img/ed/natale-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Natale ecodigital: regalare cose riparate, adottare invece di comprare</h3><p>Un oggetto ricondizionato scelto con l'etichetta europea di riparabilità, oppure un'adozione da un rifugio.</p><span class="coll">con TheAtena</span></span>
+      </a>
+
+      <a href="blog/2026-12-23-il-2026-della-rete-in-numeri.html">
+        <span class="when">23 dic</span>
+        <img src="img/ed/bilancio-1.jpg" alt="" width="108" height="74" loading="lazy">
+        <span><h3>Il 2026 della rete, in numeri</h3><p>Il primo bilancio dell'anno, con i numeri ancora da confermare segnati come tali.</p></span>
+      </a>
+
+    </div>
+
+    <p class="note">I titoli sono pubblicati in anticipo: è il modo più semplice che conosciamo per prendere un impegno davanti a chi legge. Le date possono spostarsi di una settimana, i titoli no.</p>
+
+    <div class="blog-acts">
+      <a class="b b-dark" href="attivista.html">Ricevili appena escono</a>
+      <a class="b b-dark" href="news.html">Le notizie della rete</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale che gira l'Italia a cercare le buone notizie ecologiche e digitali e le fa conoscere.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, il canale delle buone notizie ecologiche e digitali · <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

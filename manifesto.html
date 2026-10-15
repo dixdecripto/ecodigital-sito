@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Il manifesto · EcoDigital</title>
+<meta name="description" content="I dieci punti del manifesto EcoDigital, ognuno con un fatto italiano verificabile: la legge su Capri del 4 agosto 2026, i 750 lavoratori in formazione a Taranto, i 13 deputati dell'intergruppo siciliano. Firma il manifesto.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+/* =====================================================================
+   Il manifesto a schermate intere (13 schermate).
+   Sopra i 760 px ogni schermata è alta 100svh e il salto lo fa
+   js/manifesto-scroll.js. Sotto i 760 px le schermate crescono con il
+   testo e si scorre a dito, con scroll-snap morbido.
+   ===================================================================== */
+
+/* --- la schermata --- */
+.v2 .mscr{position:relative;min-height:100svh;display:flex;align-items:safe center;overflow:hidden;
+  background:var(--bg);color:var(--ink)}
+.v2 .mscr.dark{background:var(--forest);color:var(--hero-ink)}
+.v2 .mscr .mi{position:relative;z-index:2;width:100%;
+  padding:calc(var(--hdr-h) + clamp(14px,3vh,32px)) 0 clamp(16px,4vh,42px)}
+.jack .v2 .mscr{height:100svh;min-height:0}
+
+/* --- foto sfumata sotto il testo --- */
+.v2 .mscr .bgph{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--forest)}
+.v2 .mscr .bgph img{width:100%;height:100%;object-fit:cover;object-position:center 45%;opacity:.42}
+.v2 .mscr .bgph::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(41,59,142,.93),rgba(41,59,142,.72) 45%,rgba(41,59,142,.95))}
+
+/* --- apertura --- */
+.v2 .mscr.op .opgrid{display:grid;gap:clamp(22px,3.4vw,58px);align-items:end;
+  grid-template-columns:minmax(0,1.06fr) minmax(0,.84fr)}
+.v2 .mscr.op h1{margin:0 0 clamp(14px,2.2vh,26px);
+  font-size:clamp(30px,min(4.3vw,7vh),66px)}
+.v2 .mscr.op .lead{display:grid;gap:11px;max-width:52ch}
+.v2 .mscr.op .lead p{margin:0;line-height:1.56;color:rgba(255,255,255,.88);
+  font-size:clamp(14px,min(1.12vw,2vh),17.5px)}
+.v2 .mscr.op .opnote{margin-top:clamp(14px,2.6vh,28px);padding-top:clamp(12px,2vh,20px);
+  border-top:1px solid rgba(255,255,255,.22)}
+.v2 .mscr.op .opnote .oh{margin:9px 0 8px;font-family:var(--display);font-stretch:125%;
+  font-weight:800;letter-spacing:-.02em;line-height:1.06;color:var(--hero-ink);
+  font-size:clamp(18px,min(2vw,3.1vh),28px)}
+.v2 .mscr.op .opnote .intro{margin:0;line-height:1.5;color:rgba(255,255,255,.72);
+  font-size:clamp(13px,min(.98vw,1.75vh),15.5px)}
+.v2 .mscr.op .acts{margin-top:clamp(14px,2.4vh,26px)}
+.v2 .mscr.op .b-line{color:var(--hero-ink);border-color:rgba(255,255,255,.4)}
+
+/* --- indicazione «scorri» --- */
+.v2 .scrollhint{position:absolute;z-index:3;left:50%;transform:translateX(-50%);
+  bottom:clamp(10px,2.4vh,28px);margin:0;display:flex;align-items:center;gap:10px;
+  font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;
+  color:rgba(255,255,255,.68)}
+.v2 .scrollhint span{display:block;width:1px;height:26px;background:rgba(255,255,255,.5);
+  animation:mhint 2s ease-in-out infinite;transform-origin:top}
+@keyframes mhint{0%,100%{transform:scaleY(.35);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* --- il punto: numero enorme, titolo, tre frasi, foto --- */
+.v2 .mscr .ptgrid{display:grid;gap:clamp(18px,3vw,54px);align-items:center;
+  grid-template-columns:minmax(0,1fr)}
+.v2 .mscr.withph .ptgrid{grid-template-columns:minmax(0,1.08fr) minmax(0,.78fr)}
+.v2 .mscr .ptx{display:grid;align-items:start;gap:0 clamp(14px,2.4vw,36px);
+  grid-template-columns:auto minmax(0,1fr)}
+.v2 .mscr .num{font-family:var(--display);font-stretch:125%;font-weight:800;
+  font-size:clamp(52px,min(8vw,14vh),124px);line-height:.8;letter-spacing:-.02em;
+  color:var(--signal-ink);font-variant-numeric:tabular-nums;display:block}
+.v2 .mscr.dark .num{color:var(--signal)}
+.v2 .mscr .tema{margin:.35em 0 clamp(7px,1.2vh,12px);font-size:.64rem;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:800;color:var(--muted)}
+.v2 .mscr.dark .tema{color:rgba(255,255,255,.62)}
+.v2 .mscr h2.tit{margin:0 0 clamp(11px,2vh,22px);font-family:var(--display);font-stretch:125%;
+  font-weight:800;letter-spacing:-.03em;line-height:.96;color:var(--forest);
+  font-size:clamp(22px,min(2.7vw,4.4vh),40px)}
+.v2 .mscr.dark h2.tit{color:var(--hero-ink)}
+.v2 .mscr .fr{display:grid;gap:clamp(7px,1.3vh,14px);max-width:54ch}
+.v2 .mscr .fr p{margin:0;line-height:1.55;color:var(--muted);
+  font-size:clamp(14px,min(1.12vw,1.98vh),17.5px)}
+.v2 .mscr.dark .fr p{color:rgba(255,255,255,.84)}
+.v2 .mscr:not(.withph) .fr{max-width:64ch}
+
+/* --- foto a lato --- */
+.v2 .mscr .ph{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  background:var(--card)}
+.v2 .mscr.dark .ph{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+.v2 .mscr .ph img{width:100%;height:clamp(190px,50vh,460px);object-fit:cover;object-position:center 44%}
+.v2 .mscr .ph figcaption{padding:10px 15px;font-size:.78rem;line-height:1.45;color:var(--muted)}
+.v2 .mscr.dark .ph figcaption{color:rgba(255,255,255,.7)}
+
+/* --- la firma, su fondo chiaro. Su finestre basse il riquadro scorre
+       per conto suo e il colpo dopo cambia schermata --- */
+.v2 .mscr.sign{overflow:auto;align-items:safe center;overscroll-behavior:contain}
+/* --- la firma, su fondo chiaro --- */
+.v2 .mscr.sign .giant.xs{font-size:clamp(22px,min(2.8vw,4.4vh),42px)}
+.v2 .mscr.sign .say{margin-top:clamp(10px,1.8vh,20px);
+  font-size:clamp(14px,min(1.05vw,1.9vh),16.5px);max-width:52ch}
+.v2 .mscr.sign .formgrid{margin-top:clamp(16px,2.8vh,32px)}
+.v2 .mscr.sign .fld{margin-bottom:clamp(8px,1.5vh,15px)}
+.v2 .mscr.sign .fld input[type=text]{padding:clamp(8px,1.3vh,13px) 15px}
+.v2 .mscr.sign .counts b{font-size:clamp(26px,min(2.6vw,4vh),40px)}
+.v2 .mscr.sign .counts span{margin-top:8px}
+.v2 .mscr.sign .sigwall{margin-top:clamp(12px,2vh,20px);max-height:clamp(110px,26vh,250px)}
+.v2 .mscr.sign .sigwall .s{border-color:var(--line);background:var(--card);color:var(--ink)}
+.v2 .mscr.sign .sigwall .s.new{border-color:var(--signal);background:var(--badge-bg)}
+.v2 .mscr.sign .note{margin-top:10px}
+
+/* --- ultima schermata: dopo la firma e piede --- */
+.v2 .mscr.end{display:block;height:auto;min-height:0;overflow:visible}
+.jack .v2 .mscr.end{height:auto;min-height:0}
+.v2 .mscr.end .mi{padding:0}
+.v2 .dopo{background:var(--bg);color:var(--ink);
+  padding:calc(var(--hdr-h) + clamp(26px,5vh,60px)) 0 clamp(26px,5vh,60px)}
+.v2 .dopo .eyebrow2{color:var(--signal-ink)}
+.v2 .dopo h2{color:var(--forest);font-size:clamp(22px,min(2.8vw,4.2vh),40px)}
+.v2 .dopo .intro{margin-top:16px;max-width:64ch;color:var(--muted);line-height:1.58;
+  font-size:clamp(14px,min(1.08vw,1.9vh),16.5px)}
+.v2 .dopo .b-line{color:var(--forest);border-color:var(--line)}
+.v2 .dopo .b-line:hover{border-color:var(--signal-ink)}
+.v2 .mscr.end .ftr{padding:clamp(28px,5vh,56px) 0 22px}
+
+/* --- pallini a destra --- */
+.v2 .mdots{position:fixed;z-index:130;right:clamp(9px,1.3vw,20px);top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px}
+.v2 .mdots button{appearance:none;-webkit-appearance:none;margin:0;padding:0;cursor:pointer;
+  font:inherit;font-size:.58rem;font-weight:800;letter-spacing:.02em;font-variant-numeric:tabular-nums;
+  display:flex;align-items:center;justify-content:center;border-radius:999px;
+  width:11px;height:11px;background:transparent;border:1px solid rgba(20,22,31,.34);color:transparent;
+  transition:background .22s ease,border-color .22s ease,color .22s ease}
+.v2 .mdots button.num{width:27px;height:21px;color:rgba(20,22,31,.6)}
+.v2 .mdots button:hover{border-color:var(--signal-ink)}
+.v2 .mdots button[aria-current]{background:var(--signal);border-color:var(--signal);color:#14161F}
+.v2 .mdots.ondark button{border-color:rgba(255,255,255,.42)}
+.v2 .mdots.ondark button.num{color:rgba(255,255,255,.78)}
+.v2 .mdots.ondark button[aria-current]{background:var(--signal);border-color:var(--signal);color:#14161F}
+
+/* --- l'entrata di ogni schermata --- */
+.jack .v2 .mscr .num,
+.jack .v2 .mscr .ptc>*,
+.jack .v2 .mscr .ph,
+.jack .v2 .mscr .opgrid>*,
+.jack .v2 .mscr.sign .formgrid>*{opacity:0;transform:translateY(20px);
+  transition:opacity .5s ease,transform .62s cubic-bezier(.2,.7,.2,1)}
+.jack .v2 .mscr .num{transform:translateY(38px)}
+.jack .v2 .mscr .ptc>:nth-child(2){transition-delay:.06s}
+.jack .v2 .mscr .ptc>:nth-child(3){transition-delay:.12s}
+.jack .v2 .mscr .ph,
+.jack .v2 .mscr .opgrid>:nth-child(2),
+.jack .v2 .mscr.sign .formgrid>:nth-child(2){transition-delay:.16s}
+.jack .v2 .mscr.on .num,
+.jack .v2 .mscr.on .ptc>*,
+.jack .v2 .mscr.on .ph,
+.jack .v2 .mscr.on .opgrid>*,
+.jack .v2 .mscr.on.sign .formgrid>*{opacity:1;transform:none}
+
+/* --- sotto i 760 px: nessun salto, le schermate crescono --- */
+@media(max-width:760px){
+  html{scroll-snap-type:y proximity;scroll-padding-top:96px}
+  .v2 .mscr{height:auto;min-height:100svh;scroll-snap-align:start;align-items:flex-start}
+  .v2 .mscr .mi{padding:calc(var(--hdr-h) + 26px) 0 34px}
+  .v2 .mscr.op .opgrid,
+  .v2 .mscr.withph .ptgrid{grid-template-columns:1fr}
+  .v2 .mscr .ptx{grid-template-columns:1fr}
+  .v2 .mscr .num{font-size:clamp(46px,13vw,76px);margin-bottom:8px}
+  .v2 .mscr .ph img{height:clamp(170px,34vh,240px)}
+  .v2 .mscr .fr p,.v2 .mscr.op .lead p{font-size:15.5px}
+  .v2 .mscr h2.tit{font-size:clamp(21px,6vw,28px)}
+  .v2 .scrollhint{display:none}
+  .v2 .mdots{display:none}
+  .v2 .mscr.sign .sigwall{max-height:220px}
+  .v2 .dopo{padding:calc(var(--hdr-h) + 30px) 0 34px}
+}
+@media(max-width:1080px) and (min-width:761px){
+  .v2 .mscr.withph .ptgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,.7fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  .jack .v2 .mscr .num,.jack .v2 .mscr .ptc>*,.jack .v2 .mscr .ph,
+  .jack .v2 .mscr .opgrid>*,.jack .v2 .mscr.sign .formgrid>*{
+    opacity:1;transform:none;transition:none}
+  .v2 .scrollhint span{animation:none}
+}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html">Rete</a>
+      <a href="manifesto.html" aria-current="page">Manifesto</a>
+      <a href="sfide.html">Territori</a>
+      <a href="eventi/index.html">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html">Blog</a>
+      <a href="stampa.html">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================ 1 · APERTURA -->
+<section class="mscr op dark" id="apertura" data-name="Apertura del manifesto">
+  <div class="mi"><div class="wrap">
+    <div class="opgrid">
+      <div>
+        <p class="kick">Il manifesto · verso il 2050</p>
+        <h1 class="giant sm">Dieci cose belle da cercare e far crescere.</h1>
+        <div class="acts">
+          <a class="b b-sig" href="#p1">Leggi i dieci punti</a>
+          <a class="b b-line" href="#firma">Firma il manifesto</a>
+        </div>
+      </div>
+      <div>
+        <div class="lead">
+          <p>Il manifesto EcoDigital sta in dieci punti. Ogni punto dice una cosa che in Italia qualcuno sta già facendo, con il posto e la data.</p>
+          <p>Lo firmano cittadini, amministratori, imprese, startup e studenti. La firma non iscrive a nulla e serve a contare quante persone la pensano così.</p>
+          <p>La rete è nata nel 2021 e da allora ha fatto 56 tappe, da Milano a Vietri sul Mare. I dieci punti vengono da quelle tappe.</p>
+        </div>
+        <div class="opnote">
+          <p class="eyebrow2">I dieci punti</p>
+          <p class="oh">Uno per uno, con il fatto che lo tiene in piedi.</p>
+          <p class="intro">Sotto ogni titolo c'è una legge, un progetto, una data o un numero. Dove il fatto viene da una tappa della rete, trovi scritta la città.</p>
+        </div>
+      </div>
+    </div>
+  </div></div>
+  <p class="scrollhint">Scorri<span></span></p>
+</section>
+
+<!-- ============================================ 2 · PUNTO 01 -->
+<section class="mscr withph" id="p1" data-name="01, mare protetto" data-n="01">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">01</b>
+        <div class="ptc">
+          <p class="tema">Mare</p>
+          <h2 class="tit">Mare protetto</h2>
+          <div class="fr">
+            <p>La legge sull'Area Marina Protetta dell'Isola di Capri è del 4 agosto 2026.</p>
+            <p>Il 27 agosto 2026 Alfonso Pecoraro Scanio ha chiesto al Governo di istituire le aree marine che ancora mancano.</p>
+            <p>L'obiettivo si chiama 30x30: il 30% del mare protetto entro il 2030.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-capri.jpg" alt="I Faraglioni di Capri visti dal mare" width="1000" height="693" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 3 · PUNTO 02 -->
+<section class="mscr dark" id="p2" data-name="02, dati aperti" data-n="02">
+  <div class="bgph" aria-hidden="true"><img src="img/foto/s-marpiccolo.jpg" alt="" width="1000" height="667" loading="lazy"></div>
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">02</b>
+        <div class="ptc">
+          <p class="tema">Dati</p>
+          <h2 class="tit">Dati aperti</h2>
+          <div class="fr">
+            <p>A Taranto il progetto europeo Prometheus mette il Comune accanto a partner italiani e greci, con sensori, droni e intelligenza artificiale e siti pilota tra il Mar Piccolo e San Vito.</p>
+            <p>I dati che escono da quei sensori riguardano chi vive lì, quindi vanno pubblicati in formato aperto.</p>
+            <p>La stessa cosa la chiediamo a ogni amministrazione che incontriamo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 4 · PUNTO 03 -->
+<section class="mscr withph" id="p3" data-name="03, modelli che si dichiarano" data-n="03">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">03</b>
+        <div class="ptc">
+          <p class="tema">Intelligenza artificiale</p>
+          <h2 class="tit">Modelli che si dichiarano</h2>
+          <div class="fr">
+            <p>Il video «Il Viaggio del Delfino» è fatto con l'intelligenza artificiale e l'11 settembre 2026 ha ricevuto un riconoscimento a Venezia, alla 83ª Mostra del Cinema.</p>
+            <p>Nessun drone ha inseguito un animale vero per girarlo.</p>
+            <p>Chi usa questi strumenti dica quanto consumano, su quali dati sono addestrati e chi risponde quando sbagliano: Ettore Iorio ne ha parlato all'EcoDigital Forum di Roma del 22 luglio 2026.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-delfino.jpg" alt="Fotogramma del mare del Mar Piccolo, poster del video Il Viaggio del Delfino" width="1100" height="734" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 5 · PUNTO 04 -->
+<section class="mscr dark withph" id="p4" data-name="04, lavoro che cambia" data-n="04">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">04</b>
+        <div class="ptc">
+          <p class="tema">Lavoro</p>
+          <h2 class="tit">Lavoro che cambia</h2>
+          <div class="fr">
+            <p>A Taranto i corsi del Just Transition Fund hanno messo in formazione gratuita 750 lavoratori dell'indotto industriale, su green economy, blue economy, cultura e innovazione.</p>
+            <p>La Camera di commercio certifica le competenze della doppia transizione.</p>
+            <p>Prima si scrive l'elenco dei mestieri che serviranno, poi si fissa il calendario dei corsi.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-taranto.jpg" alt="Il Castello Aragonese di Taranto visto dal canale navigabile" width="950" height="632" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 6 · PUNTO 05 -->
+<section class="mscr withph" id="p5" data-name="05, paesaggio curato" data-n="05">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">05</b>
+        <div class="ptc">
+          <p class="tema">Paesaggio</p>
+          <h2 class="tit">Paesaggio curato</h2>
+          <div class="fr">
+            <p>Nel 2025 la FAO ha riconosciuto i terrazzamenti della Costiera amalfitana come patrimonio agricolo mondiale, terzo sito italiano nella rete GIAHS.</p>
+            <p>I muretti a secco trattengono terra e acqua, quindi chi li ripara fa manutenzione di un intero versante.</p>
+            <p>È un mestiere e va pagato come tale.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-terrazze.jpg" alt="I terrazzamenti a muretto a secco della Costiera amalfitana" width="1000" height="733" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 7 · PUNTO 06 -->
+<section class="mscr dark" id="p6" data-name="06, imprese con i numeri" data-n="06">
+  <div class="bgph" aria-hidden="true"><img src="img/foto/s-tavolo.jpg" alt="" width="950" height="633" loading="lazy"></div>
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">06</b>
+        <div class="ptc">
+          <p class="tema">Imprese</p>
+          <h2 class="tit">Imprese con i numeri</h2>
+          <div class="fr">
+            <p>Alle imprese chiediamo consumi, emissioni, filiera e durata dei prodotti, scritti in un bilancio che si legge senza decoder.</p>
+            <p>Nel febbraio 2025 la rete ha portato negli incontri la trasparenza nella rendicontazione ESG, e ne hanno scritto askanews e Italpress.</p>
+            <p>A Ecomondo, a Rimini dal 3 al 6 novembre 2026, andiamo a cercare chi quei numeri li pubblica già.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 8 · PUNTO 07 -->
+<section class="mscr withph" id="p7" data-name="07, comuni digitali" data-n="07">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">07</b>
+        <div class="ptc">
+          <p class="tema">Comuni</p>
+          <h2 class="tit">Comuni digitali</h2>
+          <div class="fr">
+            <p>Il 21 gennaio 2026, a Roma, il workshop «Comuni EcoDigital» ha messo allo stesso tavolo sindaci e amministratori.</p>
+            <p>Giovanni Legnini, che la rete ha incontrato a Chieti il 14 maggio 2026 ed è stato eletto sindaco l'8 giugno, ha destinato metà della sua indennità a borse di studio.</p>
+            <p>Un servizio pubblico digitale si deve aprire anche con un telefono vecchio e una connessione lenta.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-2026-01-21.jpg" alt="Sindaci, amministratori e giovani della rete in posa nella Sala di Liegro di Palazzo Valentini a Roma" width="1000" height="750" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 9 · PUNTO 08 -->
+<section class="mscr dark withph" id="p8" data-name="08, tavoli aperti" data-n="08">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">08</b>
+        <div class="ptc">
+          <p class="tema">Istituzioni</p>
+          <h2 class="tit">Tavoli aperti</h2>
+          <div class="fr">
+            <p>All'Assemblea Regionale Siciliana l'intergruppo EcoDigital è nato il 13 settembre 2024 e riunisce 13 deputati di otto gruppi diversi, con la presidenza di Jose Marano.</p>
+            <p>È il primo in Italia e gli altri consigli regionali lo possono ricopiare.</p>
+            <p>Serve un tema su cui vale la pena sedersi insieme e una presidenza dichiarata, così si sa a chi chiedere.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-ars.jpg" alt="Palazzo dei Normanni a Palermo, sede dell'Assemblea Regionale Siciliana" width="1000" height="750" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 10 · PUNTO 09 -->
+<section class="mscr withph" id="p9" data-name="09, giovani e startup" data-n="09">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">09</b>
+        <div class="ptc">
+          <p class="tema">Giovani</p>
+          <h2 class="tit">Giovani e startup</h2>
+          <div class="fr">
+            <p>Anselmo Pellizzi cura il blocco pitch e best practice degli incontri, dalla Rome Future Week del 16 settembre 2025 all'EcoDigital Forum di Roma del 22 luglio 2026.</p>
+            <p>Riccardo Del Prete, di Bring Value, segue la rete dal dicembre 2024, e Valentina Vecchia ha portato Idra Water sul palco.</p>
+            <p>Chi ha una startup che risolve un pezzo di problema la candidi scrivendo a info@ecodigital.it.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-gruppo.jpg" alt="Partecipanti a un incontro della rete EcoDigital sulla scalinata della sede" width="950" height="544" loading="lazy">
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 11 · PUNTO 10 -->
+<section class="mscr dark withph" id="p10" data-name="10, numeri verificabili" data-n="10">
+  <div class="mi"><div class="wrap">
+    <div class="ptgrid">
+      <div class="ptx">
+        <b class="num">10</b>
+        <div class="ptc">
+          <p class="tema">Misura</p>
+          <h2 class="tit">Numeri verificabili</h2>
+          <div class="fr">
+            <p>Una pratica che funziona lo dimostra con un numero scelto prima e controllato dopo: 750 lavoratori in formazione a Taranto, 13 deputati nell'intergruppo siciliano, 56 tappe dal 2021.</p>
+            <p>Quando il numero manca, lo scriviamo.</p>
+            <p>Vale anche per questo sito, che dichiara quanto pesa ogni pagina.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="ph">
+        <img src="img/foto/s-stampa.jpg" alt="Conferenza stampa della rete EcoDigital, i partecipanti mostrano i cartelli della rete" width="950" height="594" loading="lazy">
+        <figcaption>Una conferenza stampa della rete. Dal 2021 le tappe EcoDigital sono 31, da Milano a Quartu Sant'Elena.</figcaption>
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================================ 12 · FIRMA -->
+<section class="mscr sign scene mid light scrollarea" id="firma" data-name="Firma il manifesto">
+  <div class="mi"><div class="wrap">
+    <p class="eyebrow2">Firma il manifesto</p>
+    <h2 class="giant xs">Metti il tuo nome accanto agli altri.</h2>
+    <p class="say">Il muro delle firme si aggiorna appena premi il bottone. In questo prototipo i dati restano nel tuo browser e non parte nessuna mail. Nella versione pubblica servono nome, iniziale del cognome, città e categoria, con l'informativa privacy.</p>
+    <div class="formgrid">
+      <form id="fsign" novalidate>
+        <div class="fld"><label for="s-nome">Nome</label><input type="text" id="s-nome" name="nome" required autocomplete="given-name" placeholder="Alessandra"></div>
+        <div class="fld"><label for="s-ini">Iniziale del cognome</label><input type="text" id="s-ini" name="ini" maxlength="1" required placeholder="R." style="max-width:120px"></div>
+        <div class="fld"><label for="s-citta">Città</label><input type="text" id="s-citta" name="citta" required autocomplete="address-level2" placeholder="Salerno"></div>
+        <div class="fld">
+          <label id="lab-ruolo">Sono</label>
+          <div class="pick" role="radiogroup" aria-labelledby="lab-ruolo">
+            <label><input type="radio" name="ruolo" value="Cittadino" checked>Cittadino</label>
+            <label><input type="radio" name="ruolo" value="Impresa">Impresa</label>
+            <label><input type="radio" name="ruolo" value="Startup">Startup</label>
+            <label><input type="radio" name="ruolo" value="Amministratore">Amministratore</label>
+            <label><input type="radio" name="ruolo" value="Studente">Studente</label>
+          </div>
+        </div>
+        <button class="b b-sig" type="submit" style="width:100%">Firma il manifesto</button>
+        <div class="okmsg" id="s-ok" role="status">Firma registrata. Grazie.</div>
+        <p class="note">Prototipo: nessun dato lascia questo computer. Chi vuole scriverci lo può fare a info@ecodigital.it.</p>
+      </form>
+      <div>
+        <div class="counts" style="margin-top:0;grid-template-columns:1fr 1fr;gap:26px">
+          <div class="c"><b id="s-tot">0</b><span>Firme raccolte</span></div>
+          <div class="c"><b id="s-citta-n">0</b><span>Città rappresentate</span></div>
+        </div>
+        <div class="sigwall scrollarea" id="s-wall" aria-live="polite"></div>
+        <p class="note">Le firme di partenza di questo prototipo sono di esempio, con nomi di fantasia.</p>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<!-- ============================================ 13 · DOPO LA FIRMA E PIEDE -->
+<div class="mscr end" id="fine" data-name="Dopo la firma e piede della pagina">
+  <div class="mi">
+
+<section class="dopo">
+  <div class="wrap">
+    <p class="eyebrow2">Dopo la firma</p>
+    <h2 class="giant xs">Scrivici la cosa buona che hai visto vicino a casa.</h2>
+    <p class="intro">Un comune che ha aperto i dati, un'impresa che pubblica i consumi, una scuola che insegna le due transizioni insieme, una startup che risolve un pezzo di problema. Se l'hai vista, scrivicelo a info@ecodigital.it: andiamo a verificarla e finisce nella pagina dei territori.</p>
+    <div class="acts">
+      <a class="b b-sig" href="attivista.html">Diventa follower ecodigital</a>
+      <a class="b b-line" href="sfide.html">Le buone notizie dai territori</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale della transizione ecologica e digitale. Dal 2021 giriamo l'Italia con amministratori, imprese, startup e studenti.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, il canale delle buone notizie ecologiche e digitali · <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</div>
+
+<script>
+function ecoCount(node){
+  var end=parseFloat(node.getAttribute('data-count'))||0, suf=node.getAttribute('data-suf')||'';
+  var dec=parseInt(node.getAttribute('data-dec')||'0',10);
+  var t0=null, dur=1100;
+  function f(n){ return n.toLocaleString('it-IT',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches){ node.textContent=f(end)+suf; return; }
+  var done=false;
+  function step(ts){ if(done) return; if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-p,3);
+    node.textContent=f(end*e)+suf; if(p<1) requestAnimationFrame(step); else done=true; }
+  requestAnimationFrame(step);
+  setTimeout(function(){ if(!done){ done=true; node.textContent=f(end)+suf; } }, dur+900);
+}
+</script>
+
+<script>
+/* ---- muro delle firme: stesso archivio locale della home ---- */
+(function(){
+  var KEY='ecodigital_firme_v2';
+  var SEED=[
+    {n:'Alessandra',i:'R',c:'Salerno',r:'Cittadino'},{n:'Marco',i:'D',c:'Taranto',r:'Impresa'},
+    {n:'Giulia',i:'P',c:'Catania',r:'Studente'},{n:'Fabio',i:'M',c:'Napoli',r:'Startup'},
+    {n:'Chiara',i:'L',c:'Milano',r:'Cittadino'},{n:'Antonio',i:'G',c:'Santa Maria Capua Vetere',r:'Amministratore'},
+    {n:'Serena',i:'B',c:'Palermo',r:'Cittadino'},{n:'Luca',i:'F',c:'Roma',r:'Impresa'},
+    {n:'Ilaria',i:'C',c:'Amalfi',r:'Cittadino'},{n:'Vincenzo',i:'S',c:'Capri',r:'Amministratore'},
+    {n:'Martina',i:'T',c:'Bologna',r:'Studente'},{n:'Davide',i:'A',c:'Torino',r:'Startup'},
+    {n:'Rosa',i:'E',c:'Bari',r:'Cittadino'},{n:'Pietro',i:'N',c:'Venezia',r:'Impresa'},
+    {n:'Sara',i:'V',c:'Firenze',r:'Cittadino'},{n:'Gennaro',i:'O',c:'Sorrento',r:'Impresa'},
+    {n:'Elisa',i:'Z',c:'Genova',r:'Studente'},{n:'Michele',i:'Q',c:'Lecce',r:'Cittadino'},
+    {n:'Federica',i:'H',c:'Ravello',r:'Amministratore'},{n:'Simone',i:'U',c:'Padova',r:'Startup'},
+    {n:'Anna',i:'I',c:'Cagliari',r:'Cittadino'},{n:'Raffaele',i:'D',c:'Positano',r:'Impresa'},
+    {n:'Beatrice',i:'M',c:'Trieste',r:'Studente'},{n:'Salvatore',i:'C',c:'Messina',r:'Cittadino'},
+    {n:'Valeria',i:'P',c:'Perugia',r:'Amministratore'},{n:'Nicola',i:'G',c:'Matera',r:'Cittadino'}
+  ];
+  var mem=null;
+  function load(){ try{ var v=localStorage.getItem(KEY); if(v) return JSON.parse(v); }catch(e){} return mem||SEED.slice(); }
+  function save(l){ mem=l; try{ localStorage.setItem(KEY,JSON.stringify(l)); }catch(e){} }
+  var list=load();
+  var wall=document.getElementById('s-wall'), tot=document.getElementById('s-tot'),
+      cn=document.getElementById('s-citta-n'), form=document.getElementById('fsign'),
+      ok=document.getElementById('s-ok');
+  if(!wall||!form) return;
+  function cities(l){ var s={},k=0; l.forEach(function(f){ var c=(f.c||'').trim().toLowerCase(); if(c&&!s[c]){s[c]=1;k++;} }); return k; }
+  function chip(f,isNew){
+    var d=document.createElement('span'); d.className='s'+(isNew?' new':'');
+    var b=document.createElement('b'); b.textContent=f.n+' '+f.i+'.';
+    var s=document.createElement('i'); s.textContent=' · '+f.c;
+    d.appendChild(b); d.appendChild(s); d.title=f.r; return d;
+  }
+  function render(){ wall.textContent=''; list.slice().reverse().slice(0,60).forEach(function(f,i){ wall.appendChild(chip(f, i===0&&f.mine)); }); }
+  function nums(anim){
+    tot.setAttribute('data-count',list.length);
+    cn.setAttribute('data-count',cities(list));
+    if(anim){ ecoCount(tot); ecoCount(cn); } else { tot.textContent=list.length; cn.textContent=cities(list); }
+  }
+  render(); nums(false);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ nums(true); io.disconnect(); } }); },{threshold:.4});
+    io.observe(tot);
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=form.nome.value.trim(), i=form.ini.value.trim().toUpperCase().replace(/[^A-ZÀ-Ü]/g,''), c=form.citta.value.trim();
+    var r=(form.querySelector('input[name=ruolo]:checked')||{}).value||'Cittadino';
+    if(!n||!c){ (n?form.citta:form.nome).focus(); return; }
+    list.push({n:n.charAt(0).toUpperCase()+n.slice(1), i:i||n.charAt(0).toUpperCase(), c:c, r:r, mine:true});
+    save(list); render(); nums(true);
+    if(ok){ ok.classList.add('on'); ok.textContent='Firma registrata: '+n+' '+(i||'')+'. da '+c+'. Adesso siete in '+list.length+'.'; }
+    form.nome.value=''; form.ini.value=''; form.citta.value='';
+  });
+})();
+</script>
+
+<script src="js/manifesto-scroll.js?v=20261001"></script>
+
+</body>
+</html>

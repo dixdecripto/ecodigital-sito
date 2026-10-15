@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EcoDigital · La rete siamo noi</title>
+<meta name="description" content="Le persone della rete EcoDigital, i sindaci e i parlamentari intervenuti alle tappe e chi sostiene il canale, dal 2021 al 2026.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+/* --- griglia delle persone --- */
+.v2 .team{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,228px),1fr));
+  gap:clamp(20px,2.8vw,32px);margin-top:clamp(26px,4vh,44px)}
+.v2 .team .mbr{margin:0}
+.v2 .team .shot,.v2 .team .mono{width:100%;aspect-ratio:1/1;border-radius:14px;display:block}
+.v2 .team .shot{object-fit:cover;object-position:center 22%;background:#1F2D6E;
+  border:1px solid rgba(255,255,255,.2)}
+.v2 .team .mono{background:var(--forest);color:var(--hero-ink);display:grid;place-items:center;
+  font-family:var(--display);font-stretch:125%;font-weight:800;letter-spacing:-.05em;
+  font-size:clamp(52px,7vw,88px);line-height:1;border:1px solid rgba(41,59,142,.3)}
+.v2 .team h3{margin:15px 0 0;font-size:1.05rem;line-height:1.2;letter-spacing:-.02em}
+.v2 .team .role{margin:7px 0 0;font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;
+  font-weight:700;color:var(--signal);line-height:1.4}
+.v2 .team .bio{margin:11px 0 0;font-size:.86rem;line-height:1.5;opacity:.84}
+.v2 .team .tappa{margin:6px 0 0;font-size:.82rem;font-weight:700;letter-spacing:-.01em;opacity:.92}
+.v2 .scene.light .team .tappa{color:var(--forest)}
+.v2 .grp{margin:clamp(30px,4vh,48px) 0 0;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.16em;font-weight:800;color:var(--signal)}
+.v2 .team .org{display:block;font-size:.8rem;letter-spacing:.02em;text-transform:none;
+  font-weight:800;color:var(--hero-ink);margin-bottom:3px}
+.v2 .scene.light .team .org{color:var(--forest)}
+.v2 .team .more{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:700;
+  color:var(--signal);text-decoration:none;border-bottom:1px solid currentColor}
+.v2 .scene.light .team .shot{border-color:var(--line)}
+.v2 .scene.light .team .role{color:var(--signal-ink)}
+.v2 .scene.light .team .bio{opacity:1;color:var(--muted)}
+.v2 .scene.light .team h3{color:var(--forest)}
+.v2 .scene.light .team .more{color:var(--signal-ink)}
+.v2 .scene.light .b-line{color:var(--forest);border-color:var(--line)}
+
+/* --- elenco dei relatori --- */
+.v2 .roll{margin:clamp(24px,3.5vh,38px) 0 0;padding:0;list-style:none;
+  columns:4 168px;column-gap:clamp(18px,2.4vw,30px);font-size:.9rem}
+.v2 .roll li{break-inside:avoid;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.16);
+  line-height:1.35}
+
+/* --- fascia delle foto di gruppo --- */
+.v2 .gall{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  gap:14px;margin-top:clamp(26px,4vh,44px)}
+.v2 .gall figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.06)}
+.v2 .gall img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+.v2 .gall figcaption{padding:11px 14px;font-size:.72rem;line-height:1.4;opacity:.78}
+
+/* --- elenco dei partner --- */
+.v2 .lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
+  gap:6px 22px;margin:18px 0 0;padding:0;list-style:none;font-size:.9rem}
+.v2 .lista li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.v2 .lista li b{font-weight:700}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html" aria-current="page">Rete</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="sfide.html">Territori</a>
+      <a href="eventi/index.html">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html">Blog</a>
+      <a href="stampa.html">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ====================================================== APERTURA -->
+<section class="scene mid short" style="background:var(--forest)">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="in"><div class="wrap">
+    <h1 class="giant sm">La rete siamo noi.</h1>
+    <p class="say" style="margin-top:26px;max-width:58ch">Qui ci sono le persone della rete EcoDigital, con il ruolo che hanno e le cose che hanno fatto. I nomi vengono dalle locandine dei nostri incontri e dall'archivio pubblico della rete, quindi sono nomi già stampati e già pubblici. Se manchi e dovresti esserci, scrivici: <b>info@ecodigital.it</b>.</p>
+    <div class="acts">
+      <a class="b b-sig" href="attivista.html">Diventa follower ecodigital</a>
+      <a class="b b-line" href="#startup">Candida la tua startup</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== LE PERSONE DELLA RETE -->
+<section class="scene mid light" id="squadra" style="background:var(--bg)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2" style="color:var(--signal-ink)">La rete</p>
+    <h2 class="giant xs rv2" data-d="1" style="color:var(--forest)">Le persone della rete</h2>
+
+    <div class="team">
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/v-apecoraro.jpg" alt="Ritratto di Alfonso Pecoraro Scanio" width="360" height="360" loading="lazy"><h3>Alfonso Pecoraro Scanio</h3>
+        <p class="role">Promotore della rete EcoDigital</p>
+        <p class="bio">Ha avviato la rete nel 2021 e da allora è sulle locandine di tutte le tappe, da Roma a Quartu Sant'Elena. Presiede la Fondazione UniVerde ed è stato ministro dell'Ambiente e dell'Agricoltura.</p>
+        <a class="more" href="alfonso-pecoraro-scanio.html">La sua pagina</a>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/v-pellizzi.jpg" alt="Ritratto di Anselmo Pellizzi" width="360" height="360" loading="lazy"><h3>Anselmo Pellizzi</h3>
+        <p class="role">Segretario nazionale della rete</p>
+        <p class="bio">Cura il blocco pitch e best practice degli incontri. Roma il 4 dicembre 2024, gli appuntamenti di luglio 2025, la Rome Future Week del 16 settembre 2025 e il Forum del 22 luglio 2026.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/v-cutino.jpg" alt="Ritratto di Christian Cutino" width="360" height="360" loading="lazy"><h3>Christian Cutino</h3>
+        <p class="role">EcoDigital Campania, direttivo</p>
+        <p class="bio">Si occupa di digital marketing e coordina il gruppo campano, quello che si muove di più: 13 tappe dal 2023, da Napoli a Vietri sul Mare. Era fra i relatori di Castellammare di Stabia il 18 maggio 2024 e modera quasi tutti gli incontri in Campania.</p>
+        <a class="more" href="campania.html">EcoDigital Campania</a>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/v-digirolamo.jpg" alt="Ritratto di Emilia Di Girolamo" width="360" height="360" loading="lazy"><h3>Emilia Di Girolamo</h3>
+        <p class="role">EcoDigital Campania, MAVV</p>
+        <p class="bio">Dirige il Museo dell'arte, del vino e della vite di Portici e segue il pezzo enogastronomico del gruppo campano. Sul palco a Napoli, a Cercola, a Santa Maria Capua Vetere e alla Fabbrica Italiana dell'Innovazione.</p>
+        <a class="more" href="campania.html">EcoDigital Campania</a>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/v-iorio.jpg" alt="Ritratto di Ettore Iorio" width="360" height="360" loading="lazy"><h3>Ettore Iorio</h3>
+        <p class="role">Etica dell'intelligenza artificiale</p>
+        <p class="bio">Studia l'etica dell'intelligenza artificiale e le regole che servono a chi la usa. Ha parlato all'EcoDigital Forum di Roma del 22 luglio 2026.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/v-urzi.jpg" alt="Ritratto di Manuel Urzì" width="360" height="360" loading="lazy"><h3>Manuel Urzì</h3>
+        <p class="role">EcoDigital Lombardia, Startup Geeks</p>
+        <p class="bio">Lavora in Startup Geeks e segue il gruppo lombardo. Sei tappe della rete, da Milano a Bologna, con i passaggi di Catania e Genova nel 2024.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/v-mossa.jpg" alt="Ritratto di Tiziana Mossa" width="360" height="360" loading="lazy"><h3>Tiziana Mossa</h3>
+        <p class="role">EcoDigital Piemonte</p>
+        <p class="bio">Consigliera della prima circoscrizione della Città di Torino. Sul palco a Milano il 22 luglio 2024 e a Torino il 27 settembre 2024, per la Giornata mondiale del turismo.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/v-califano.jpg" alt="Ritratto di Massimiliano Califano" width="360" height="360" loading="lazy"><h3>Massimiliano Califano</h3>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/v-marano.jpg" alt="Ritratto di Jose Marano" width="360" height="360" loading="lazy"><h3>Jose Marano</h3>
+        <p class="role">Intergruppo EcoDigital all'ARS</p>
+        <p class="bio">Deputata all'Assemblea Regionale Siciliana, presiede l'Intergruppo EcoDigital nato il 13 settembre 2024 con 13 deputati di otto gruppi diversi.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/v-depetris.jpg" alt="Ritratto di Loredana De Petris" width="360" height="360" loading="lazy"><h3>Loredana De Petris</h3>
+        <p class="role">Senatrice, promotrice della rete</p>
+        <p class="bio">Ha promosso la rete fin dall'inizio e ha aperto le sale del Senato agli incontri. Nove tappe romane, da Palazzo Brancaccio nel 2021 a Palazzo Giustiniani nel marzo 2024.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/v-delprete.jpg" alt="Ritratto di Riccardo Del Prete" width="360" height="360" loading="lazy"><h3>Riccardo Del Prete</h3>
+        <p class="role"><span class="org">Bring Value</span>Fondatore e CEO</p>
+        <p class="bio">Bring Value è la startup che segue la rete da più tempo. Era a Roma il 4 dicembre 2024, agli incontri di luglio 2025 e all'EcoDigital Forum del 22 luglio 2026.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/v-mele.jpg" alt="Ritratto di Jacopo Mele" width="360" height="360" loading="lazy"><h3>Jacopo Mele</h3>
+        <p class="role"><span class="org">Fondazione Homo ex Machina</span>Presidente</p>
+        <p class="bio">Porta agli incontri il lavoro della sua fondazione sull'innovazione e sui giovani. Quattro tappe fra Roma e Milano, dal gennaio 2023 al dicembre 2024.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/v-russo.jpg" alt="Ritratto di Francesco Paolo Russo" width="360" height="360" loading="lazy"><h3>Francesco Paolo Russo</h3>
+        <p class="role"><span class="org">ANGI</span>Direttore</p>
+        <p class="bio">Dirige l'Associazione Nazionale Giovani Innovatori. Tre tappe della rete, dal Phygital &amp; Metaverse Meeting di Roma del 7 luglio 2022 in avanti.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/v-vecchia.jpg" alt="Ritratto di Valentina Vecchia" width="360" height="360" loading="lazy"><h3>Valentina Vecchia</h3>
+        <p class="role"><span class="org">Idra Water</span>CEO</p>
+        <p class="bio">Guida Idra Water, una delle startup salite sul palco degli incontri con la propria best practice. Il marchio compare fra quelli dei materiali della rete.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/v-licastro.jpg" alt="Ritratto di Irene Licastro" width="360" height="360" loading="lazy"><h3>Irene Licastro</h3>
+        <p class="role"><span class="org">Aspire Leaders</span>Fellow</p>
+        <p class="bio">Fa parte del programma Aspire Leaders, che lavora sulla formazione dei giovani. È fra i ritratti con nome dell'archivio pubblico della rete.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/v-dicapua.jpg" alt="Ritratto di Alessandro Di Capua" width="360" height="360" loading="lazy"><h3>Alessandro Di Capua</h3>
+        <p class="role"><span class="org">Curatore del canale</span>Responsabile marketing e comunicazione</p>
+        <p class="bio">Cura il canale EcoDigital con Michele D'Orso: sito, social e campagne. L'11 settembre 2026 era al Lido di Venezia per il riconoscimento al video sulle Aree Marine Protette, il progetto 30x30.</p>
+      </article>
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/v-dorso.jpg" alt="Ritratto di Michele D'Orso" width="360" height="360" loading="lazy"><h3>Michele D'Orso</h3>
+        <p class="role"><span class="org">Curatore del canale</span>Video e contenuti</p>
+        <p class="bio">Ha firmato «Il Viaggio del Delfino», il video girato con l'intelligenza artificiale da Capri a Taranto. L'11 settembre 2026 il video ha ricevuto un riconoscimento alla Mostra di Venezia.</p>
+      </article>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== I RELATORI ECODIGITAL -->
+<section class="scene mid" id="relatori" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">Intervenuti agli incontri</p>
+    <h2 class="giant xs rv2" data-d="1">I relatori ecodigital nelle istituzioni</h2>
+    <p class="say rv2" data-d="2" style="margin-top:20px;max-width:60ch">Sono intervenuti come relatori agli incontri della rete: sindaci, senatori, deputati ed eurodeputati, dal primo incontro di Roma del 12 ottobre 2021 al workshop &laquo;Comuni EcoDigital&raquo; del 21 gennaio 2026. Accanto a ogni nome c'&egrave; la tappa in cui &egrave; intervenuto, con la citt&agrave; e la data.</p>
+
+    <p class="grp rv2" data-d="2">Sindaci e amministratori locali</p>
+    <div class="team">
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/pol-manfredi.jpg" alt="Ritratto di Gaetano Manfredi" width="360" height="360" loading="lazy"><h3>Gaetano Manfredi</h3>
+        <p class="role">Sindaco di Napoli</p>
+        <p class="tappa">Napoli, 26 maggio 2025</p>
+        <p class="bio">Quattro tappe della rete, dal convegno romano del 30 marzo 2022 ai due seminari napoletani sul turismo sostenibile.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/pol-legnini.jpg" alt="Ritratto di Giovanni Legnini" width="360" height="360" loading="lazy"><h3>Giovanni Legnini</h3>
+        <p class="role">Sindaco di Chieti</p>
+        <p class="tappa">Chieti, 14 maggio 2026</p>
+        <p class="bio">Alfonso lo chiama il sindaco ecodigital: ha destinato met&agrave; della sua indennit&agrave; a borse di studio. Prima di Chieti era a Pescara l'8 marzo 2024, poi al Forum di Roma del 22 luglio 2026.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <div class="mono" role="img" aria-label="Iniziali di Emma Petitti, foto non disponibile">EP</div><h3>Emma Petitti</h3>
+        <p class="role">Assemblea legislativa dell'Emilia-Romagna</p>
+        <p class="tappa">Rimini, 8 novembre 2024</p>
+        <p class="bio">Allo stand di Ecomondo per il 22&deg; Rapporto sulle rinnovabili, sei giorni prima della tappa di Bologna.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <div class="mono" role="img" aria-label="Iniziali di Enrico Trantino, foto non disponibile">ET</div><h3>Enrico Trantino</h3>
+        <p class="role">Sindaco di Catania</p>
+        <p class="tappa">Catania, 15 luglio 2024</p>
+        <p class="bio">Ha aperto Palazzo degli Elefanti alla tappa siciliana su strategie e best practice.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/pol-gualtieri.jpg" alt="Ritratto di Roberto Gualtieri" width="360" height="360" loading="lazy"><h3>Roberto Gualtieri</h3>
+        <p class="role">Sindaco di Roma</p>
+        <p class="tappa">Roma, 12 ottobre 2021</p>
+        <p class="bio">Era candidato sindaco quando la rete si &egrave; presentata a Palazzo Brancaccio, alla sua prima tappa in assoluto.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <div class="mono" role="img" aria-label="Iniziali di Federico Scaramucci, foto non disponibile">FS</div><h3>Federico Scaramucci</h3>
+        <p class="role">Amministratore locale, Urbino</p>
+        <p class="tappa">Urbino, 1 marzo 2024</p>
+        <p class="bio">Tappa al Caff&egrave; degli Archi, in piazza della Repubblica, su benessere dei cittadini e ambiente.</p>
+      </article>
+
+    </div>
+
+    <p class="grp rv2" data-d="2">Parlamentari ed eurodeputati</p>
+    <div class="team">
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/pol-conte.jpg" alt="Ritratto di Giuseppe Conte" width="360" height="360" loading="lazy"><h3>Giuseppe Conte</h3>
+        <p class="role">Presidente del Movimento 5 Stelle</p>
+        <p class="tappa">Roma, 21 gennaio 2026</p>
+        <p class="bio">Cinque tappe romane, dal convegno sull'indipendenza energetica del 30 marzo 2022 a quello sul PNRR del 18 marzo 2024. Nel 2026 ha aperto il workshop &laquo;Comuni EcoDigital&raquo; con sindaci e amministratori.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/pol-boccia.jpg" alt="Ritratto di Francesco Boccia" width="360" height="360" loading="lazy"><h3>Francesco Boccia</h3>
+        <p class="role">Senatore</p>
+        <p class="tappa">Roma, 4 dicembre 2024</p>
+        <p class="bio">Tre tappe romane: Palazzo Giustiniani nel 2022 e nel 2024, poi Europa Experience con le nuove generazioni.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/pol-furore.jpg" alt="Ritratto di Mario Furore" width="360" height="360" loading="lazy"><h3>Mario Furore</h3>
+        <p class="role">Eurodeputato</p>
+        <p class="tappa">Lecce, 30 maggio 2024</p>
+        <p class="bio">Prima a Napoli l'8 maggio 2023 sul turismo, poi alla tappa pugliese. Nel febbraio 2026 ha accolto la rete a Bruxelles.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/pol-patuanelli.jpg" alt="Ritratto di Stefano Patuanelli" width="360" height="360" loading="lazy"><h3>Stefano Patuanelli</h3>
+        <p class="role">Senatore</p>
+        <p class="tappa">Roma, 18 marzo 2024</p>
+        <p class="bio">Alla Sala Zuccari di Palazzo Giustiniani, tappa su PNRR e smart governance.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/pol-floridia.jpg" alt="Ritratto di Barbara Floridia" width="360" height="360" loading="lazy"><h3>Barbara Floridia</h3>
+        <p class="role">Senatrice, presidente della Commissione di vigilanza Rai</p>
+        <p class="tappa">Catania, 15 luglio 2024</p>
+        <p class="bio">Sul palco della tappa siciliana, al Comune di Catania, insieme ai giovani della rete.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/pol-gava.jpg" alt="Ritratto di Vannia Gava" width="360" height="360" loading="lazy"><h3>Vannia Gava</h3>
+        <p class="role">Deputata</p>
+        <p class="tappa">Rimini, 8 novembre 2024</p>
+        <p class="bio">A Ecomondo per il rapporto su amministrazioni locali e transizione energetica.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <img class="shot" src="img/foto/pol-donno.jpg" alt="Ritratto di Leonardo Donno" width="360" height="360" loading="lazy"><h3>Leonardo Donno</h3>
+        <p class="role">Deputato</p>
+        <p class="tappa">Lecce, 30 maggio 2024</p>
+        <p class="bio">A Palazzo Turrisi-Palumbo per la tappa pugliese su giovani, turismo ed Europa.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <img class="shot" src="img/foto/pol-tamburrano.jpg" alt="Ritratto di Dario Tamburrano" width="360" height="360" loading="lazy"><h3>Dario Tamburrano</h3>
+        <p class="role">Eurodeputato</p>
+        <p class="tappa">Roma, 4 dicembre 2024</p>
+        <p class="bio">Ha ospitato la tappa a Europa Experience e nel febbraio 2026 ha portato la rete a Bruxelles per due giorni di incontri.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <img class="shot" src="img/foto/pol-tridico.jpg" alt="Ritratto di Pasquale Tridico" width="360" height="360" loading="lazy"><h3>Pasquale Tridico</h3>
+        <p class="role">Eurodeputato</p>
+        <p class="tappa">Bruxelles, 26 febbraio 2026</p>
+        <p class="bio">Fra gli eurodeputati incontrati nei due giorni su transizione ecodigital, trasparenza e democrazia.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <div class="mono" role="img" aria-label="Iniziali di Agostino Santillo, foto non disponibile">AS</div><h3>Agostino Santillo</h3>
+        <p class="role">Vicepresidente della Commissione Ambiente della Camera</p>
+        <p class="tappa">Roma, 28 novembre 2023</p>
+        <p class="bio">Alla Sala Matteotti di Palazzo Theodoli-Bianchelli per &laquo;La rivoluzione EcoDigital&raquo;.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <div class="mono" role="img" aria-label="Iniziali di Alessandra Maiorino, foto non disponibile">AM</div><h3>Alessandra Maiorino</h3>
+        <p class="role">Senatrice, capogruppo in Commissione Esteri</p>
+        <p class="tappa">Roma, 30 agosto 2022</p>
+        <p class="bio">Conferenza stampa a Palazzo Madama sulla sfida ecologista per la legislatura.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <div class="mono" role="img" aria-label="Iniziali di Valentina Palmisano, foto non disponibile">VP</div><h3>Valentina Palmisano</h3>
+        <p class="role">Eurodeputata</p>
+        <p class="tappa">Lecce, 30 maggio 2024</p>
+        <p class="bio">Dalla tappa pugliese ai due giorni di incontri a Bruxelles del 26 febbraio 2026.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="1">
+        <div class="mono" role="img" aria-label="Iniziali di Gaetano Pedullà, foto non disponibile">GP</div><h3>Gaetano Pedull&agrave;</h3>
+        <p class="role">Eurodeputato</p>
+        <p class="tappa">Milano, 16 maggio 2024</p>
+        <p class="bio">Tappa da Youthquake su giovani, innovazione e Green Deal, poi gli incontri di Bruxelles.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="2">
+        <div class="mono" role="img" aria-label="Iniziali di Sergio Costa, foto non disponibile">SC</div><h3>Sergio Costa</h3>
+        <p class="role">Deputato, gi&agrave; ministro dell'Ambiente</p>
+        <p class="tappa">Avezzano, 7 marzo 2024</p>
+        <p class="bio">Al Gran Caff&egrave; di piazza Risorgimento, tappa su economia, ambiente e turismo.</p>
+      </article>
+
+      <article class="mbr rv2" data-d="3">
+        <div class="mono" role="img" aria-label="Iniziali di Rossella Muroni, foto non disponibile">RM</div><h3>Rossella Muroni</h3>
+        <p class="role">Ambientalista, gi&agrave; deputata</p>
+        <p class="tappa">Roma, 7 luglio 2022</p>
+        <p class="bio">Allo Spazio Field di via Merulana per la tappa su phygital e metaverso.</p>
+      </article>
+
+    </div>
+
+    <p class="note rv2" data-d="3">I nomi e le date vengono dalle locandine pubbliche degli incontri e dall'archivio della rete. Prima della messa online va chiesto il consenso alle persone citate, e chi preferisce uscire dall'elenco ci scrive a info@ecodigital.it.</p>
+  </div></div>
+</section>
+
+<!-- ====================================================== FOTO DI GRUPPO -->
+<section class="scene short">
+  <div class="scene-bg blur"><img src="img/foto/s-gruppo.jpg" alt="" width="950" height="544" loading="lazy"></div>
+  <div class="veil f85"></div>
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">Le foto di gruppo</p>
+    <h2 class="giant xs rv2" data-d="1">Sale piene, cartelli, scalinate.</h2>
+    <div class="gall">
+      <figure class="rv2" data-d="1"><img src="img/foto/s-gruppo.jpg" alt="Una quarantina di giovani sulla scalinata della sede con il cartello EcoDigital" width="950" height="544" loading="lazy"><figcaption>Luglio 2022, il cartello EcoDigital sulla scalinata: una quarantina di ragazzi dopo l'incontro.</figcaption></figure>
+      <figure class="rv2" data-d="2"><img src="img/foto/s-stampa.jpg" alt="Conferenza stampa della rete con i partecipanti che mostrano i cartelli EcoDigital" width="950" height="594" loading="lazy"><figcaption>La conferenza stampa a Palazzo Madama, con i cartelli della rete davanti ai microfoni.</figcaption></figure>
+      <figure class="rv2" data-d="3"><img src="img/foto/s-tavolo.jpg" alt="Il tavolo dei relatori in una sala istituzionale" width="950" height="633" loading="lazy"><figcaption>Il tavolo dei relatori, con istituzioni e imprese sedute accanto ai ragazzi della rete.</figcaption></figure>
+      <figure class="rv2" data-d="1"><img src="img/foto/s-genova.jpg" alt="Relatore al microfono davanti al gonfalone della città durante la tappa di Genova" width="1000" height="679" loading="lazy"><figcaption>Genova, 15 ottobre 2024: la tappa ligure al Talent Garden Baltimora.</figcaption></figure>
+      <figure class="rv2" data-d="2"><img src="img/foto/s-bologna.jpg" alt="Intervento durante la tappa di Bologna" width="1000" height="901" loading="lazy"><figcaption>Bologna, 14 novembre 2024, allo spazio The Rooom di via Galliera.</figcaption></figure>
+      <figure class="rv2" data-d="3"><img src="img/foto/s-sala2.jpg" alt="La sala di un incontro della rete vista dal fondo" width="1000" height="667" loading="lazy"><figcaption>Una sala vista dal fondo: chi amministra, chi produce e chi studia, seduti insieme.</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== CHI CI SOSTIENE -->
+<section class="scene mid short" id="sostegno" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">Chi ci sostiene</p>
+    <h2 class="giant xs rv2" data-d="1">Chi tiene in piedi EcoDigital</h2>
+    <div class="split" style="margin-top:clamp(30px,4vh,50px)">
+      <div>
+        <p class="say rv2" data-d="2">A sorreggere EcoDigital c'è <b>SOS Terra ETS</b>, l'ente del terzo settore che amministra anche il gruppo Facebook della rete. Accanto ci sono la <b>Fondazione UniVerde</b>, presieduta da Alfonso Pecoraro Scanio, e <b>Opera2030</b>.</p>
+        <p class="say rv2" data-d="3" style="margin-top:18px">Chi vuole sostenere il canale, o portare un progetto dentro le tappe, scrive ad Alessandro Di Capua o a Michele D'Orso: <b>info@ecodigital.it</b>.</p>
+      </div>
+      <div class="rv2" data-d="2">
+        <img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy" style="border-radius:16px;background:#fff;padding:18px;border:1px solid rgba(255,255,255,.22)">
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== STARTUP -->
+<section class="scene mid light" id="startup" style="background:var(--bg)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2" style="color:var(--signal-ink)">Startup, imprese e comuni</p>
+    <h2 class="giant xs rv2" data-d="1" style="color:var(--forest)">Candida la tua startup</h2>
+    <div class="formgrid" style="margin-top:34px">
+      <div>
+        <p class="say rv2" data-d="2" style="color:var(--muted)">Le startup sono le prime compagne di strada della rete. Hanno già risolto un pezzo di problema, spesso senza che se ne accorga nessuno fuori dal loro settore. Noi le portiamo sul palco degli incontri, nelle pagine del sito e davanti alle amministrazioni che quel problema ce l'hanno ancora.</p>
+        <div class="three rv2" data-d="3" style="margin-top:26px">
+          <div class="p"><b>01</b><span style="color:var(--muted)">Ci scrivi cosa risolvi, in una riga.</span></div>
+          <div class="p"><b>02</b><span style="color:var(--muted)">Andiamo a vedere se funziona davvero, e con chi.</span></div>
+          <div class="p"><b>03</b><span style="color:var(--muted)">La raccontiamo alla rete e la portiamo a un incontro.</span></div>
+        </div>
+        <p class="note rv2" data-d="3" style="color:var(--muted);opacity:1">Vale lo stesso modulo per le imprese e per i comuni che hanno già avviato una pratica che funziona. Scrivete cosa avete fatto, con i numeri se li avete: dall'altra parte ci sono Alessandro Di Capua e Michele D'Orso.</p>
+      </div>
+      <form class="rv2" data-d="2" id="fstartup" novalidate style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,32px)">
+        <h3 class="tiny" style="color:var(--signal-ink);margin-bottom:18px">Candida la tua startup</h3>
+        <div class="fld"><label for="st-nome">Nome della startup</label><input type="text" id="st-nome" name="nome" placeholder="Es. Marea Data" required></div>
+        <div class="fld"><label for="st-citta">Città</label><input type="text" id="st-citta" name="citta" placeholder="Es. Salerno" required></div>
+        <div class="fld"><label for="st-cosa">Cosa risolve, in una riga</label><input type="text" id="st-cosa" name="cosa" placeholder="Monitoriamo la qualità dell'acqua nelle aree marine protette"></div>
+        <div class="fld">
+          <label id="lab-chi">Siamo</label>
+          <div class="pick" role="radiogroup" aria-labelledby="lab-chi">
+            <label><input type="radio" name="chi" value="Startup" checked>Startup</label>
+            <label><input type="radio" name="chi" value="Impresa">Impresa</label>
+            <label><input type="radio" name="chi" value="Amministrazione">Amministrazione</label>
+            <label><input type="radio" name="chi" value="Scuola o ateneo">Scuola o ateneo</label>
+          </div>
+        </div>
+        <button class="b b-sig" type="submit" style="width:100%">Candida la startup</button>
+        <div class="okmsg" id="st-ok" role="status">Candidatura registrata. Ti scriviamo per farci raccontare la vostra pratica.</div>
+        <p class="note">Prototipo: il modulo non invia nulla e i dati restano su questo computer.</p>
+      </form>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale che gira l'Italia a cercare le buone notizie ecologiche e digitali e le racconta.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, il canale delle buone notizie ecologiche e digitali · <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.rv2'));
+  if(!items.length) return;
+  if(!('IntersectionObserver' in window)){ items.forEach(function(n){n.classList.add('shown');}); return; }
+  setTimeout(function(){ items.forEach(function(n){n.classList.add('shown');}); }, 1500);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){
+      var i=+(en.target.getAttribute('data-d')||0);
+      setTimeout(function(){en.target.classList.add('shown');}, i*80);
+      io.unobserve(en.target); } });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+  items.forEach(function(n){io.observe(n);});
+})();
+/* ---- modulo startup (finto) ---- */
+(function(){
+  var f=document.getElementById('fstartup'), ok=document.getElementById('st-ok');
+  if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.nome.value.trim()){ f.nome.focus(); return; }
+    if(ok) ok.classList.add('on');
+    f.reset();
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+EcoDigital · mozione tipo M5 · Etichetta per l'IA
+Proposta 03 del mazzo · Intelligenza artificiale
+Bozza da adattare. Le parti tra [ ] si completano con i dati del Comune.
+Contatti: Alessandro Di Capua e Michele D'Orso, info@ecodigital.it
+
+Mozione: il Comune compra servizi di intelligenza artificiale solo con l'etichetta
+
+Il Consiglio comunale di [Comune],
+
+Premesso che
+
+  • il Comune sta introducendo o valuta di introdurre servizi di intelligenza artificiale, per esempio [assistenti per il sito, trascrizione di sedute, gestione delle pratiche];
+  • all'EcoDigital Forum di Roma del 22 luglio 2026 Ettore Iorio ha proposto un'etichetta per l'IA, come la classe energetica degli elettrodomestici.
+
+Considerato che
+
+  • chi usa un servizio pubblico ha diritto di sapere quanta energia consuma, su quali dati è addestrato e chi risponde quando sbaglia;
+  • le regole europee sull'intelligenza artificiale [riferimento da verificare] chiedono già trasparenza su diversi di questi punti;
+  • il Comune, come acquirente, può chiedere queste informazioni ai fornitori.
+
+Impegna il Sindaco e la Giunta a
+
+  • chiedere a ogni fornitore di servizi di intelligenza artificiale una scheda con consumi energetici stimati, provenienza dei dati di addestramento e soggetto responsabile in caso di errore;
+  • pubblicare la scheda sul sito del Comune, nella pagina del servizio, scritta in modo che si legga;
+  • dare preferenza, nei limiti delle regole sugli acquisti pubblici [riferimento da verificare], ai servizi che forniscono queste informazioni in modo completo;
+  • coordinare il lavoro con il Responsabile per la Transizione Digitale e con il Responsabile della protezione dei dati;
+  • riferire al Consiglio entro [12 mesi].
+
+Fatto citato: intervento di Ettore Iorio, EcoDigital Forum, Roma, 22 luglio 2026.

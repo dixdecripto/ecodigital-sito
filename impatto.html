@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Impatto · Quanto pesa questo sito · EcoDigital</title>
+<meta name="description" content="Questa pagina misura sé stessa con l'API Performance del browser e converte i byte in grammi di CO₂. In fondo, il calcolatore per l'impronta del tuo sito.">
+<meta name="author" content="EcoDigital">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<style>
+.v2 .kpi2{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:22px}
+.v2 .kpi2 div{border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:16px 18px;
+  background:rgba(255,255,255,.06)}
+.v2 .kpi2 b{display:block;font-family:var(--display);font-stretch:125%;font-weight:800;
+  font-size:clamp(26px,3.2vw,40px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.v2 .kpi2 span{display:block;margin-top:9px;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+  font-weight:700;opacity:.7;line-height:1.4}
+.v2 .scene.light .kpi2 div{border-color:var(--line);background:var(--card)}
+.v2 .scene.light .kpi2 b{color:var(--forest)}
+.v2 .scene.light .kpi2 span{color:var(--muted);opacity:1}
+
+.v2 .formula{border-left:2px solid var(--signal);padding:4px 0 4px 16px;margin-top:22px;
+  font-size:.86rem;line-height:1.55;opacity:.84}
+.v2 .scene.light .formula{opacity:1;color:var(--muted)}
+.v2 .formula b{opacity:1}
+
+.v2 .fld input[type=number]{width:100%;padding:13px 15px;border-radius:12px;font:inherit;font-size:.95rem;
+  border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.v2 .fld input[type=range]{width:100%;accent-color:var(--signal);margin:10px 0 0}
+.v2 .calcbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,32px)}
+.v2 .esito{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,2.6vw,28px);margin-top:16px}
+.v2 .esito h3{font-size:1.15rem;letter-spacing:-.02em;color:var(--forest);margin-bottom:8px}
+.v2 .esito p{font-size:.95rem;line-height:1.5;color:var(--muted);margin:0}
+</style>
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body class="v2">
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="EcoDigital, home"><img src="img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="run">
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+        <span>Roma</span><span>Milano</span><span>Napoli</span><span>Catania</span><span>Palermo</span><span>Lecce</span><span>Genova</span><span>Bologna</span><span>Rimini</span><span>Torino</span><span>Urbino</span><span>Pescara</span><span>Avezzano</span><span>Salerno</span><span>Castellammare di Stabia</span><span>Quartu Sant'Elena</span><span>Venezia</span><span>Chieti</span><span>Bari</span><span>Bruxelles</span><span>Pompei</span><span>Vietri sul Mare</span><span>Ischia</span><span>Cercola</span><span>Santa Maria Capua Vetere</span>
+      </div>
+    </div>
+    <nav aria-label="Navigazione principale">
+      <a href="rete.html">Rete</a>
+      <a href="manifesto.html">Manifesto</a>
+      <a href="sfide.html">Territori</a>
+      <a href="eventi/index.html">Eventi</a>
+      <a href="news.html">Notizie</a>
+      <a href="blog.html">Blog</a>
+      <a href="stampa.html">Press</a>
+      <a href="amministratori/index.html">Amministratori</a>
+      <a href="impatto.html" aria-current="page">Impatto</a>
+    </nav>
+    <a class="b b-sig b-sm" href="attivista.html">Diventa <span>follower</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ====================================================== APERTURA -->
+<section class="scene mid" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="kick">Il punto 10 del manifesto, applicato a noi</p>
+    <h1 class="giant sm">Il sito che dichiara quanto pesa.</h1>
+    <p class="say" style="margin-top:26px;max-width:56ch">Ogni pagina web che apri consuma energia, in rete, nei data center e nel tuo telefono. Questa pagina si misura mentre la stai leggendo e ti mostra i suoi byte e i suoi grammi di CO₂. Il punto 10 del manifesto chiede questo numero a chi fa siti, quindi partiamo dal nostro.</p>
+    <div class="acts">
+      <a class="b b-sig" href="#misura">Vedi la misura</a>
+      <a class="b b-line" href="#calcolatore">Calcola l'impronta del tuo sito</a>
+    </div>
+  </div></div>
+  <a class="arrow" href="#misura" aria-label="Scorri alla misura"><span>Scorri</span>
+    <svg viewBox="0 0 18 26" fill="none" aria-hidden="true"><path d="M9 1v22M2 16l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- ====================================================== MISURA -->
+<section class="scene mid" id="misura" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">Misura in tempo reale</p>
+    <h2 class="giant xs rv2" data-d="1">Quanto pesa la pagina che stai leggendo.</h2>
+    <p class="say rv2" data-d="2" style="margin-top:18px;max-width:56ch">Il numero qui sotto è la somma dei byte che il tuo browser ha scaricato per aprire questa pagina. Lo legge l'API <b>Performance</b> del browser e lo converte in grammi di CO₂.</p>
+
+    <div class="weight" style="margin-top:32px">
+      <div class="rv2" data-d="2">
+        <div class="wbadge">
+          <b id="i-badge">&hellip;</b>
+          <span class="u" id="i-badge-lab">rispetto alla media dei siti</span>
+        </div>
+        <div class="kpi2">
+          <div><b id="i-kb">&hellip;</b><span>KB caricati</span></div>
+          <div><b id="i-g">&hellip;</b><span>g CO₂ per visita</span></div>
+          <div><b id="i-res">&hellip;</b><span>risorse caricate</span></div>
+          <div><b id="i-src">&hellip;</b><span>metodo di misura</span></div>
+        </div>
+      </div>
+
+      <div class="rv2" data-d="3">
+        <h3 class="tiny" style="color:var(--signal);margin-bottom:18px">Questa pagina, a confronto</h3>
+        <div class="wbar">
+          <div class="l"><span>Questa pagina</span></div>
+          <div class="track"><div class="fill" id="bar-us"></div></div>
+          <p class="note" id="v-us" style="margin-top:8px">&hellip;</p>
+        </div>
+        <div class="wbar" style="margin-top:22px">
+          <div class="l"><span>Media dei siti web</span></div>
+          <div class="track"><div class="fill avg" id="bar-avg"></div></div>
+          <p class="note" id="v-avg" style="margin-top:8px">≈ 2,4 MB · ≈ 0,864 g CO₂ per visita</p>
+        </div>
+        <div class="formula">
+          <b>La formula:</b> grammi di CO₂ = megabyte trasferiti × 0,36. È il modello Sustainable Web Design v4 in versione semplificata, che assegna circa 0,36 g di CO₂e a ogni megabyte trasferito, contando rete, data center e dispositivo di chi legge.
+        </div>
+        <p class="note" id="i-nota">Se apri il file dal disco, senza un server, il browser non riporta i byte di rete. In quel caso la misura usa la lunghezza del documento HTML, che per una pagina come questa è quasi uguale al peso reale.</p>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== CALCOLATORE -->
+<section class="scene light" id="calcolatore" style="background:var(--bg)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2" style="color:var(--signal-ink)">Strumento</p>
+    <h2 class="giant xs rv2" data-d="1" style="color:var(--forest)">Calcola l'impronta del tuo sito.</h2>
+    <p class="say rv2" data-d="2" style="margin-top:18px;color:var(--muted)">Servono due numeri, quanto pesa una pagina del tuo sito e quante visite fa in un mese. Il resto lo fa la stessa formula usata qui sopra.</p>
+
+    <div class="formgrid" style="margin-top:32px">
+      <div class="calcbox rv2" data-d="2">
+        <div class="fld">
+          <label for="c-mb">Peso di una pagina, in MB</label>
+          <input type="number" id="c-mb" value="2.4" min="0.02" max="60" step="0.1">
+          <p class="note" style="margin-top:8px">Se non lo sai, 2,4 è la media di una pagina web nel mondo.</p>
+        </div>
+        <div class="fld">
+          <label for="c-vis">Visite al mese: <b id="c-vis-lab" class="tnum" style="color:var(--signal-ink)">10.000</b></label>
+          <input type="range" id="c-vis" min="0" max="100" value="50" step="1" aria-describedby="c-vis-lab">
+          <div class="note" style="display:flex;justify-content:space-between;margin-top:4px"><span>100</span><span>1.000.000</span></div>
+        </div>
+        <div class="formula">
+          <b>Come si calcola:</b><br>
+          g CO₂ all'anno = MB × 0,36 × visite al mese × 12<br>
+          km in auto = g ÷ 106 &nbsp;·&nbsp; ricariche di telefono = g ÷ 8,22 &nbsp;·&nbsp; alberi = kg ÷ 21
+        </div>
+      </div>
+
+      <div class="rv2" data-d="3">
+        <div class="counts" style="margin-top:0;grid-template-columns:1fr 1fr;gap:26px">
+          <div class="c"><b id="c-kg" style="color:var(--forest)">&hellip;</b><span style="color:var(--muted)">kg CO₂ all'anno</span></div>
+          <div class="c"><b id="c-g" style="color:var(--forest)">&hellip;</b><span style="color:var(--muted)">g CO₂ per visita</span></div>
+        </div>
+        <div class="kpi2">
+          <div><b id="c-km">&hellip;</b><span>km in auto</span></div>
+          <div><b id="c-tel">&hellip;</b><span>ricariche di telefono</span></div>
+          <div><b id="c-alb">&hellip;</b><span>alberi per assorbirla</span></div>
+        </div>
+        <div class="esito">
+          <h3 id="c-titolo">Cosa vuol dire</h3>
+          <p id="c-frase">&hellip;</p>
+          <p class="note" style="margin-top:12px;color:var(--muted);opacity:1">Da dove vengono i coefficienti. 106 g CO₂/km è la media delle auto nuove immatricolate in Europa. 8,22 g è l'emissione di una ricarica completa di telefono. 21 kg all'anno è quanto assorbe un albero maturo. Sono ordini di grandezza utili per capirsi, senza pretesa di misura certificata.</p>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== COME CI SIAMO RIUSCITI -->
+<section class="scene mid short" style="background:var(--forest)">
+  <div class="in"><div class="wrap">
+    <p class="eyebrow2 rv2">Come ci siamo riusciti</p>
+    <h2 class="giant xs rv2" data-d="1">Le quattro cose che non abbiamo messo.</h2>
+    <p class="say rv2" data-d="2" style="margin-top:18px;max-width:56ch">Per tenere leggero un sito non serve tecnologia speciale. Servono quattro scelte fatte all'inizio, e chi fa siti le può copiare stasera.</p>
+    <div class="three rv2" data-d="2">
+      <div class="p"><b>01</b><span>Zero font scaricati. Usiamo i caratteri già installati sul tuo dispositivo, da 100 a 400 KB risparmiati su ogni pagina.</span></div>
+      <div class="p"><b>02</b><span>Foto ridotte a 1000 px e caricate solo se scorri. Sotto il primo schermo non parte nulla finché non serve.</span></div>
+      <div class="p"><b>03</b><span>Zero librerie esterne. Niente framework, niente CDN, niente tracciatori. Gira solo il codice scritto per questa pagina.</span></div>
+      <div class="p"><b>04</b><span>Zero dati a terzi. Niente cookie di profilazione e niente pixel. Il traffico che non parte è energia che non si consuma.</span></div>
+    </div>
+    <div class="acts">
+      <a class="b b-sig rv2" data-d="3" href="manifesto.html">Leggi il manifesto</a>
+      <a class="b b-line rv2" data-d="3" href="attivista.html">Diventa follower ecodigital</a>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logomark big" src="img/logo/istituzionale-negativo.svg" alt="EcoDigital" width="792" height="109">
+        <p class="about">Il canale che gira l'Italia a cercare le buone notizie ecologiche e digitali e le racconta.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" d="M7.5 3.6h9a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="7" r="1.15" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5M3 9.5h4V21H3zm7 0h3.8v1.6h.05c.53-.95 1.83-1.95 3.76-1.95C21.4 9.15 22 11.3 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-3.9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>La rete</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rete.html">La rete siamo noi</a></li>
+          <li><a href="manifesto.html">Il manifesto</a></li>
+          <li><a href="sfide.html">I territori</a></li>
+          <li><a href="campania.html">EcoDigital Campania</a></li>
+          <li><a href="eventi.html">Le tappe fatte</a></li>
+          <li><a href="eventi/index.html">Prossimi incontri e iscrizioni</a></li>
+          <li><a href="alfonso-pecoraro-scanio.html">Alfonso Pecoraro Scanio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partecipa e leggi</h4>
+        <ul>
+          <li><a href="attivista.html">Diventa follower</a></li>
+          <li><a href="rete.html#startup">Candida la tua startup</a></li>
+          <li><a href="manifesto.html#firma">Firma il manifesto</a></li>
+          <li><a href="news.html">Notizie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="stampa.html">Press</a></li>
+          <li><a href="amministratori/index.html">Per gli amministratori</a></li>
+          <li><a href="impatto.html">Impatto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Con il sostegno di</h4>
+        <div class="partners"><img src="img/logo/sostegno.png" alt="Loghi di Fondazione UniVerde, Opera2030 e SOS Terra ETS" width="640" height="528" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="end">
+      <span>EcoDigital, rete civica per la transizione ecologica e digitale &middot; <a href="crediti.html">Crediti fotografici</a></span>
+      <span>La rete è promossa da Alfonso Pecoraro Scanio · Il canale è curato da Alessandro Di Capua e Michele D'Orso</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---- misura reale del peso della pagina + stima CO2 (modello SWD v4 semplificato) ---- */
+var ECO = (function(){
+  var G_PER_MB = 0.36;            /* gCO2e per MB trasferito */
+  var AVG_MB = 2.4;               /* peso medio di una pagina web */
+  function bytes(){
+    var t=0, e=0, d=0, src='';
+    try{
+      var nav=(performance.getEntriesByType('navigation')||[])[0];
+      if(nav){ t+=nav.transferSize||0; e+=nav.encodedBodySize||0; d+=nav.decodedBodySize||0; }
+      (performance.getEntriesByType('resource')||[]).forEach(function(r){
+        t+=r.transferSize||0; e+=r.encodedBodySize||0; d+=r.decodedBodySize||0;
+      });
+    }catch(err){}
+    var b=0;
+    if(t>0){ b=t; src='transferSize'; }
+    else if(e>0){ b=e; src='encodedBodySize'; }
+    else if(d>0){ b=d; src='decodedBodySize'; }
+    else { b=document.documentElement.outerHTML.length; src='outerHTML.length'; }
+    return {bytes:b, src:src};
+  }
+  function fmt(n,dec){
+    return n.toLocaleString('it-IT',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  }
+  var m = bytes();
+  var mb = m.bytes/1048576, kb = m.bytes/1024, g = mb*G_PER_MB;
+  return {G_PER_MB:G_PER_MB, AVG_MB:AVG_MB, AVG_G:AVG_MB*G_PER_MB,
+          bytes:m.bytes, src:m.src, mb:mb, kb:kb, g:g, fmt:fmt,
+          /* il browser chiude i conti dei byte solo a caricamento finito:
+             rileggi() ripete la stessa misura, con la stessa API, dopo il load */
+          rileggi:function(){
+            var x=bytes();
+            this.bytes=x.bytes; this.src=x.src;
+            this.mb=x.bytes/1048576; this.kb=x.bytes/1024; this.g=this.mb*G_PER_MB;
+            return this;
+          }};
+})();
+(function(){
+  var el=document.getElementById('fbadge-v');
+  if(el) el.textContent = ECO.fmt(ECO.kb,0)+' KB · '+ECO.fmt(ECO.g,3)+' g CO₂ per visita';
+})();
+
+/* ---- reveal on scroll, versione v2 (senza JS resta tutto visibile) ---- */
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.rv2'));
+  if(!items.length) return;
+  if(!('IntersectionObserver' in window)){ items.forEach(function(n){n.classList.add('shown');}); return; }
+  setTimeout(function(){ items.forEach(function(n){n.classList.add('shown');}); }, 1500);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(en.isIntersecting){
+        var i=+(en.target.getAttribute('data-d')||0);
+        setTimeout(function(){en.target.classList.add('shown');}, i*80);
+        io.unobserve(en.target);
+      }
+    });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.05});
+  items.forEach(function(n){io.observe(n);});
+})();
+
+/* ---- contatori animati ---- */
+function ecoCount(node){
+  var end=parseFloat(node.getAttribute('data-count'))||0;
+  var dec=parseInt(node.getAttribute('data-dec')||'0',10);
+  var suf=node.getAttribute('data-suf')||'';
+  var t0=null, dur=1100;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    node.textContent=ECO.fmt(end,dec)+suf; return;
+  }
+  function step(ts){
+    if(!t0) t0=ts;
+    var p=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-p,3);
+    node.textContent=ECO.fmt(end*e,dec)+suf;
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+(function(){
+  var ns=[].slice.call(document.querySelectorAll('[data-count]'));
+  if(!ns.length) return;
+  if(!('IntersectionObserver' in window)){ ns.forEach(ecoCount); return; }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ ecoCount(en.target); io.unobserve(en.target); } });
+  },{threshold:.4});
+  ns.forEach(function(n){io.observe(n);});
+})();
+</script>
+<script>
+/* =======================================================================
+   1) MISURA REALE DELLA PAGINA
+   ECO (definito nel footer) ha già letto performance.getEntriesByType()
+   con fallback su document.documentElement.outerHTML.length.
+   ======================================================================= */
+function mostraMisura(){
+  var f=ECO.fmt;
+  var risorse=0;
+  try{ risorse=(performance.getEntriesByType('resource')||[]).length; }catch(e){}
+
+  var set=function(id,v){ var n=document.getElementById(id); if(n) n.textContent=v; };
+  set('i-kb', f(ECO.kb,0));
+  set('i-g', f(ECO.g,3));
+  set('i-res', risorse);
+  set('i-src', ECO.src==='outerHTML.length' ? 'HTML' : ECO.src.replace('Size',''));
+
+  var vus=document.getElementById('v-us');
+  if(vus) vus.textContent = f(ECO.kb,0)+' KB ('+f(ECO.mb,3)+' MB) · '+f(ECO.g,3)+
+    ' g CO₂ per visita · misurato con '+ECO.src;
+
+  /* barre proporzionali: la media dei siti è il 100% della scala */
+  var pct = Math.max(1.2, Math.min(100, (ECO.mb/ECO.AVG_MB)*100));
+  setTimeout(function(){
+    var a=document.getElementById('bar-us'), b=document.getElementById('bar-avg');
+    if(a) a.style.width=pct.toFixed(2)+'%';
+    if(b) b.style.width='100%';
+  },260);
+
+  /* badge: quanto in meno rispetto alla media */
+  var diff = (1 - ECO.g/ECO.AVG_G)*100;
+  var badge=document.getElementById('i-badge'), lab=document.getElementById('i-badge-lab');
+  if(badge){
+    if(diff>=0){
+      badge.textContent='−'+f(diff,1)+'%';
+      lab.textContent='di CO₂ rispetto alla media dei siti';
+    }else{
+      badge.textContent='+'+f(-diff,1)+'%';
+      lab.textContent='di CO₂ rispetto alla media dei siti';
+      badge.parentNode.style.background='#C0202F';
+    }
+  }
+  var nota=document.getElementById('i-nota');
+  if(nota && ECO.src!=='outerHTML.length'){
+    nota.textContent='Misura presa da '+ECO.src+'. Sono i byte contati dal browser per il documento e per le '+risorse+' risorse collegate.';
+  }
+}
+mostraMisura();
+/* a caricamento finito il browser ha chiuso i conti: si rilegge e si riscrive */
+window.addEventListener('load',function(){
+  setTimeout(function(){ ECO.rileggi(); mostraMisura(); },80);
+});
+
+/* =======================================================================
+   2) CALCOLATORE «L'IMPRONTA DEL TUO SITO»
+   ======================================================================= */
+(function(){
+  var mb=document.getElementById('c-mb'), vis=document.getElementById('c-vis');
+  if(!mb||!vis) return;
+  var f=ECO.fmt;
+  var G_KM=106;      /* g CO2 per km, media auto nuove in Europa */
+  var G_TEL=8.22;    /* g CO2 per una ricarica completa di smartphone */
+  var KG_ALBERO=21;  /* kg CO2 assorbiti in un anno da un albero maturo */
+
+  /* lo slider è logaritmico: da 100 a 1.000.000 di visite al mese */
+  function visite(){
+    var p=+vis.value/100;
+    var v=100*Math.pow(10,p*4);
+    if(v<1000) return Math.round(v/10)*10;
+    if(v<10000) return Math.round(v/100)*100;
+    if(v<100000) return Math.round(v/1000)*1000;
+    return Math.round(v/10000)*10000;
+  }
+  function calcola(){
+    var peso=parseFloat(String(mb.value).replace(',','.'));
+    if(!(peso>0)) peso=0;
+    var v=visite();
+    var gVisita=peso*ECO.G_PER_MB;
+    var gAnno=gVisita*v*12;
+    var kg=gAnno/1000;
+
+    document.getElementById('c-vis-lab').textContent=f(v,0);
+    document.getElementById('c-g').textContent=f(gVisita,2);
+    document.getElementById('c-kg').textContent=kg>=100?f(kg,0):f(kg,1);
+    document.getElementById('c-km').textContent=f(gAnno/G_KM,0);
+    document.getElementById('c-tel').textContent=f(gAnno/G_TEL,0);
+    document.getElementById('c-alb').textContent=f(kg/KG_ALBERO,1);
+
+    var km=gAnno/G_KM, alberi=kg/KG_ALBERO;
+    var frase;
+    if(kg<50){
+      frase='Come '+f(km,0)+' km in auto ogni anno. Un sito leggero, tenetelo così.';
+    }else if(kg<500){
+      frase='Come percorrere '+f(km,0)+' km in auto ogni anno. Servono '+f(alberi,1)+
+            ' alberi per riassorbire questa CO₂, e dimezzando il peso delle pagine si dimezza anche questo numero.';
+    }else{
+      frase='Come '+f(km,0)+' km in auto ogni anno. Servirebbero '+f(alberi,0)+
+            ' alberi per compensare. Di solito due terzi del peso stanno nelle immagini non ridotte, nei font scaricati e nelle librerie che non si usano.';
+    }
+    document.getElementById('c-frase').textContent=frase;
+  }
+  mb.addEventListener('input',calcola);
+  vis.addEventListener('input',calcola);
+  calcola();
+})();
+</script>
+
+</body>
+</html>
