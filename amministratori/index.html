@@ -153,15 +153,18 @@ fieldset.campo{border:0;padding:0;margin:0}
 /* adesione */
 .adesione{background:var(--tenue)}
 .piede{padding:44px 0 56px;font-size:14px;color:var(--grigio)}
-.piede img{height:22px;margin-bottom:14px}
+.piede img{height:22px;width:auto;margin-bottom:14px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:200;background:var(--giallo);color:#14161F;padding:10px 18px;border-radius:999px;font-weight:700;text-decoration:none}
+.skip:focus{left:12px}
 .piede a{color:var(--blu)}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Vai al contenuto</a>
 
 <header class="top">
   <div class="wrap">
-    <a href="../index.html"><img src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
+    <a href="../index.html"><img src="../img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
     <nav aria-label="Sezioni della pagina">
       <a href="#proposte">Le proposte</a>
       <a href="#tappa">Una tappa</a>
@@ -171,6 +174,7 @@ fieldset.campo{border:0;padding:0;margin:0}
     </nav>
   </div>
 </header>
+<main id="main">
 
 <section class="hero grad">
   <div class="wrap">
@@ -327,9 +331,10 @@ fieldset.campo{border:0;padding:0;margin:0}
   </div>
 </section>
 
+</main>
 <footer class="piede">
   <div class="wrap">
-    <img src="../img/logo/istituzionale.svg" alt="EcoDigital">
+    <img src="../img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109">
     <p>EcoDigital è la rete promossa da Alfonso Pecoraro Scanio. Il canale di informazione è curato da Alessandro Di Capua e Michele D'Orso.<br>
     Per comuni, imprese e startup: <a href="mailto:info@ecodigital.it">info@ecodigital.it</a> · <a href="../attivista.html">Diventa follower</a></p>
   </div>

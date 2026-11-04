@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="../css/brand.css">
-<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<link rel="stylesheet" href="eventi.css?v=2026-11-04">
 <title>Incontro EcoDigital</title>
 <meta name="description" content="Data, luogo, programma e iscrizione all'incontro EcoDigital.">
 <meta property="og:site_name" content="EcoDigital">
@@ -21,9 +21,10 @@
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<a class="skip" href="#pagina">Vai al contenuto</a>
 <header class="testata">
   <div class="contenitore">
-    <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
+    <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
     <nav aria-label="Navigazione principale">
       <a href="index.html" class="attivo">Incontri</a>
       <a class="nascondi-mobile" href="../eventi.html">Tutte le tappe</a>
@@ -34,7 +35,7 @@
 
 <main id="pagina">
   <section class="copertina" id="copertina">
-    <div class="contenitore"><img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital"><h1 class="display">Caricamento…</h1></div>
+    <div class="contenitore"><img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital" width="792" height="109"><h1 class="display">Caricamento…</h1></div>
   </section>
   <div class="contenitore">
     <div class="evento">
@@ -47,7 +48,7 @@
 <footer class="piede">
   <div class="contenitore">
     <div>
-      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital" width="792" height="109">
       <p style="margin:10px 0 0">La rete promossa da Alfonso Pecoraro Scanio. Il canale è curato da Alessandro Di Capua e Michele D'Orso.</p>
     </div>
     <div style="display:flex;gap:20px;flex-wrap:wrap">
@@ -106,7 +107,7 @@
     var foto = e.foto ? '<img class="copertina__foto" src="' + ED.esc(e.foto) + '" alt=""><div class="copertina__velo"></div>' : '';
     var ora = ED.orario(e);
     c.innerHTML = foto + '<div class="contenitore">' +
-      '<img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">' +
+      '<img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital" width="792" height="109">' +
       '<div style="display:flex;gap:8px;flex-wrap:wrap"><span class="etichetta etichetta--tipo">' + ED.TIPI[e.tipo] + '</span>' +
       (e.stato === "passato" ? '<span class="etichetta etichetta--passato">Incontro passato</span>' : (e.confermato ? '' : '<span class="etichetta etichetta--da-confermare">Data da confermare</span>')) + '</div>' +
       '<h1 class="display">' + ED.esc(e.titolo) + '</h1>' +

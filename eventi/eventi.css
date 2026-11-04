@@ -342,3 +342,8 @@ img.logo--bianco { height: 24px; width: auto; }
 .tab td:first-child { white-space: nowrap; }
 .btn { white-space: nowrap; }
 @media (max-width: 400px) { .testata img.logo { height: 22px; } .testata nav { gap: 12px; } }
+
+/* link per saltare al contenuto, visibile solo con la tastiera */
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 200; background: var(--giallo, #F7B807); color: #14161F;
+  padding: 10px 18px; border-radius: 999px; font-weight: 700; text-decoration: none; }
+.skip:focus { left: 12px; }
