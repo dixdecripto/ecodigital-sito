@@ -87,7 +87,7 @@
       <form id="fatt" class="rv2" data-d="2" novalidate>
         <div class="fld"><label for="a-nome">Nome</label><input type="text" id="a-nome" name="nome" required autocomplete="given-name" placeholder="Alessandra"></div>
         <div class="fld"><label for="a-citta">Città</label><input type="text" id="a-citta" name="citta" required autocomplete="address-level2" placeholder="Salerno"></div>
-        <div class="fld"><label for="a-mail">Email</label><input type="text" id="a-mail" name="mail" required autocomplete="email" placeholder="nome@esempio.it"></div>
+        <div class="fld"><label for="a-mail">Email</label><input type="email" id="a-mail" name="mail" required autocomplete="email" placeholder="nome@esempio.it"></div>
         <div class="fld">
           <label id="lab-sono">Sono</label>
           <div class="pick" role="radiogroup" aria-labelledby="lab-sono">
@@ -230,6 +230,7 @@ function ecoCount(node){
     e.preventDefault();
     var n=form.nome.value.trim(), c=form.citta.value.trim();
     if(!n||!c){ (n?form.citta:form.nome).focus(); return; }
+    if(!form.mail.value.trim()||!form.mail.checkValidity()){ form.mail.focus(); return; }
     list.push({n:n.charAt(0).toUpperCase()+n.slice(1), c:c, mine:true});
     save(list); render(); nums(true);
     if(ok) ok.classList.add('on');
