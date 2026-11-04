@@ -6,16 +6,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="../css/brand.css">
-<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<link rel="stylesheet" href="../css/brand.css?v=20261104">
+<link rel="stylesheet" href="eventi.css?v=2026-11-04">
 <title>Iscritti agli incontri · EcoDigital</title>
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
+<a class="skip" href="#main">Vai al contenuto</a>
 <header class="regia-testa">
   <div class="contenitore">
     <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital" width="792" height="109">
       <h1 class="display">Iscritti</h1>
     </div>
     <div style="display:flex;gap:10px">
@@ -25,7 +26,7 @@
   </div>
 </header>
 
-<main class="contenitore" style="padding-bottom:64px">
+<main id="main" class="contenitore" style="padding-bottom:64px">
   <div id="avviso-regia"></div>
   <div id="regia">
     <div class="barra">
@@ -46,7 +47,7 @@
     <div id="conferma"></div>
     <div class="stato" id="stato" role="status" aria-live="polite"></div>
 
-    <div class="tabella-wrap" style="margin-top:18px">
+    <div class="tabella-wrap" style="margin-top:18px" tabindex="0" role="region" aria-label="Iscritti">
       <table class="tab">
         <thead><tr><th>Codice</th><th>Nome</th><th>Email</th><th>Ente</th><th>Ruolo</th><th>Città</th><th>Acc.</th><th>Notizie</th><th>Iscritto il</th><th>Presente</th></tr></thead>
         <tbody id="righe"></tbody>

@@ -13,7 +13,7 @@
    - tutto isolato sotto body.v2 come nella v3
    ===================================================================== */
 
-@import url("brand.css?v=20261001") layer(brand);
+@import url("brand.css?v=20261104") layer(brand);
 
 :root{
   color-scheme:light;
@@ -303,7 +303,7 @@
 .v2 .fld{margin-bottom:16px}
 .v2 .fld label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   margin-bottom:7px;opacity:.75}
-.v2 .fld input[type=text]{width:100%;padding:13px 15px;border-radius:12px;font:inherit;font-size:.95rem;
+.v2 .fld :is(input[type=text],input[type=email]){width:100%;padding:13px 15px;border-radius:12px;font:inherit;font-size:.95rem;
   border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:var(--hero-ink)}
 .v2 .fld input::placeholder{color:rgba(255,255,255,.4)}
 .v2 .fld input:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px rgba(247,184,7,.28)}
@@ -317,7 +317,7 @@
   background:rgba(247,184,7,.2);border:1px solid var(--signal);font-size:.9rem;font-weight:600}
 .v2 .okmsg.on{display:block}
 /* campi su fondo chiaro */
-.v2 .scene.light .fld input[type=text]{border-color:var(--line);background:var(--bg);color:var(--ink)}
+.v2 .scene.light .fld :is(input[type=text],input[type=email]){border-color:var(--line);background:var(--bg);color:var(--ink)}
 .v2 .scene.light .fld input::placeholder{color:var(--muted);opacity:.8}
 .v2 .scene.light .fld label{opacity:.9;color:var(--muted)}
 .v2 .scene.light .okmsg{background:var(--badge-bg);border-color:var(--signal);color:var(--forest)}

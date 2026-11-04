@@ -5,10 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EcoDigital · Diventa un follower ecodigital</title>
 <meta name="description" content="Ti mandiamo le cose belle che i giovani della rete EcoDigital stanno facendo in giro per l'Italia. Tu le rilanci con un like e ci segnali le buone pratiche che vedi vicino a te.">
+<link rel="canonical" href="https://dixdecripto.github.io/ecodigital-sito/attivista.html">
+<meta property="og:site_name" content="EcoDigital">
+<meta property="og:locale" content="it_IT">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EcoDigital · Diventa un follower ecodigital">
+<meta property="og:description" content="Ti mandiamo le cose belle che i giovani della rete EcoDigital stanno facendo in giro per l'Italia. Tu le rilanci con un like e ci segnali le buone pratiche che vedi vicino a te.">
+<meta property="og:url" content="https://dixdecripto.github.io/ecodigital-sito/attivista.html">
+<meta property="og:image" content="https://dixdecripto.github.io/ecodigital-sito/video/spot-poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="author" content="EcoDigital">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="img/logo/tondo-blu.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/site-v4.css?v=20261015">
+<link rel="stylesheet" href="css/site-v4.css?v=20261104">
 <script>document.documentElement.className+=" js";</script>
 </head>
 <body class="v2">
@@ -76,7 +87,7 @@
       <form id="fatt" class="rv2" data-d="2" novalidate>
         <div class="fld"><label for="a-nome">Nome</label><input type="text" id="a-nome" name="nome" required autocomplete="given-name" placeholder="Alessandra"></div>
         <div class="fld"><label for="a-citta">Città</label><input type="text" id="a-citta" name="citta" required autocomplete="address-level2" placeholder="Salerno"></div>
-        <div class="fld"><label for="a-mail">Email</label><input type="text" id="a-mail" name="mail" required autocomplete="email" placeholder="nome@esempio.it"></div>
+        <div class="fld"><label for="a-mail">Email</label><input type="email" id="a-mail" name="mail" required autocomplete="email" placeholder="nome@esempio.it"></div>
         <div class="fld">
           <label id="lab-sono">Sono</label>
           <div class="pick" role="radiogroup" aria-labelledby="lab-sono">
@@ -96,7 +107,7 @@
           <div class="c"><b id="a-tot">0</b><span>Follower</span></div>
           <div class="c"><b id="a-citta-n">0</b><span>Città rappresentate</span></div>
         </div>
-        <div class="sigwall" id="a-wall" aria-live="polite"></div>
+        <div class="sigwall" id="a-wall" aria-live="polite" tabindex="0" role="region" aria-label="Follower"></div>
         <p class="note">I nomi già presenti in questo prototipo sono di fantasia, servono solo a far vedere come si riempie il muro.</p>
       </div>
     </div>
@@ -219,6 +230,7 @@ function ecoCount(node){
     e.preventDefault();
     var n=form.nome.value.trim(), c=form.citta.value.trim();
     if(!n||!c){ (n?form.citta:form.nome).focus(); return; }
+    if(!form.mail.value.trim()||!form.mail.checkValidity()){ form.mail.focus(); return; }
     list.push({n:n.charAt(0).toUpperCase()+n.slice(1), c:c, mine:true});
     save(list); render(); nums(true);
     if(ok) ok.classList.add('on');

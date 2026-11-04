@@ -6,38 +6,39 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivio:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="../css/brand.css">
-<link rel="stylesheet" href="eventi.css?v=2026-10-01">
+<link rel="stylesheet" href="../css/brand.css?v=20261104">
+<link rel="stylesheet" href="eventi.css?v=2026-11-04">
 <title>La tua iscrizione · EcoDigital</title>
 <meta name="description" content="Il riepilogo della tua iscrizione a un incontro EcoDigital, con il QR da mostrare all'ingresso.">
 <meta name="robots" content="noindex">
 </head>
 <body>
+<a class="skip" href="#main">Vai al contenuto</a>
 <header class="testata">
   <div class="contenitore">
-    <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
+    <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital" width="792" height="109"></a>
     <nav aria-label="Navigazione principale">
       <a href="index.html">Incontri</a>
-      <a class="nascondi-mobile" href="../sito/eventi.html">Tutte le tappe</a>
-      <a class="btn btn--giallo btn--piccolo" href="../sito/attivista.html">Diventa follower</a>
+      <a class="nascondi-mobile" href="../eventi.html">Tutte le tappe</a>
+      <a class="btn btn--giallo btn--piccolo" href="../attivista.html">Diventa follower</a>
     </nav>
   </div>
 </header>
 
-<main class="contenitore" style="padding-top:36px;padding-bottom:64px">
+<main id="main" class="contenitore" style="padding-top:36px;padding-bottom:64px">
   <div id="contenuto"><p>Caricamento…</p></div>
 </main>
 
 <footer class="piede">
   <div class="contenitore">
     <div>
-      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">
+      <img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital" width="792" height="109">
       <p style="margin:10px 0 0">La rete promossa da Alfonso Pecoraro Scanio. Il canale è curato da Alessandro Di Capua e Michele D'Orso.</p>
     </div>
     <div style="display:flex;gap:20px;flex-wrap:wrap">
       <a href="index.html">Incontri</a>
       <a href="privacy.html">Privacy delle iscrizioni</a>
-      <a href="../sito/index.html">Il sito</a>
+      <a href="../index.html">Il sito</a>
     </div>
   </div>
 </footer>
@@ -76,7 +77,7 @@
     box.innerHTML =
       (dati.simulato ? '<div class="avviso" style="margin-bottom:18px"><strong>Backend non collegato</strong>Questa iscrizione è una prova fatta da questo browser: il codice non vale all\'ingresso.</div>' : '') +
       '<div class="biglietto">' +
-        '<div class="biglietto__testa aurora"><img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital">' +
+        '<div class="biglietto__testa aurora"><img class="logo logo--bianco" src="../img/logo/mono-bianco.svg" alt="EcoDigital" width="792" height="109">' +
           '<p class="occhiello" style="color:rgba(255,255,255,.85);margin:22px 0 4px">Sei iscritto a</p><h1 class="display" style="margin:0;font-size:clamp(28px,4.4vw,48px)">' + ED.esc(ev.titolo) + '</h1></div>' +
         '<div class="biglietto__corpo"><dl>' +
           (dati.nome ? '<dt>Nome</dt><dd>' + ED.esc(dati.nome + " " + (dati.cognome || "")) + (acc ? ' <span style="color:var(--grigio);font-weight:500">e ' + ED.numero(acc) + (acc === 1 ? ' accompagnatore' : ' accompagnatori') + '</span>' : '') + '</dd>' : '') +
