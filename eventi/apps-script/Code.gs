@@ -13,7 +13,7 @@
  *                  (es. https://www.ecodigital.it/eventi/)
  *   RISPONDI_A     facoltativa: indirizzo a cui arrivano le risposte alle email
  *   CONTATTO       facoltativa: indirizzo scritto in fondo alle email (predefinito info@ecodigital.it)
- *   LINK_FOLLOWER  facoltativa: pagina «Diventa follower» (predefinito SITO_URL + ../sito/attivista.html)
+ *   LINK_FOLLOWER  facoltativa: pagina «Diventa follower» (predefinito SITO_URL + ../attivista.html)
  *   ID_FOGLIO      facoltativa: id del foglio, solo se lo script NON è stato creato dal foglio
  *
  * Il front-end manda i POST come text/plain (senza header personalizzati) per evitare
@@ -460,7 +460,7 @@ function inviaEmail(tipo, ev, p) {
     conferma: b + 'conferma.html?id=' + encodeURIComponent(ev.id) + '&codice=' + encodeURIComponent(p.codice),
     disdetta: b + 'conferma.html?id=' + encodeURIComponent(ev.id) + '&annulla=' + encodeURIComponent(p.codice),
     privacy: b + 'privacy.html',
-    follower: proprieta().LINK_FOLLOWER || (b + '../sito/attivista.html')
+    follower: proprieta().LINK_FOLLOWER || (b + '../attivista.html')
   };
   var prossimo = tipo === 'dopo-evento' ? prossimoEvento(ev.id) : null;
   var acc = p.accompagnatori ? (p.accompagnatori === 1 ? 'un accompagnatore' : numero(p.accompagnatori) + ' accompagnatori') : '';

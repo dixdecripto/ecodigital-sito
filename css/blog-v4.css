@@ -3,7 +3,7 @@
    Si carica DOPO lo stile interno di ogni editoriale e lo corregge.
    brand.css sta in un livello basso: queste regole vincono sempre.
    ===================================================================== */
-@import url("brand.css?v=20261001") layer(brand);
+@import url("brand.css?v=20261104") layer(brand);
 
 :root{--wide:125%;--tenue:#F4F5FA;--blu-tenue:#E9ECF7;--blu-scuro:#1F2D6E}
 body{background:#fff}
