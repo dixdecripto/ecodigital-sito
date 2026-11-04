@@ -10,6 +10,15 @@
 <link rel="stylesheet" href="eventi.css?v=2026-10-01">
 <title>Incontro EcoDigital</title>
 <meta name="description" content="Data, luogo, programma e iscrizione all'incontro EcoDigital.">
+<meta property="og:site_name" content="EcoDigital">
+<meta property="og:locale" content="it_IT">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Incontro EcoDigital">
+<meta property="og:description" content="Data, luogo, programma e iscrizione all'incontro EcoDigital.">
+<meta property="og:image" content="https://dixdecripto.github.io/ecodigital-sito/video/spot-poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <header class="testata">
@@ -17,8 +26,8 @@
     <a href="index.html"><img class="logo" src="../img/logo/istituzionale.svg" alt="EcoDigital"></a>
     <nav aria-label="Navigazione principale">
       <a href="index.html" class="attivo">Incontri</a>
-      <a class="nascondi-mobile" href="../sito/eventi.html">Tutte le tappe</a>
-      <a class="btn btn--giallo btn--piccolo" href="../sito/attivista.html">Diventa follower</a>
+      <a class="nascondi-mobile" href="../eventi.html">Tutte le tappe</a>
+      <a class="btn btn--giallo btn--piccolo" href="../attivista.html">Diventa follower</a>
     </nav>
   </div>
 </header>
@@ -44,7 +53,7 @@
     <div style="display:flex;gap:20px;flex-wrap:wrap">
       <a href="index.html">Incontri</a>
       <a href="privacy.html">Privacy delle iscrizioni</a>
-      <a href="../sito/index.html">Il sito</a>
+      <a href="../index.html">Il sito</a>
     </div>
   </div>
 </footer>
@@ -158,7 +167,7 @@
         '<p style="margin:0 0 4px;font-weight:700;font-size:18px">' + ED.esc(p.titolo) + '</p>' +
         '<p style="margin:0 0 14px;color:var(--grigio)">' + ED.esc(ED.cap(ED.dataEstesa(p))) + ' · ' + ED.esc(p.online ? "Online" : p.citta) + '</p>' +
         '<a class="btn btn--pieno" href="evento.html?id=' + encodeURIComponent(p.id) + '#iscrizione">Iscriviti alla prossima</a>' : '') +
-      '<p style="margin:16px 0 0"><a class="btn btn--giallo btn--pieno" href="../sito/attivista.html">Diventa follower</a></p></div>';
+      '<p style="margin:16px 0 0"><a class="btn btn--giallo btn--pieno" href="../attivista.html">Diventa follower</a></p></div>';
   }
 
   function modulo() {
